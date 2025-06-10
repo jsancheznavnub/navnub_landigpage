@@ -63,24 +63,24 @@ export default function CookieConsentModal({
         
         <ScrollArea className="flex-grow">
           <AlertDialogDescription className="space-y-4 text-sm text-foreground text-body pr-6"> {/* Añadido pr-6 aquí para el contenido */}
-            <p className="italic">{dictionary.effectiveDate?.replace('{date}', '10 de junio de 2025')}</p>
-            <p>{dictionary.introduction}</p>
+            <div className="italic">{dictionary.effectiveDate?.replace('{date}', '10 de junio de 2025')}</div>
+            <div>{dictionary.introduction}</div>
 
             <h3 className="font-semibold text-md text-primary pt-2">{dictionary.whatAreCookies?.title}</h3>
-            <p>{dictionary.whatAreCookies?.content}</p>
+            <div>{dictionary.whatAreCookies?.content}</div>
 
             <h3 className="font-semibold text-md text-primary pt-2">{dictionary.howWeUseCookies?.title}</h3>
-            <p>{dictionary.howWeUseCookies?.content}</p>
+            <div>{dictionary.howWeUseCookies?.content}</div>
             <ul className="list-disc pl-5 space-y-1">
               <li>{dictionary.howWeUseCookies?.item1}</li>
               <li>{dictionary.howWeUseCookies?.item2}</li>
               <li>{dictionary.howWeUseCookies?.item3}</li>
               <li>{dictionary.howWeUseCookies?.item4}</li>
             </ul>
-            <p>{dictionary.howWeUseCookies?.aiNote}</p>
+            <div>{dictionary.howWeUseCookies?.aiNote}</div>
 
             <h3 className="font-semibold text-md text-primary pt-2">{dictionary.typesOfCookies?.title}</h3>
-            <p>{dictionary.typesOfCookies?.intro}</p>
+            <div>{dictionary.typesOfCookies?.intro}</div>
             <ul className="list-disc pl-5 space-y-2">
               <li><strong>{dictionary.typesOfCookies?.strictlyNecessary?.title}:</strong> {dictionary.typesOfCookies?.strictlyNecessary?.content}</li>
               <li><strong>{dictionary.typesOfCookies?.performance?.title}:</strong> {dictionary.typesOfCookies?.performance?.content}</li>
@@ -89,13 +89,13 @@ export default function CookieConsentModal({
             </ul>
             
             <h3 className="font-semibold text-md text-primary pt-2">{dictionary.thirdPartyCookies?.title}</h3>
-            <p>{dictionary.thirdPartyCookies?.content}</p>
+            <div>{dictionary.thirdPartyCookies?.content}</div>
             
             <h3 className="font-semibold text-md text-primary pt-2">{dictionary.yourConsent?.title}</h3>
-            <p>{dictionary.yourConsent?.content}</p>
+            <div>{dictionary.yourConsent?.content}</div>
 
             <h3 className="font-semibold text-md text-primary pt-2">{dictionary.managingPreferences?.title}</h3>
-            <p>{dictionary.managingPreferences?.intro}</p>
+            <div>{dictionary.managingPreferences?.intro}</div>
             <ul className="list-disc pl-5 space-y-1">
               <li>{dictionary.managingPreferences?.item1}</li>
               <li>{dictionary.managingPreferences?.item2}</li>
@@ -103,13 +103,13 @@ export default function CookieConsentModal({
             </ul>
 
             <h3 className="font-semibold text-md text-primary pt-2">{dictionary.dataRetention?.title}</h3>
-            <p>{dictionary.dataRetention?.content}</p>
+            <div>{dictionary.dataRetention?.content}</div>
             
             <h3 className="font-semibold text-md text-primary pt-2">{dictionary.policyUpdates?.title}</h3>
-            <p>{dictionary.policyUpdates?.content}</p>
+            <div>{dictionary.policyUpdates?.content}</div>
 
             <h3 className="font-semibold text-md text-primary pt-2">{dictionary.contact?.title}</h3>
-            <p>{dictionary.contact?.content}</p>
+            <div>{dictionary.contact?.content}</div>
           </AlertDialogDescription>
         </ScrollArea>
 
