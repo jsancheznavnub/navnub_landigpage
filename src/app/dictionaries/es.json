@@ -1,3 +1,4 @@
+
 {
   "navigation": {
     "home": "Inicio",
@@ -38,6 +39,9 @@
     "collaboration": "Enfoque Colaborativo",
     "customization": "Personalización",
     "predictiveAnalysis": "Análisis Predictivo"
+  },
+  "homePageTestimonials": {
+    "title": "Lo Que Dicen Nuestros Clientes"
   },
   "chatbotCTA": {
     "title": "¿Necesitas un Chatbot para tu Negocio?",
