@@ -23,17 +23,17 @@ const ServiceCard = ({ icon, title, description }: { icon: React.ReactNode, titl
 export default function ServicesSection({ dictionary }: ServicesSectionProps) {
   const services = [
     {
-      icon: <Cloud size={32} />,
+      icon: <Cloud size={32} strokeWidth={1.5} />,
       title: dictionary.cloudSolutions.title,
       description: dictionary.cloudSolutions.description,
     },
     {
-      icon: <Code size={32} />,
+      icon: <Code size={32} strokeWidth={1.5} />,
       title: dictionary.webDevelopment.title,
       description: dictionary.webDevelopment.description,
     },
     {
-      icon: <Bot size={32} />,
+      icon: <Bot size={32} strokeWidth={1.5} />,
       title: dictionary.chatbots.title,
       description: dictionary.chatbots.description,
     },

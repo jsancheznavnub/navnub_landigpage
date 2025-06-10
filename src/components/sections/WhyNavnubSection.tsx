@@ -14,11 +14,11 @@ const ValueItem = ({ icon, text }: { icon: React.ReactNode, text: string }) => (
 
 export default function WhyNavnubSection({ dictionary }: WhyNavnubSectionProps) {
   const values = [
-    { icon: <Zap size={24} />, text: dictionary.excellence },
-    { icon: <Lightbulb size={24} />, text: dictionary.innovation },
-    { icon: <Users size={24} />, text: dictionary.collaboration },
-    { icon: <Settings size={24} />, text: dictionary.customization },
-    { icon: <BarChartBig size={24} />, text: dictionary.predictiveAnalysis },
+    { icon: <Zap size={24} strokeWidth={1.5} />, text: dictionary.excellence },
+    { icon: <Lightbulb size={24} strokeWidth={1.5} />, text: dictionary.innovation },
+    { icon: <Users size={24} strokeWidth={1.5} />, text: dictionary.collaboration },
+    { icon: <Settings size={24} strokeWidth={1.5} />, text: dictionary.customization },
+    { icon: <BarChartBig size={24} strokeWidth={1.5} />, text: dictionary.predictiveAnalysis },
   ];
 
   return (

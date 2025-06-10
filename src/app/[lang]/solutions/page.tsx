@@ -19,7 +19,7 @@ const SolutionDetailCard = ({ title, description, benefits, icon, imageSrc, imag
         <ul className="space-y-2">
           {benefits.map((benefit, index) => (
             <li key={index} className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-accent mr-2 mt-1 flex-shrink-0" />
+              <CheckCircle className="h-5 w-5 text-accent mr-2 mt-1 flex-shrink-0" strokeWidth={1.5} />
               <span className="text-body">{benefit}</span>
             </li>
           ))}
@@ -47,7 +47,7 @@ export default async function SolutionsPage({ params: { lang } }: { params: { la
         title={d.cloudTitle}
         description={d.cloudDescription}
         benefits={d.cloudBenefits}
-        icon={<Cloud size={32} />}
+        icon={<Cloud size={32} strokeWidth={1.5} />}
         imageSrc="https://placehold.co/600x400.png"
         imageAlt="Cloud Solutions Illustration"
         aiHint="cloud infrastructure"
@@ -57,7 +57,7 @@ export default async function SolutionsPage({ params: { lang } }: { params: { la
         title={d.webDevTitle}
         description={d.webDevDescription}
         benefits={d.webDevBenefits}
-        icon={<Code size={32} />}
+        icon={<Code size={32} strokeWidth={1.5} />}
         imageSrc="https://placehold.co/600x400.png"
         imageAlt="Web Development Illustration"
         aiHint="web design"
@@ -67,7 +67,7 @@ export default async function SolutionsPage({ params: { lang } }: { params: { la
         title={d.chatbotsTitle}
         description={d.chatbotsDescription}
         benefits={d.chatbotsBenefits}
-        icon={<Bot size={32} />}
+        icon={<Bot size={32} strokeWidth={1.5} />}
         imageSrc="https://placehold.co/600x400.png"
         imageAlt="Chatbots Illustration"
         aiHint="chatbot interface"
