@@ -29,7 +29,7 @@ export default function Footer({ dictionary, lang }: FooterProps) {
           {/* Column 1: Navnub + Slogan */}
           <div className="space-y-4">
             <Link href={`/${lang}`} className="inline-block mb-2">
-               <span className="text-2xl font-bold font-display text-foreground dark:text-white">{dictionary.navnubLogoAlt}</span>
+               <span className="text-2xl font-bold font-display text-white">{dictionary.navnubLogoAlt}</span>
             </Link>
             <p className="text-sm font-body">{dictionary.slogan}</p>
           </div>
