@@ -1,7 +1,9 @@
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import LanguageToggle from '@/components/LanguageToggle';
+import ThemeToggle from '@/components/ThemeToggle'; // Import ThemeToggle
 import type { Locale } from '@/app/i18n-config';
 import type { Dictionary } from '@/lib/dictionaries';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -12,11 +14,12 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { cn } from "@/lib/utils"; // Added missing import
+import { cn } from "@/lib/utils";
 
 type HeaderProps = {
   lang: Locale;
   dictionary: Dictionary['navigation'];
+  themeDictionary: Dictionary['themeToggle']; // Add theme dictionary prop
 };
 
 const NavLink = ({ href, children, lang, onClick, className }: { href: string; children: React.ReactNode; lang: Locale; onClick?: () => void; className?: string; }) => (
@@ -53,16 +56,13 @@ const ServicesDropdown = ({ lang, dictionary }: { lang: Locale; dictionary: Dict
           {dictionary.aiAndChatbots}
         </Link>
       </DropdownMenuItem>
-      {/* Add more services as needed based on dictionary/structure */}
     </DropdownMenuContent>
   </DropdownMenu>
 );
 
 
-export default function Header({ lang, dictionary }: HeaderProps) {
+export default function Header({ lang, dictionary, themeDictionary }: HeaderProps) {
   const navLinks = [
-    // "Inicio" is handled by the logo link
-    // { href: '/', label: dictionary.home }, // Already covered by logo
     { href: '/casos-de-exito', label: dictionary.successCases },
     { href: '/blog', label: dictionary.blog },
     { href: '/contact', label: dictionary.contact },
@@ -76,7 +76,6 @@ export default function Header({ lang, dictionary }: HeaderProps) {
             <Image src="https://placehold.co/120x40.png?text=Navnub&font=montserrat" alt={dictionary.navnubLogoAlt} width={120} height={40} data-ai-hint="logo modern dark" />
           </Link>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-1">
             <NavLink href="/" lang={lang}>{dictionary.home}</NavLink>
             <ServicesDropdown lang={lang} dictionary={dictionary.servicesDropdown} />
@@ -85,15 +84,16 @@ export default function Header({ lang, dictionary }: HeaderProps) {
             ))}
           </nav>
           
-          <div className="hidden md:flex items-center space-x-3">
+          <div className="hidden md:flex items-center space-x-2">
+            <ThemeToggle dictionary={themeDictionary} />
             <LanguageToggle currentLocale={lang} />
             <Button asChild size="sm" className="button-text bg-cta hover:bg-cta/90 text-cta-foreground px-4 py-2">
               <Link href={`/${lang}/contact`}>{dictionary.ctaDemo}</Link>
             </Button>
           </div>
 
-          {/* Mobile Navigation */}
           <div className="md:hidden flex items-center">
+            <ThemeToggle dictionary={themeDictionary} />
             <LanguageToggle currentLocale={lang} />
             <Sheet>
               <SheetTrigger asChild>
@@ -119,7 +119,6 @@ export default function Header({ lang, dictionary }: HeaderProps) {
                     <NavLink href="/" lang={lang} className="block py-2">{dictionary.home}</NavLink>
                   </SheetClose>
                   
-                  {/* Mobile Services Dropdown - simplified or full accordion later */}
                   <div className="text-foreground/80 px-3 py-2 font-display text-sm font-medium">{dictionary.servicesDropdown.title}</div>
                   <SheetClose asChild>
                     <Link href={`/${lang}/solutions#cloud`} className="nav-text text-foreground/70 hover:text-accent transition-colors pl-6 pr-3 py-2 block">{dictionary.servicesDropdown.cloudSolutions}</Link>

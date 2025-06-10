@@ -15,6 +15,12 @@
     "ctaDemo": "Solicita una Demo",
     "navnubLogoAlt": "Logo de Navnub"
   },
+  "themeToggle": {
+    "toggleTheme": "Cambiar tema",
+    "light": "Claro",
+    "dark": "Oscuro",
+    "system": "Sistema"
+  },
   "hero": {
     "title": "Fusionando Creatividad con Tecnología Avanzada",
     "subtitle": "Navnub: Liderando la evolución del desarrollo web con soluciones innovadoras de IA y nube para experiencias digitales excepcionales.",

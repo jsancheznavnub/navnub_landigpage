@@ -15,6 +15,12 @@
     "ctaDemo": "Request a Demo",
     "navnubLogoAlt": "Navnub Logo"
   },
+  "themeToggle": {
+    "toggleTheme": "Toggle theme",
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  },
   "hero": {
     "title": "Fusing Creativity with Advanced Technology",
     "subtitle": "Navnub: Leading the evolution of web development with innovative AI and cloud solutions for exceptional digital experiences.",
