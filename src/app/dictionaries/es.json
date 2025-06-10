@@ -301,7 +301,73 @@
       "imageUrl": "https://placehold.co/100x100.png",
       "imageHint": "directora creativa"
     }
-  ]
+  ],
+  "cookiePolicyModal": {
+    "title": "Política de Cookies de Navnub",
+    "effectiveDate": "Fecha de entrada en vigor: {date}",
+    "introduction": "En Navnub, líder en el campo de la Inteligencia Artificial (AI) y soluciones basadas en la nube, nos dedicamos a fusionar la creatividad con la tecnología avanzada para crear experiencias digitales excepcionales. Esta Política de Cookies explica cómo Navnub ('nosotros', 'nuestro', 'Navnub') utiliza cookies y tecnologías similares en nuestro sitio web, www.navnub.com.",
+    "whatAreCookies": {
+      "title": "1. ¿Qué son las Cookies?",
+      "content": "Las cookies son pequeños archivos de texto que se almacenan en su dispositivo (ordenador, tablet, smartphone, etc.) cuando visita un sitio web. Permiten que el sitio web recuerde sus acciones y preferencias (como el inicio de sesión, el idioma, el tamaño de fuente y otras preferencias de visualización) durante un período de tiempo, para que no tenga que volver a introducirlas cada vez que regrese al sitio o navegue de una página a otra."
+    },
+    "howWeUseCookies": {
+      "title": "2. ¿Cómo Utiliza Navnub las Cookies?",
+      "content": "Utilizamos cookies y tecnologías de seguimiento similares para diversos fines, que incluyen:",
+      "item1": "Funcionalidad esencial del sitio: Para permitir la navegación y las funciones básicas del sitio, como el acceso a áreas seguras.",
+      "item2": "Mejora de la experiencia del usuario: Para recordar sus preferencias y configuraciones, haciendo que su visita sea más eficiente y personalizada.",
+      "item3": "Análisis y rendimiento: Para recopilar información sobre cómo los visitantes utilizan nuestro sitio web, lo que nos ayuda a mejorar su rendimiento y diseño.",
+      "item4": "Publicidad dirigida: Para ofrecer anuncios relevantes basados en sus intereses y comportamiento de navegación.",
+      "aiNote": "Navnub aprovecha la potencia de la inteligencia artificial para impulsar la personalización y el análisis predictivo, y esto se extiende a la forma en que optimizamos la experiencia del usuario a través de las cookies."
+    },
+    "typesOfCookies": {
+      "title": "3. Tipos de Cookies Utilizadas por Navnub",
+      "intro": "Clasificamos las cookies en las siguientes categorías:",
+      "strictlyNecessary": {
+        "title": "Cookies Estrictamente Necesarias (Esenciales)",
+        "content": "Son fundamentales para que nuestro sitio web funcione correctamente. Permiten la navegación por el sitio y el uso de sus funciones, como el acceso a áreas seguras. Sin estas cookies, los servicios que solicita, como el carrito de compras o la facturación electrónica, no pueden ser proporcionados. No requieren consentimiento del usuario ya que son necesarias para el funcionamiento del sitio."
+      },
+      "performance": {
+        "title": "Cookies de Rendimiento/Análisis",
+        "content": "Estas cookies recopilan información anónima sobre cómo los visitantes utilizan nuestro sitio web (ej. qué páginas visitan con más frecuencia, si encuentran errores). Nos ayudan a entender el rendimiento del sitio y a mejorar la experiencia del usuario. Por ejemplo, podemos usar cookies de Google Analytics para entender el tráfico del sitio."
+      },
+      "functionality": {
+        "title": "Cookies de Funcionalidad",
+        "content": "Permiten que el sitio web recuerde las elecciones que usted hace (como su nombre de usuario, idioma o la región en la que se encuentra) y proporcionan características mejoradas y más personalizadas."
+      },
+      "advertising": {
+        "title": "Cookies de Publicidad/Orientación",
+        "content": "Estas cookies se utilizan para entregar anuncios más relevantes para usted y sus intereses. También se utilizan para limitar el número de veces que ve un anuncio, así como para ayudar a medir la efectividad de las campañas publicitarias. Suelen ser colocadas por redes publicitarias con el permiso del operador del sitio web."
+      }
+    },
+    "thirdPartyCookies": {
+      "title": "4. Cookies de Terceros",
+      "content": "Navnub puede utilizar proveedores de servicios de terceros para ayudarnos con ciertas funciones del sitio, como análisis web o publicidad. Estos terceros también pueden colocar cookies en su dispositivo a través de nuestro sitio web. No tenemos control sobre estas cookies de terceros. Para obtener información sobre cómo utilizan las cookies, le recomendamos revisar las políticas de privacidad y cookies de los respectivos terceros."
+    },
+    "yourConsent": {
+      "title": "5. Su Consentimiento",
+      "content": "Al acceder y utilizar nuestro sitio web, le solicitaremos su consentimiento para el uso de cookies no esenciales. Implementamos un banner de consentimiento de cookies que le permite aceptar, rechazar o personalizar sus preferencias de cookies. Para ser reconocidos como líderes en la industria del desarrollo web, destacando por nuestra capacidad para fusionar la creatividad con la innovación tecnológica, la transparencia en el uso de datos es clave."
+    },
+    "managingPreferences": {
+      "title": "6. Gestión de sus Preferencias de Cookies",
+      "intro": "Usted tiene el control sobre sus preferencias de cookies. Puede:",
+      "item1": "Ajustar su consentimiento: A través del banner de cookies o la sección de configuración de privacidad en nuestro sitio web (si está disponible).",
+      "item2": "Configuración del navegador: La mayoría de los navegadores web permiten cierto control sobre las cookies a través de la configuración del navegador. Puede configurarlos para que le notifiquen cuando se le envíe una cookie, lo que le permite aceptarla o rechazarla. También puede eliminar las cookies ya almacenadas. Sin embargo, si deshabilita las cookies, algunas funciones de nuestro sitio web pueden no funcionar correctamente.",
+      "item3": "Herramientas de exclusión (Opt-out): Puede optar por no participar en la publicidad dirigida de algunas redes publicitarias a través de los enlaces proporcionados por la Network Advertising Initiative (NAI) o la Digital Advertising Alliance (DAA)."
+    },
+    "dataRetention": {
+      "title": "7. Retención de Datos de Cookies",
+      "content": "Las cookies tienen diferentes periodos de vida útil. Algunas son 'cookies de sesión' que se eliminan automáticamente cuando cierra su navegador, mientras que otras son 'cookies persistentes' que permanecen en su dispositivo durante un período de tiempo predefinido o hasta que las elimine manualmente."
+    },
+    "policyUpdates": {
+      "title": "8. Actualizaciones a Esta Política de Cookies",
+      "content": "Nos reservamos el derecho de actualizar esta Política de Cookies periódicamente para reflejar cambios en nuestras prácticas o requisitos legales. Le notificaremos sobre cualquier cambio significativo publicando la Política de Cookies actualizada en nuestro sitio web. Le recomendamos revisar esta página regularmente para estar al tanto de nuestras prácticas de cookies."
+    },
+    "contact": {
+      "title": "9. Contacto",
+      "content": "Si tiene alguna pregunta sobre nuestra Política de Cookies, puede ponerse en contacto con nosotros a través de los medios de contacto proporcionados en nuestro sitio web www.navnub.com."
+    },
+    "acceptAllButton": "Aceptar Todas",
+    "rejectAllButton": "Rechazar Todas"
+  }
 }
 
-    

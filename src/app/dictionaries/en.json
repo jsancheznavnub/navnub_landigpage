@@ -301,7 +301,73 @@
       "imageUrl": "https://placehold.co/100x100.png",
       "imageHint": "creative director"
     }
-  ]
+  ],
+  "cookiePolicyModal": {
+    "title": "Navnub Cookie Policy",
+    "effectiveDate": "Effective Date: June 10, 2025",
+    "introduction": "At Navnub, a leader in Artificial Intelligence (AI) and cloud-based solutions, we are dedicated to merging creativity with advanced technology to create exceptional digital experiences. This Cookie Policy explains how Navnub ('we', 'our', 'Navnub') uses cookies and similar technologies on our website, www.navnub.com.",
+    "whatAreCookies": {
+      "title": "1. What are Cookies?",
+      "content": "Cookies are small text files stored on your device (computer, tablet, smartphone, etc.) when you visit a website. They allow the website to remember your actions and preferences (such as login, language, font size, and other display preferences) over a period, so you don’t have to keep re-entering them whenever you come back to the site or browse from one page to another."
+    },
+    "howWeUseCookies": {
+      "title": "2. How Navnub Uses Cookies?",
+      "content": "We use cookies and similar tracking technologies for various purposes, including:",
+      "item1": "Essential site functionality: To enable navigation and basic site functions, such as access to secure areas.",
+      "item2": "Enhancing user experience: To remember your preferences and settings, making your visit more efficient and personalized.",
+      "item3": "Analytics and performance: To collect information about how visitors use our website, helping us improve its performance and design.",
+      "item4": "Targeted advertising: To deliver relevant ads based on your interests and browsing behavior.",
+      "aiNote": "Navnub leverages the power of artificial intelligence to drive personalization and predictive analysis, and this extends to how we optimize user experience through cookies."
+    },
+    "typesOfCookies": {
+      "title": "3. Types of Cookies Used by Navnub",
+      "intro": "We classify cookies into the following categories:",
+      "strictlyNecessary": {
+        "title": "Strictly Necessary Cookies (Essential)",
+        "content": "These are fundamental for our website to function correctly. They enable site navigation and use of its features, such as access to secure areas. Without these cookies, services you request, like shopping carts or e-billing, cannot be provided. They do not require user consent as they are necessary for the site's operation."
+      },
+      "performance": {
+        "title": "Performance/Analytics Cookies",
+        "content": "These cookies collect anonymous information about how visitors use our website (e.g., which pages they visit most often, if they encounter errors). They help us understand site performance and improve user experience. For example, we may use Google Analytics cookies to understand site traffic."
+      },
+      "functionality": {
+        "title": "Functionality Cookies",
+        "content": "These allow the website to remember choices you make (such as your username, language, or the region you are in) and provide enhanced, more personalized features."
+      },
+      "advertising": {
+        "title": "Advertising/Targeting Cookies",
+        "content": "These cookies are used to deliver ads more relevant to you and your interests. They are also used to limit the number of times you see an advertisement as well as help measure the effectiveness of advertising campaigns. They are usually placed by advertising networks with the website operator’s permission."
+      }
+    },
+    "thirdPartyCookies": {
+      "title": "4. Third-Party Cookies",
+      "content": "Navnub may use third-party service providers to assist us with certain site functions, such as web analytics or advertising. These third parties may also place cookies on your device through our website. We do not have control over these third-party cookies. For information on how they use cookies, we recommend reviewing the privacy and cookie policies of the respective third parties."
+    },
+    "yourConsent": {
+      "title": "5. Your Consent",
+      "content": "By accessing and using our website, we will request your consent for the use of non-essential cookies. We implement a cookie consent banner that allows you to accept, reject, or customize your cookie preferences. To be recognized as leaders in the web development industry, standing out for our ability to merge creativity with technological innovation, transparency in data use is key."
+    },
+    "managingPreferences": {
+      "title": "6. Managing Your Cookie Preferences",
+      "intro": "You have control over your cookie preferences. You can:",
+      "item1": "Adjust your consent: Through the cookie banner or the privacy settings section on our website (if available).",
+      "item2": "Browser settings: Most web browsers allow some control over cookies through browser settings. You can set them to notify you when a cookie is sent, allowing you to accept or reject it. You can also delete already stored cookies. However, if you disable cookies, some features of our website may not function correctly.",
+      "item3": "Opt-out tools: You can opt-out of targeted advertising from some ad networks through links provided by the Network Advertising Initiative (NAI) or the Digital Advertising Alliance (DAA)."
+    },
+    "dataRetention": {
+      "title": "7. Cookie Data Retention",
+      "content": "Cookies have different lifespans. Some are 'session cookies' that are automatically deleted when you close your browser, while others are 'persistent cookies' that remain on your device for a predefined period or until you manually delete them."
+    },
+    "policyUpdates": {
+      "title": "8. Updates to This Cookie Policy",
+      "content": "We reserve the right to update this Cookie Policy periodically to reflect changes in our practices or legal requirements. We will notify you of any significant changes by posting the updated Cookie Policy on our website. We recommend reviewing this page regularly to stay informed about our cookie practices."
+    },
+    "contact": {
+      "title": "9. Contact",
+      "content": "If you have any questions about our Cookie Policy, you can contact us through the contact means provided on our website www.navnub.com."
+    },
+    "acceptAllButton": "Accept All",
+    "rejectAllButton": "Reject All"
+  }
 }
 
-    
