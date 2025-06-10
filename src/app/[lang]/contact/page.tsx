@@ -32,15 +32,15 @@ export default async function ContactPage({ params: { lang } }: { params: { lang
           <CardContent className="space-y-4 text-body text-foreground">
             <div className="flex items-start">
               <MapPin className="h-6 w-6 text-accent mr-3 mt-1 flex-shrink-0" />
-              <span>{d.address}</span>
+              <span>{d.addressDetail}</span>
             </div>
             <div className="flex items-center">
               <Phone className="h-6 w-6 text-accent mr-3 flex-shrink-0" />
-              <a href={`tel:${d.phone.replace(/\s/g, '')}`} className="hover:text-primary">{d.phone}</a>
+              <a href={`tel:${d.phoneDetail.replace(/\s/g, '')}`} className="hover:text-primary">{d.phoneDetail}</a>
             </div>
             <div className="flex items-center">
               <Mail className="h-6 w-6 text-accent mr-3 flex-shrink-0" />
-              <a href={`mailto:${d.email}`} className="hover:text-primary">{d.email}</a>
+              <a href={`mailto:${d.emailDetail}`} className="hover:text-primary">{d.emailDetail}</a>
             </div>
           </CardContent>
         </Card>
