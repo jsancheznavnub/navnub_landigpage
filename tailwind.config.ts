@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -10,10 +11,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Open Sans', 'sans-serif'], // Default sans-serif
-        display: ['Montserrat', 'sans-serif'], // For titles/headings
-        body: ['Open Sans', 'sans-serif'], // For general body text
-        lato: ['Lato', 'sans-serif'], // Specific Lato font
+        sans: ['Open Sans', 'sans-serif'], 
+        display: ['Montserrat', 'sans-serif'], 
+        body: ['Open Sans', 'sans-serif'], 
+        lato: ['Lato', 'sans-serif'], 
         code: ['monospace'],
       },
       colors: {
@@ -28,28 +29,28 @@ export default {
           foreground: 'hsl(var(--popover-foreground))',
         },
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
+          DEFAULT: 'hsl(var(--primary))', // #003366 - Azul Profundo (Principal)
+          foreground: 'hsl(var(--primary-foreground))', // #FFFFFF - Blanco (Texto sobre primario)
         },
         secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-          foreground: 'hsl(var(--secondary-foreground))',
+          DEFAULT: 'hsl(var(--secondary))', // #66CCFF - Azul Cielo (Secundario)
+          foreground: 'hsl(var(--secondary-foreground))', // #003366 o #333333 (Texto sobre secundario claro)
         },
         muted: {
-          DEFAULT: 'hsl(var(--muted))',
-          foreground: 'hsl(var(--muted-foreground))',
+          DEFAULT: 'hsl(var(--muted))', // #E0E0E0 o #2C2C4A (Fondos/elementos silenciados)
+          foreground: 'hsl(var(--muted-foreground))', // #666666 o #CCCCCC (Texto silenciado)
         },
         accent: {
-          DEFAULT: 'hsl(var(--accent))',
-          foreground: 'hsl(var(--accent-foreground))',
+          DEFAULT: 'hsl(var(--accent))', // #66CC99 - Verde Menta (Acento)
+          foreground: 'hsl(var(--accent-foreground))', // #FFFFFF o #333333 (Texto sobre acento)
         },
         destructive: {
           DEFAULT: 'hsl(var(--destructive))',
           foreground: 'hsl(var(--destructive-foreground))',
         },
-        border: 'hsl(var(--border))',
-        input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
+        border: 'hsl(var(--border))', // #E0E0E0 o #2C2C4A (Bordes)
+        input: 'hsl(var(--input))', // Ligeramente diferente del fondo
+        ring: 'hsl(var(--primary))', // Usar el color primario para anillos de enfoque
         cta: {
           DEFAULT: 'hsl(var(--cta))',
           foreground: 'hsl(var(--cta-foreground))',
@@ -103,5 +104,8 @@ export default {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    require('@tailwindcss/typography')
+  ],
 } satisfies Config;
