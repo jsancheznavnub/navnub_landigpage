@@ -28,7 +28,7 @@ export default function HowNavnubGrowsSection({ dictionary }: HowNavnubGrowsSect
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-center text-primary mb-16 md:mb-20">{dictionary.title}</h2>
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
-          <div className="relative w-full h-72 sm:h-80 md:h-[450px] rounded-lg overflow-hidden shadow-xl">
+          <div className="relative w-full h-72 sm:h-80 md:h-[450px] rounded-lg overflow-hidden shadow-xl border border-transparent hover:shadow-2xl hover:border-primary/50 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-103">
             <Image
               src="https://placehold.co/600x450.png"
               alt={dictionary.title} // Using section title as a generic alt
