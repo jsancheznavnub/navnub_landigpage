@@ -21,7 +21,7 @@ export default async function ContactPage({ params: { lang } }: { params: { lang
       </header>
 
       <div className="grid md:grid-cols-2 gap-12 items-start">
-        <Card className="shadow-lg">
+        <Card className="shadow-lg transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1">
           <CardHeader>
             <CardTitle className="font-headline text-2xl text-primary">{d.form.submit}</CardTitle>
           </CardHeader>
@@ -30,22 +30,22 @@ export default async function ContactPage({ params: { lang } }: { params: { lang
           </CardContent>
         </Card>
 
-        <Card className="shadow-lg">
+        <Card className="shadow-lg transition-all duration-300 ease-in-out hover:shadow-2xl hover:-translate-y-1">
           <CardHeader>
             <CardTitle className="font-headline text-2xl text-primary">{d.infoTitle}</CardTitle>
           </CardHeader>
           <CardContent className="space-y-4 text-body text-foreground">
-            <div className="flex items-start">
-              <MapPin className="h-6 w-6 text-accent mr-3 mt-1 flex-shrink-0" />
-              <span>{contactAddress}</span>
+            <div className="flex items-start group">
+              <MapPin className="h-6 w-6 text-accent mr-3 mt-1 flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
+              <span className="transition-colors duration-300 group-hover:text-primary">{contactAddress}</span>
             </div>
-            <div className="flex items-center">
-              <Phone className="h-6 w-6 text-accent mr-3 flex-shrink-0" />
-              <a href={`tel:${contactPhone.replace(/\s|-/g, '')}`} className="hover:text-primary">{contactPhone}</a>
+            <div className="flex items-center group">
+              <Phone className="h-6 w-6 text-accent mr-3 flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
+              <a href={`tel:${contactPhone.replace(/\s|-/g, '')}`} className="hover:text-primary transition-colors duration-300 group-hover:text-primary">{contactPhone}</a>
             </div>
-            <div className="flex items-center">
-              <Mail className="h-6 w-6 text-accent mr-3 flex-shrink-0" />
-              <a href={`mailto:${contactEmail}`} className="hover:text-primary">{contactEmail}</a>
+            <div className="flex items-center group">
+              <Mail className="h-6 w-6 text-accent mr-3 flex-shrink-0 transition-transform duration-300 group-hover:scale-110" />
+              <a href={`mailto:${contactEmail}`} className="hover:text-primary transition-colors duration-300 group-hover:text-primary">{contactEmail}</a>
             </div>
           </CardContent>
         </Card>
