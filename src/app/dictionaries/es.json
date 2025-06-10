@@ -193,7 +193,63 @@
     "description": "Explora una selección de nuestros proyectos que demuestran nuestra experiencia en IA, soluciones en la nube, desarrollo web y automatización con chatbots.",
     "projectCategoryAI": "Proyectos de IA",
     "projectCategoryWeb": "Apps Web y Móviles",
-    "projectCategoryChatbot": "Soluciones de Chatbot"
+    "projectCategoryChatbot": "Soluciones de Chatbot",
+    "projects": [
+      {
+        "id": "1",
+        "title": "Plataforma Analítica Potenciada por IA",
+        "description": "Una plataforma analítica integral que utiliza aprendizaje automático para proporcionar información empresarial procesable para PYMEs.",
+        "imageUrl": "https://placehold.co/600x400.png",
+        "imageHint": "dashboard analytics",
+        "categoryKey": "AI",
+        "tags": ["IA", "Aprendizaje Automático", "Big Data", "SaaS"]
+      },
+      {
+        "id": "2",
+        "title": "Rediseño de Sitio Web E-commerce",
+        "description": "Rediseño completo y desarrollo de una plataforma de comercio electrónico, mejorando la experiencia de usuario y las tasas de conversión.",
+        "imageUrl": "https://placehold.co/600x400.png",
+        "imageHint": "ecommerce website",
+        "categoryKey": "Web",
+        "tags": ["Desarrollo Web", "UX/UI", "E-commerce", "React"]
+      },
+      {
+        "id": "3",
+        "title": "Chatbot de Atención al Cliente",
+        "description": "Un chatbot inteligente integrado con WhatsApp Business para soporte al cliente 24/7 y generación de leads.",
+        "imageUrl": "https://placehold.co/600x400.png",
+        "imageHint": "chatbot conversation",
+        "categoryKey": "Chatbot",
+        "tags": ["Chatbot", "IA", "Soporte al Cliente", "WhatsApp"]
+      },
+      {
+        "id": "4",
+        "title": "Migración a la Nube para PYME",
+        "description": "Migración exitosa de sistemas heredados de una mediana empresa a una infraestructura en la nube escalable y segura.",
+        "imageUrl": "https://placehold.co/600x400.png",
+        "imageHint": "cloud server",
+        "categoryKey": "AI",
+        "tags": ["Computación en la Nube", "AWS", "Migración", "Escalabilidad"]
+      },
+      {
+        "id": "5",
+        "title": "App Móvil para Logística",
+        "description": "Una aplicación móvil multiplataforma para optimizar la logística y la gestión de flotas.",
+        "imageUrl": "https://placehold.co/600x400.png",
+        "imageHint": "mobile app",
+        "categoryKey": "Web",
+        "tags": ["App Móvil", "Logística", "React Native", "GPS"]
+      },
+      {
+        "id": "6",
+        "title": "Bot Asistente de Ventas Automatizado",
+        "description": "Un chatbot diseñado para asistir a los equipos de ventas calificando leads y programando citas.",
+        "imageUrl": "https://placehold.co/600x400.png",
+        "imageHint": "sales automation",
+        "categoryKey": "Chatbot",
+        "tags": ["Chatbot", "Automatización de Ventas", "IA", "Integración CRM"]
+      }
+    ]
   },
   "blogPage": {
     "title": "Nuestro Blog",

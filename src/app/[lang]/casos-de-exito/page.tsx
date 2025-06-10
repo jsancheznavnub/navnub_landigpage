@@ -1,64 +1,51 @@
+
 import type { Locale } from '@/app/i18n-config';
 import { getDictionary, type Dictionary } from '@/lib/dictionaries';
 import ProjectCard, { type Project } from '@/components/ProjectCard';
 
-// Placeholder data for projects
-const getProjects = (dictionary: Dictionary['successCasesPage']): Project[] => [
-  {
-    id: '1',
-    title: 'AI-Powered Analytics Platform',
-    description: 'A comprehensive analytics platform using machine learning to provide actionable business insights for PYMEs.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'dashboard analytics',
-    category: dictionary.projectCategoryAI,
-    tags: ['AI', 'Machine Learning', 'Big Data', 'SaaS'],
-  },
-  {
-    id: '2',
-    title: 'E-commerce Website Redesign',
-    description: 'Complete redesign and development of an e-commerce platform, improving user experience and conversion rates.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'ecommerce website',
-    category: dictionary.projectCategoryWeb,
-    tags: ['Web Development', 'UX/UI', 'E-commerce', 'React'],
-  },
-  {
-    id: '3',
-    title: 'Customer Service Chatbot',
-    description: 'An intelligent chatbot integrated with WhatsApp Business for 24/7 customer support and lead generation.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'chatbot conversation',
-    category: dictionary.projectCategoryChatbot,
-    tags: ['Chatbot', 'AI', 'Customer Support', 'WhatsApp'],
-  },
-  {
-    id: '4',
-    title: 'Cloud Migration for SME',
-    description: 'Successfully migrated legacy systems of a medium-sized enterprise to a scalable and secure cloud infrastructure.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'cloud server',
-    category: dictionary.projectCategoryAI, // Assuming cloud relates to AI/Cloud solutions
-    tags: ['Cloud Computing', 'AWS', 'Migration', 'Scalability'],
-  },
-  {
-    id: '5',
-    title: 'Mobile App for Logistics',
-    description: 'A cross-platform mobile application for optimizing logistics and fleet management.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'mobile app',
-    category: dictionary.projectCategoryWeb,
-    tags: ['Mobile App', 'Logistics', 'React Native', 'GPS'],
-  },
-  {
-    id: '6',
-    title: 'Automated Sales Assistant Bot',
-    description: 'A chatbot designed to assist sales teams by qualifying leads and scheduling appointments.',
-    imageUrl: 'https://placehold.co/600x400.png',
-    imageHint: 'sales automation',
-    category: dictionary.projectCategoryChatbot,
-    tags: ['Chatbot', 'Sales Automation', 'AI', 'CRM Integration'],
-  },
-];
+// Type for project data coming from the dictionary
+type DictionaryProject = {
+  id: string;
+  title: string;
+  description: string;
+  imageUrl: string;
+  imageHint: string;
+  categoryKey: 'AI' | 'Web' | 'Chatbot' | string; // Add string for flexibility
+  tags?: string[];
+};
+
+const getProjects = (dscp: Dictionary['successCasesPage']): Project[] => {
+  if (!dscp.projects || !Array.isArray(dscp.projects)) {
+    return []; // Return empty array if projects are not defined or not an array
+  }
+  return dscp.projects.map((p: DictionaryProject) => {
+    let categoryDisplay = '';
+    switch (p.categoryKey) {
+      case 'AI':
+        categoryDisplay = dscp.projectCategoryAI;
+        break;
+      case 'Web':
+        categoryDisplay = dscp.projectCategoryWeb;
+        break;
+      case 'Chatbot':
+        categoryDisplay = dscp.projectCategoryChatbot;
+        break;
+      default:
+        // Fallback or default category if key is not recognized
+        // If you expect only the defined keys, you might want to log an error here
+        categoryDisplay = p.categoryKey; 
+    }
+    return {
+      id: p.id,
+      title: p.title,
+      description: p.description,
+      imageUrl: p.imageUrl,
+      imageHint: p.imageHint,
+      category: categoryDisplay, // This is the translated string for display
+      tags: p.tags,
+    };
+  });
+};
 
 export default async function SuccessCasesPage({ params: { lang } }: { params: { lang: Locale } }) {
   const dictionary = await getDictionary(lang);
@@ -79,3 +66,5 @@ export default async function SuccessCasesPage({ params: { lang } }: { params: {
     </div>
   );
 }
+
+    
