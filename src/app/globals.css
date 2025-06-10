@@ -4,112 +4,106 @@
 
 @layer base {
   :root {
-    /* New Light Theme */
-    --background: 0 0% 98%;             /* Very light gray / Off-white */
-    --foreground: 210 25% 15%;         /* Dark desaturated blue/charcoal */
+    /* Modo Claro - Paleta Reciente */
+    --background: 0 0% 98%; /* #F9F9F9 - Gris muy claro, casi blanco */
+    --foreground: 220 10% 20%; /* #2D3036 - Carbón oscuro / Azul desaturado */
 
-    --card: 0 0% 100%;                 /* White */
-    --card-foreground: 210 25% 15%;
+    --card: 0 0% 100%; /* #FFFFFF - Blanco puro para tarjetas */
+    --card-foreground: 220 10% 20%; /* Mismo que --foreground */
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 25% 15%;
+    --popover-foreground: 220 10% 20%;
 
-    --primary: 180 60% 35%;             /* Deep Teal */
-    --primary-foreground: 0 0% 100%;     /* White */
+    --primary: 175 50% 35%; /* #2C877F - Verde azulado (teal) profundo */
+    --primary-foreground: 0 0% 100%; /* Blanco para texto sobre primario */
 
-    --secondary: 180 25% 90%;          /* Light Teal Gray */
-    --secondary-foreground: 180 40% 25%;   /* Dark Teal */
+    --secondary: 175 40% 55%; /* Un teal más claro para secundario */
+    --secondary-foreground: 0 0% 100%; /* Blanco para texto sobre secundario */
 
-    --muted: 210 40% 96%;             /* Very Light Gray Blue */
-    --muted-foreground: 210 30% 50%;     /* Medium Gray Blue */
+    --muted: 0 0% 94%; /* #F0F0F0 - Gris claro para fondos sutiles */
+    --muted-foreground: 0 0% 40%; /* #666666 - Gris medio para texto silenciado */
 
-    --accent: 320 70% 50%;              /* Vibrant Magenta */
-    --accent-foreground: 0 0% 100%;      /* White */
+    --accent: 320 70% 55%; /* #D949A0 - Magenta vibrante */
+    --accent-foreground: 0 0% 100%; /* Blanco para texto sobre acento */
 
     --destructive: 0 70% 50%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 210 20% 88%;             /* Light Gray Blue Border */
-    --input: 210 30% 94%;              /* Lighter Gray Blue Input */
-    --ring: 180 60% 40%;                /* Primary color for focus rings (Teal) */
+    --border: 0 0% 88%; /* #E0E0E0 - Gris claro para bordes */
+    --input: 0 0% 95%; /* #F2F2F2 - Gris muy claro para inputs */
+    --ring: 175 50% 45%; /* Teal para anillos de enfoque */
 
-    --radius: 0.5rem;
+    --cta: 134 61% 40%; /* #28a745 - Verde Vibrante (mantenido) */
+    --cta-foreground: 0 0% 100%; /* Blanco */
+    --footer-background: 223 47% 11%; /* #0A1128 - Azul Marino (mantenido) */
+    --footer-foreground: 0 0% 90%;
 
-    /* Kept from previous specific request */
-    --cta: 134 61% 40%;                 /* Green #28a745 */
-    --cta-foreground: 0 0% 100%;        /* White */
-    --footer-background: 223 47% 11%;     /* Dark Navy Blue #0A1128 */
-    --footer-foreground: 210 30% 85%;     /* Light Gray for footer text */
+    /* Gráficos y Sidebar para Modo Claro */
+    --chart-1: hsl(var(--primary));
+    --chart-2: hsl(var(--secondary));
+    --chart-3: hsl(var(--accent));
+    --chart-4: 40 90% 60%;
+    --chart-5: 270 60% 65%;
 
-    /* Chart Colors - Light Theme */
-    --chart-1: hsl(var(--primary));       /* Deep Teal */
-    --chart-2: hsl(var(--accent));        /* Vibrant Magenta */
-    --chart-3: 210 70% 65%;             /* Bright Blue */
-    --chart-4: 40 90% 60%;              /* Bright Orange */
-    --chart-5: 270 60% 65%;             /* Bright Purple */
-
-    /* Sidebar Colors - Light Theme */
-    --sidebar-background: 0 0% 96%;        /* Slightly off-white from main bg */
-    --sidebar-foreground: 210 25% 20%;    /* Darker foreground for sidebar */
+    --sidebar-background: 0 0% 97%;
+    --sidebar-foreground: 220 10% 20%;
     --sidebar-primary: hsl(var(--primary));
     --sidebar-primary-foreground: hsl(var(--primary-foreground));
     --sidebar-accent: hsl(var(--accent));
     --sidebar-accent-foreground: hsl(var(--accent-foreground));
-    --sidebar-border: 210 20% 85%;       /* Slightly darker border for sidebar */
+    --sidebar-border: 0 0% 88%;
     --sidebar-ring: hsl(var(--ring));
   }
 
   .dark {
-    /* New Dark Theme */
-    --background: 220 15% 10%;         /* Very Dark Desaturated Blue */
-    --foreground: 210 40% 95%;         /* Very Light Gray/Off-white */
+    /* Modo Oscuro - Paleta Reciente */
+    --background: 220 15% 10%; /* #15191C - Azul desaturado muy oscuro */
+    --foreground: 0 0% 95%; /* #F2F2F2 - Gris muy claro/blanco */
 
-    --card: 220 12% 15%;               /* Darker Desaturated Blue for cards */
-    --card-foreground: 210 40% 95%;
+    --card: 220 15% 15%; /* #1F252A - Un poco más claro que el fondo */
+    --card-foreground: 0 0% 95%;
 
-    --popover: 220 15% 10%;
-    --popover-foreground: 210 40% 95%;
+    --popover: 220 15% 15%;
+    --popover-foreground: 0 0% 95%;
 
-    --primary: 180 55% 45%;             /* Deep Teal (more vibrant for dark mode) */
-    --primary-foreground: 0 0% 100%;     /* White */
+    --primary: 175 55% 45%; /* #3AA99F - Teal, ligeramente más brillante */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 180 30% 25%;          /* Dark Muted Teal */
-    --secondary-foreground: 180 40% 85%;   /* Light Muted Teal */
+    --secondary: 175 45% 65%; /* Un teal más claro y suave para secundario oscuro */
+    --secondary-foreground: 220 15% 10%; /* Texto oscuro sobre secundario claro */
 
-    --muted: 220 12% 18%;             /* Slightly Lighter Dark Blue for muted backgrounds */
-    --muted-foreground: 210 30% 75%;     /* Medium Light Gray */
+    --muted: 220 15% 12%; /* #1A1F23 - Para fondos sutiles oscuros */
+    --muted-foreground: 0 0% 70%; /* #B3B3B3 - Gris claro para texto silenciado */
 
-    --accent: 320 70% 60%;              /* Vibrant Magenta (brighter for dark mode) */
-    --accent-foreground: 0 0% 100%;      /* White */
+    --accent: 320 75% 60%; /* #E65AAA - Magenta, ligeramente más brillante */
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 60% 50%;           /* Adjusted for dark mode if needed */
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 15% 25%;             /* Dark Blue/Gray Border */
-    --input: 220 15% 20%;              /* Dark Blue/Gray Input Background */
-    --ring: 320 70% 55%;                /* Accent color for focus rings (Magenta) */
+    --border: 220 15% 20%; /* #2A3238 - Bordes oscuros */
+    --input: 220 15% 18%; /* #252B31 - Inputs oscuros */
+    --ring: 175 55% 55%; /* Teal para anillos de enfoque */
 
-    /* CTA and Footer remain consistent as per previous requests */
     --cta: 134 61% 40%;
     --cta-foreground: 0 0% 100%;
     --footer-background: 223 47% 11%;
-    --footer-foreground: 210 30% 85%;
+    --footer-foreground: 0 0% 90%;
 
-    /* Chart Colors - Dark Theme */
-    --chart-1: hsl(var(--primary));       /* Deep Teal */
-    --chart-2: hsl(var(--accent));        /* Vibrant Magenta */
-    --chart-3: 210 70% 70%;             /* Brighter Blue */
-    --chart-4: 40 90% 65%;              /* Brighter Orange */
-    --chart-5: 270 60% 70%;             /* Brighter Purple */
+    /* Gráficos y Sidebar para Modo Oscuro */
+    --chart-1: hsl(var(--primary));
+    --chart-2: hsl(var(--secondary));
+    --chart-3: hsl(var(--accent));
+    --chart-4: 40 90% 65%;
+    --chart-5: 270 60% 70%;
 
-    /* Sidebar Colors - Dark Theme */
-    --sidebar-background: 220 15% 8%;    /* Slightly darker than main bg */
-    --sidebar-foreground: 210 40% 90%;
+    --sidebar-background: 220 15% 8%;
+    --sidebar-foreground: 0 0% 95%;
     --sidebar-primary: hsl(var(--primary));
     --sidebar-primary-foreground: hsl(var(--primary-foreground));
     --sidebar-accent: hsl(var(--accent));
     --sidebar-accent-foreground: hsl(var(--accent-foreground));
-    --sidebar-border: 220 15% 18%;       /* Darker border for sidebar */
+    --sidebar-border: 220 15% 20%;
     --sidebar-ring: hsl(var(--ring));
   }
 }
@@ -125,16 +119,17 @@
   main {
     @apply flex-grow;
   }
-  /* Updated font family definitions */
+  /* Definiciones de familias de fuentes actualizadas */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display; /* Montserrat for headings */
+    @apply font-display text-primary; /* Montserrat para encabezados, con color primario por defecto */
   }
-  p, span, div, li, a, label, input, textarea, button, select, option { /* Added option */
-    @apply font-body; /* Open Sans for body text */
+
+  p, span, div, li, a, label, input, textarea, button, select, option {
+    @apply font-body; /* Open Sans para texto de cuerpo */
   }
-  /* Text Body (using Lato as per later requirement, Open Sans for general body/UI) */
-  p.text-body-lato, .text-body-lato { /* Specific class if Lato is needed only for p */
-    @apply font-lato; /* Lato specifically for p tags if differentiated */
+  /* Clase específica para Lato si es necesario */
+  p.text-body-lato, .text-body-lato {
+    @apply font-lato;
   }
 
   h1 {
@@ -143,16 +138,13 @@
   h2 {
     @apply text-3xl font-bold leading-snug md:text-4xl;
   }
-  /* Text Body */
   p, .text-body {
-    @apply text-base leading-relaxed text-foreground/80; /* Open Sans 16px */
+    @apply text-base leading-relaxed text-foreground; /* Open Sans 16px, usando la variable --foreground */
   }
-  /* Navigation Text */
   nav a, .nav-text {
-    @apply font-display text-sm font-medium; /* Montserrat 14px 500 for nav */
+    @apply font-display text-sm font-medium; /* Montserrat 14px 500 para nav */
   }
-  /* Button Text */
   .button-text {
-    @apply font-display text-sm font-semibold leading-none; /* Montserrat 14px 600 for buttons */
+    @apply font-display text-sm font-semibold leading-none; /* Montserrat 14px 600 para botones */
   }
 }
