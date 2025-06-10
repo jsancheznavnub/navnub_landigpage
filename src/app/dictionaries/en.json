@@ -24,17 +24,7 @@
     "title": "Fusing Creativity with Advanced Technology",
     "subtitle": "Navnub: Leading the evolution of web development with innovative AI and cloud solutions for exceptional digital experiences.",
     "ctaExplore": "Explore Solutions",
-    "ctaContact": "Get in Touch",
-    "form": {
-      "name": "Name",
-      "namePlaceholder": "Your Name",
-      "email": "Email",
-      "emailPlaceholder": "your.email@example.com",
-      "company": "Company",
-      "companyPlaceholder": "Your Company Name",
-      "submit": "Request Demo Now",
-      "legalText": "By submitting you accept our Privacy Policy and Terms."
-    }
+    "ctaContact": "Get in Touch"
   },
   "trustLogos": {
     "title": "Trusted by Leading Companies"
@@ -368,6 +358,96 @@
     },
     "acceptAllButton": "Accept All",
     "rejectAllButton": "Reject All"
+  },
+  "termsOfServicePage": {
+    "mainTitle": "Navnub Terms of Service",
+    "effectiveDate": "Effective Date: {date}",
+    "introduction": "Welcome to Navnub. These Terms of Service ('Terms') govern your use of the services provided by Navnub, a leading company in the field of Artificial Intelligence (AI) that merges technological innovation with cloud-based solutions and artificial intelligence.",
+    "acceptanceIntro": "By accessing or using any of Navnub's services, you ('User', 'Client') agree to be legally bound by these Terms. If you do not agree with these Terms, you should not use our services.",
+    "section1": {
+      "title": "1. Description of Services",
+      "intro": "Navnub specializes in creating innovative and technologically advanced solutions. Our services include, but are not limited to:",
+      "item1": {
+        "title": "Web Platform and Mobile Application Development",
+        "content": "Creation of websites and applications that are not only visually appealing but also functional and highly intuitive."
+      },
+      "item2": {
+        "title": "Artificial Intelligence (AI) Projects",
+        "content": "Implementation of AI-based solutions to drive personalization and predictive analysis."
+      },
+      "item3": {
+        "title": "Chatbots and Automations",
+        "content": "Development of high-quality chatbots for small and medium-sized businesses (PYMEs), with integration into landing pages and compatibility with the WhatsApp Business API. These chatbots improve customer interaction and automate repetitive tasks, resulting in greater efficiency and productivity."
+      },
+      "item4": {
+        "title": "Cloud-Based Solutions",
+        "content": "As pioneers in the convergence of cloud and artificial intelligence, we offer scalable, customized, and highly functional solutions that drive digital transformation."
+      }
+    },
+    "section2": {
+      "title": "2. Acceptance of Terms",
+      "content": "By contracting or using Navnub's services, you acknowledge that you have read, understood, and accepted these Terms, as well as our Privacy Policy and Cookie Policy. These Terms constitute a binding legal agreement between you and Navnub."
+    },
+    "section3": {
+      "title": "3. User Obligations and Conduct",
+      "intro": "The User agrees to:",
+      "item1": "Provide truthful, complete, and updated information for the provision of services.",
+      "item2": "Use Navnub's services lawfully and in accordance with morality and public order.",
+      "item3": "Not use the services for illegal, fraudulent purposes, or purposes that may harm the reputation of Navnub or third parties.",
+      "item4": "Be responsible for maintaining the confidentiality of any access credentials provided by Navnub or created by the User."
+    },
+    "section4": {
+      "title": "4. Intellectual Property",
+      "navnubContent": {
+        "title": "Navnub Content",
+        "content": "All content, design, logos, trademarks, software, and other intellectual property elements developed by Navnub are the exclusive property of Navnub or its licensors and are protected by applicable intellectual property laws."
+      },
+      "clientContent": {
+        "title": "Client Content",
+        "content": "The Client shall retain intellectual property ownership of all content, data, and materials provided to Navnub for the provision of services. The Client grants Navnub a non-exclusive, worldwide, royalty-free license to use, reproduce, modify, and adapt such content solely for the purpose of providing the contracted services."
+      },
+      "specificDevelopments": {
+        "title": "Specific Developments",
+        "content": "The intellectual property of custom developments created by Navnub for the Client will be governed by the specific agreements of each project, detailed in the corresponding service contract."
+      }
+    },
+    "section5": {
+      "title": "5. Payments and Billing",
+      "content": "Payment terms, fees, deadlines, and any additional charges will be specified in the individual project proposal or service contract agreed between Navnub and the Client. The Client agrees to make payments on the stipulated dates and in the stipulated forms. Failure to make payments may result in the suspension or termination of services."
+    },
+    "section6": {
+      "title": "6. Confidentiality",
+      "content": "Navnub and the Client commit to maintaining the confidentiality of all non-public information shared during the business relationship, including, but not limited to, trade secrets, technical, financial, marketing information, and customer data. This confidentiality obligation will remain even after the termination of services."
+    },
+    "section7": {
+      "title": "7. Disclaimer of Warranties",
+      "content": "Navnub is dedicated to excellence and constant innovation and strives to offer exceptional digital experiences. However, Navnub's services are provided 'as is' and 'as available', without warranties of any kind, whether express or implied. Navnub does not guarantee that the services will be uninterrupted, error-free, or secure."
+    },
+    "section8": {
+      "title": "8. Limitation of Liability",
+      "content": "In no event shall Navnub be liable for indirect, incidental, special, consequential, or punitive damages, including, without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the services; (ii) any conduct or content of any third party on the services; (iii) any content obtained from the services; and (iv) unauthorized access, use, or alteration of your transmissions or content, whether based on warranty, contract, tort (including negligence), or any other legal theory, even if we have been informed of the possibility of such damage."
+    },
+    "section9": {
+      "title": "9. Indemnification",
+      "content": "You agree to defend, indemnify and hold harmless Navnub and its directors, employees, partners, and agents, from and against any and all claims, demands, damages, obligations, losses, liabilities, costs or debt, and expenses (including but not limited to attorney's fees), arising from: a) your use of and access to the services; b) your violation of any of these Terms; c) your violation of any third-party right, including without limitation any intellectual property, privacy, or third-party right."
+    },
+    "section10": {
+      "title": "10. Termination",
+      "content": "Navnub may terminate or suspend your access to the services immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach these Terms. Upon termination, your right to use the services will immediately cease."
+    },
+    "section11": {
+      "title": "11. Governing Law and Jurisdiction",
+      "content": "These Terms shall be governed and construed in accordance with the laws of the state of Florida, United States, without regard to its conflict of law provisions. Any dispute arising in connection with these Terms or the use of Navnub's services shall be submitted to the exclusive jurisdiction of the courts located in Doral, Florida, United States."
+    },
+    "section12": {
+      "title": "12. Changes to Terms",
+      "content": "We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will make reasonable efforts to provide at least 30 days' notice before any new terms take effect. What constitutes a material change will be determined at our sole discretion. By continuing to access or use our services after those revisions become effective, you agree to be bound by the revised terms."
+    },
+    "section13": {
+      "title": "13. Contact",
+      "content": "If you have any questions about these Terms of Service, you can contact Navnub through the contact means available on our website: www.navnub.com."
+    }
   }
 }
 
+    
