@@ -304,7 +304,7 @@
       "title": "2. ¿Cómo Utiliza Navnub las Cookies?",
       "content": "Utilizamos cookies y tecnologías de seguimiento similares para diversos fines, que incluyen:",
       "item1": "Funcionalidad esencial del sitio: Para permitir la navegación y las funciones básicas del sitio, como el acceso a áreas seguras.",
-      "item2": "Mejora de la experiencia del usuario: Para recordar sus preferences y configuraciones, haciendo que su visita sea más eficiente y personalizada.",
+      "item2": "Mejora de la experiencia del usuario: Para recordar sus preferencias y configuraciones, haciendo que su visita sea más eficiente y personalizada.",
       "item3": "Análisis y rendimiento: Para recopilar información sobre cómo los visitantes utilizan nuestro sitio web, lo que nos ayuda a mejorar su rendimiento y diseño.",
       "item4": "Publicidad dirigida: Para ofrecer anuncios relevantes basados en sus intereses y comportamiento de navegación.",
       "aiNote": "Navnub aprovecha la potencia de la inteligencia artificial para impulsar la personalización y el análisis predictivo, y esto se extiende a la forma en que optimizamos la experiencia del usuario a través de las cookies."
@@ -362,26 +362,26 @@
   "termsOfServicePage": {
     "mainTitle": "Términos de Servicio de Navnub",
     "effectiveDate": "Fecha de entrada en vigor: {date}",
-    "introduction": "Bienvenido/a a Navnub. Estos Términos de Servicio ('Términos') rigen el uso de los servicios proporcionados por Navnub, una empresa líder en el campo de la Inteligencia Artificial (AI) que fusiona la innovación tecnológica con soluciones basadas en la nube e inteligencia artificial.",
+    "introduction": "Bienvenido/a a Navnub. Estos Términos de Servicio ('Términos') rigen el uso de los servicios proporcionados por Navnub ('nosotros', 'nuestro', 'Navnub'), una empresa líder en el campo de la Inteligencia Artificial (AI) que fusiona la innovación tecnológica con soluciones basadas en la nube e inteligencia artificial.",
     "acceptanceIntro": "Al acceder o utilizar cualquiera de los servicios de Navnub, usted ('Usuario', 'Cliente') acepta estar legalmente vinculado/a por estos Términos. Si no está de acuerdo con estos Términos, no debe utilizar nuestros servicios.",
     "section1": {
       "title": "1. Descripción de los Servicios",
-      "intro": "Navnub se especializa en la creación de soluciones innovadoras y tecnológicamente avanzadas. Nuestros servicios incluyen, pero no se limitan a:",
+      "intro": "Navnub se especializa en la creación de soluciones innovadoras y tecnológicamente avanzadas, con la misión de fusionar la creatividad con la tecnología avanzada para crear experiencias digitales excepcionales. Nuestros servicios incluyen, pero no se limitan a:",
       "item1": {
         "title": "Desarrollo de Plataformas Web y Aplicaciones Móviles",
         "content": "Creación de sitios web y aplicaciones que no solo son visualmente atractivos, sino también funcionales y altamente intuitivos."
       },
       "item2": {
         "title": "Proyectos de Inteligencia Artificial (AI)",
-        "content": "Implementación de soluciones basadas en AI para impulsar la personalización y el análisis predictivo."
+        "content": "Implementación de soluciones basadas en AI para impulsar la personalización y el análisis predictivo, resultando en soluciones que se adaptan y evolucionan junto con las necesidades cambiantes de nuestros clientes."
       },
       "item3": {
         "title": "Chatbots y Automatizaciones",
-        "content": "Desarrollo de chatbots de alta calidad para pequeñas y medianas empresas (PYMEs), con integración en sitios web de aterrizaje (landing pages) y compatibilidad con la API de WhatsApp Business. Estos chatbots mejoran la interacción con los clientes y automatizan tareas repetitivas, lo que resulta en una mayor eficiencia y productividad."
+        "content": "Desarrollo de chatbots de alta calidad para pequeñas y medianas empresas (PYMEs), con integración en sitios web de aterrizaje (landing pages) y compatibilidad con la API de WhatsApp Business. Estos chatbots mejoran la interacción con los clientes al proporcionar respuestas instantáneas a sus consultas y ayudan a las empresas a automatizar tareas repetitivas, lo que resulta en una mayor eficiencia y productividad."
       },
       "item4": {
         "title": "Soluciones Basadas en la Nube",
-        "content": "Como pioneros en la convergencia de la nube y la inteligencia artificial, ofrecemos soluciones escalables, personalizadas y altamente funcionales que impulsan la transformación digital."
+        "content": "Siendo pioneros en la convergencia de la nube y la inteligencia artificial, buscamos proporcionar soluciones escalables, personalizadas y altamente funcionales que impulsen la transformación digital."
       }
     },
     "section2": {
@@ -392,60 +392,87 @@
       "title": "3. Obligaciones y Conducta del Usuario",
       "intro": "El Usuario se compromete a:",
       "item1": "Proporcionar información veraz, completa y actualizada para la prestación de los servicios.",
-      "item2": "Utilizar los servicios de Navnub de manera lícita y de acuerdo con la moral y el orden público.",
-      "item3": "No utilizar los servicios para fines ilegales, fraudulentos o que puedan dañar la reputación de Navnub o de terceros.",
-      "item4": "Ser responsable de mantener la confidencialidad de cualquier credencial de acceso proporcionada por Navnub o creada por el Usuario."
+      "item2": "Utilizar los servicios de Navnub de manera lícita y de acuerdo con la moral, el orden público y las buenas costumbres.",
+      "item3": "No utilizar los servicios para fines ilegales, fraudulentos, engañosos o que puedan dañar la reputación de Navnub o de terceros.",
+      "item4": "No cargar, transmitir o distribuir contenido ilegal, difamatorio, obsceno, abusivo, amenazante, dañino, invasivo de la privacidad, racial o étnicamente censurable, o de otro modo objetable.",
+      "item5": "No infringir los derechos de propiedad intelectual de Navnub o de terceros.",
+      "item6": "No interferir con la seguridad o el funcionamiento de los servicios o de otros sistemas conectados a ellos.",
+      "item7": "Ser responsable de mantener la confidencialidad de cualquier credencial de acceso proporcionada por Navnub o creada por el Usuario, y de todas las actividades que ocurran bajo su cuenta."
     },
     "section4": {
       "title": "4. Propiedad Intelectual",
       "navnubContent": {
         "title": "Contenido de Navnub",
-        "content": "Todo el contenido, diseño, logotipos, marcas, software y otros elementos de propiedad intelectual desarrollados por Navnub son propiedad exclusiva de Navnub o de sus licenciantes y están protegidos por las leyes de propiedad intelectual aplicables."
+        "content": "Todo el contenido, diseño, logotipos, marcas, software, metodologías de IA y otros elementos de propiedad intelectual desarrollados por Navnub, o de los que Navnub es licenciante, son propiedad exclusiva de Navnub o de sus licenciantes y están protegidos por las leyes de propiedad intelectual aplicables."
       },
       "clientContent": {
         "title": "Contenido del Cliente",
-        "content": "El Cliente conservará la propiedad intelectual de todo el contenido, datos y materiales que proporcione a Navnub para la prestación de los servicios. El Cliente otorga a Navnub una licencia no exclusiva, mundial, libre de regalías para usar, reproducir, modificar y adaptar dicho contenido únicamente con el fin de proporcionar los servicios contratados."
+        "content": "El Cliente conservará la propiedad intelectual de todo el contenido, datos y materiales que proporcione a Navnub para la prestación de los servicios. El Cliente otorga a Navnub una licencia no exclusiva, mundial, libre de regalías, sublicenciable y transferible para usar, reproducir, modificar, adaptar, publicar y distribuir dicho contenido únicamente con el fin de proporcionar los servicios contratados. El Cliente garantiza que tiene todos los derechos y permisos necesarios para proporcionar dicho contenido a Navnub."
       },
       "specificDevelopments": {
         "title": "Desarrollos Específicos",
-        "content": "La propiedad intelectual de los desarrollos personalizados creados por Navnub para el Cliente se regirá por los acuerdos específicos de cada proyecto, detallados en el contrato de servicio correspondiente."
+        "content": "La propiedad intelectual de los desarrollos personalizados creados por Navnub para el Cliente (ej. código fuente de un chatbot personalizado, diseño de una plataforma web específica) se regirá por los acuerdos específicos de cada proyecto, detallados en el contrato de servicio correspondiente."
       }
     },
     "section5": {
       "title": "5. Pagos y Facturación",
-      "content": "Los términos de pago, tarifas, plazos y cualquier cargo adicional serán especificados en la propuesta de proyecto individual o contrato de servicio acordado entre Navnub y el Cliente. El Cliente se compromete a realizar los pagos en las fechas y formas estipuladas. El incumplimiento de los pagos podría resultar en la suspensión o terminación de los servicios."
+      "content": "Los términos de pago, tarifas, plazos y cualquier cargo adicional serán especificados en la propuesta de proyecto individual o contrato de servicio acordado entre Navnub y el Cliente. El Cliente se compromete a realizar los pagos en las fechas y formas estipuladas. El incumplimiento de los pagos podría resultar en la suspensión o terminación de los servicios por parte de Navnub."
     },
     "section6": {
       "title": "6. Confidencialidad",
-      "content": "Navnub y el Cliente se comprometen a mantener la confidencialidad de toda la información no pública compartida durante la relación comercial, incluyendo, pero no limitándose a, secretos comerciales, información técnica, financiera, de marketing y datos de clientes. Esta obligación de confidencialidad se mantendrá incluso después de la terminación de los servicios."
+      "content": "Navnub y el Cliente se comprometen a mantener la confidencialidad de toda la información no pública compartida entre las partes durante la relación comercial ('Información Confidencial'), incluyendo, pero no limitándose a, secretos comerciales, información técnica, operativa, financiera, de marketing, estrategias de negocio y datos de clientes. Ambas partes se comprometen a utilizar la Información Confidencial únicamente para los fines de la prestación de los servicios y a no divulgarla a terceros sin el consentimiento previo por escrito de la parte divulgadora. Esta obligación de confidencialidad se mantendrá durante la vigencia de este acuerdo y por un período de cinco (5) años posteriores a su terminación."
     },
     "section7": {
-      "title": "7. Exención de Garantías",
-      "content": "Navnub se dedica a la excelencia y la innovación constante y se esfuerza por ofrecer experiencias digitales excepcionales. Sin embargo, los servicios de Navnub se proporcionan \"tal cual\" y \"según disponibilidad\", sin garantías de ningún tipo, ya sean expresas o implícitas. Navnub no garantiza que los servicios serán ininterrumpidos, libres de errores o seguros."
+      "title": "7. Protección de Datos Personales",
+      "content": "Navnub está comprometido con la protección de la privacidad y los datos personales de sus usuarios y clientes. Todo procesamiento de datos personales por parte de Navnub se rige por nuestra Política de Privacidad y nuestra Política de Cookies, las cuales están disponibles en nuestro sitio web. Al utilizar nuestros servicios, usted acepta el procesamiento de sus datos personales de acuerdo con dichas políticas. Navnub se compromete a cumplir con las leyes de protección de datos aplicables, incluyendo, cuando corresponda, el Reglamento General de Protección de Datos (RGPD) de la Unión Europea, la Ley de Privacidad del Consumidor de California (CCPA/CPRA) y otras normativas relevantes."
     },
     "section8": {
-      "title": "8. Limitación de Responsabilidad",
-      "content": "En ningún caso Navnub será responsable por daños indirectos, incidentales, especiales, consecuenciales o punitivos, incluyendo, sin limitación, pérdida de beneficios, datos, uso, fondo de comercio u otras pérdidas intangibles, resultantes de (i) su acceso o uso o incapacidad para acceder o usar los servicios; (ii) cualquier conducta o contenido de terceros en los servicios; (iii) cualquier contenido obtenido de los servicios; y (iv) el acceso, uso o alteración no autorizados de sus transmisiones o contenido, ya sea basado en garantía, contrato, agravio (incluida negligencia) o cualquier otra teoría legal, incluso si se nos ha informado de la posibilidad de tales daños."
+      "title": "8. Exención de Garantías",
+      "content": "Navnub se dedica a la excelencia y la innovación constante y se esfuerza por ofrecer experiencias digitales excepcionales. Sin embargo, los servicios de Navnub se proporcionan \"tal cual\" y \"según disponibilidad\", sin garantías de ningún tipo, ya sean expresas o implícitas, incluyendo, pero no limitándose a, garantías implícitas de comerciabilidad, idoneidad para un propósito particular o no infracción. Navnub no garantiza que los servicios serán ininterrumpidos, libres de errores, seguros o que los defectos serán corregidos. Cualquier garantía específica sobre el rendimiento o características de un servicio particular será exclusivamente la establecida en un Acuerdo de Nivel de Servicio (SLA) adjunto al contrato de proyecto individual."
     },
     "section9": {
-      "title": "9. Indemnización",
-      "content": "Usted acepta defender, indemnizar y eximir de responsabilidad a Navnub y a sus directores, empleados, socios y agentes, de y contra cualquier reclamo, demanda, daño, obligación, pérdida, responsabilidad, costo o deuda, y gastos (incluidos, entre otros, honorarios de abogados), que surjan de: a) su uso y acceso a los servicios; b) su incumplimiento de cualquiera de estos Términos; c) su violación de cualquier derecho de terceros, incluidos, entre otros, cualquier derecho de propiedad intelectual, privacidad o derecho de un tercero."
+      "title": "9. Limitación de Responsabilidad",
+      "content": "En ningún caso Navnub, ni sus directores, empleados, socios, agentes, proveedores o afiliados, serán responsables por daños indirectos, incidentales, especiales, consecuenciales o punitivos, incluyendo, sin limitación, pérdida de beneficios, datos, uso, fondo de comercio o activos intangibles, u otras pérdidas intangibles, resultantes de (I) su acceso o uso o incapacidad para acceder o usar los servicios; (II) cualquier conducta o contenido de terceros en los servicios; (III) cualquier contenido obtenido de los servicios; y (IV) el acceso, uso o alteración no autorizados de sus transmisiones o contenido, ya sea basado en garantía, contrato, agravio (incluida negligencia) o cualquier otra teoría legal, incluso si se nos ha informado de la posibilidad de tales daños. La responsabilidad total acumulada de Navnub por cualquier reclamo que surja de o esté relacionado con estos Términos o los servicios no excederá, en ningún caso, la cantidad pagada por el Cliente a Navnub por los servicios durante los seis (6) meses anteriores a la fecha del evento que dio origen al reclamo."
     },
     "section10": {
-      "title": "10. Terminación",
-      "content": "Navnub puede terminar o suspender su acceso a los servicios inmediatamente, sin previo aviso o responsabilidad, por cualquier motivo, incluyendo, sin limitación, si usted incumple estos Términos. Tras la terminación, su derecho a usar los servicios cesará inmediatamente."
+      "title": "10. Indemnización",
+      "content": "Usted acepta defender, indemnizar y eximir de responsabilidad a Navnub y a sus directores, empleados, socios, agentes, proveedores y afiliados, de y contra cualquier reclamo, demanda, daño, obligación, pérdida, responsabilidad, costo o deuda, y gastos (incluidos, entre otros, honorarios de abogados razonables), que surjan de o estén relacionados con: a) su uso y acceso a los servicios; b) su incumplimiento de cualquiera de estos Términos; c) el contenido que usted proporcione o transmita a través de los servicios; d) su violación de cualquier derecho de terceros, incluidos, entre otros, cualquier derecho de propiedad intelectual, privacidad o derecho de un tercero; e) su conducta negligente o intencional."
     },
     "section11": {
-      "title": "11. Ley Aplicable y Jurisdicción",
-      "content": "Estos Términos se regirán e interpretarán de acuerdo con las leyes del estado de Florida, Estados Unidos, sin tener en cuenta sus disposiciones sobre conflictos de leyes. Cualquier disputa que surja en relación con estos Términos o el uso de los servicios de Navnub será sometida a la jurisdicción exclusiva de los tribunales ubicados en Doral, Florida, Estados Unidos."
+      "title": "11. Fuerza Mayor",
+      "content": "Navnub no será responsable de ningún retraso o incumplimiento en el cumplimiento de sus obligaciones bajo estos Términos si dicho retraso o incumplimiento es causado por eventos fuera de su control razonable, incluyendo, pero no limitado a, actos de Dios, guerra, terrorismo, disturbios civiles, embargos, incendios, inundaciones, terremotos, huelgas, pandemias, escasez de mano de obra o materiales, interrupciones en las telecomunicaciones, fallas de la red o ataques cibernéticos generalizados."
     },
     "section12": {
-      "title": "12. Cambios en los Términos",
-      "content": "Nos reservamos el derecho, a nuestra entera discreción, de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es material, haremos esfuerzos razonables para proporcionar un aviso de al menos 30 días antes de que los nuevos términos entren en vigor. Lo que constituye un cambio material se determinará a nuestra entera discreción. Al continuar accediendo o utilizando nuestros servicios después de que esas revisiones se hagan efectivas, usted acepta estar sujeto/a a los términos revisados."
+      "title": "12. Terminación",
+      "content": "Navnub puede terminar o suspender su acceso a los servicios inmediatamente, sin previo aviso o responsabilidad, por cualquier motivo, incluyendo, sin limitación, si usted incumple estos Términos. Tras la terminación, su derecho a usar los servicios cesará inmediatamente. Las disposiciones de estos Términos que por su naturaleza deberían sobrevivir a la terminación, incluyendo, sin limitación, las disposiciones de propiedad intelectual, exención de garantías, limitación de responsabilidad, indemnización y ley aplicable, seguirán en pleno vigor y efecto."
     },
     "section13": {
-      "title": "13. Contacto",
+      "title": "13. Subcontratación",
+      "content": "Navnub podrá, a su discreción, subcontratar parte o la totalidad de la provisión de los servicios a terceros calificados, siempre y cuando Navnub siga siendo el principal responsable ante el Cliente por el cumplimiento de sus obligaciones bajo estos Términos y los acuerdos de servicio individuales."
+    },
+    "section14": {
+      "title": "14. Ley Aplicable y Resolución de Disputas",
+      "content": "Estos Términos se regirán e interpretarán de acuerdo con las leyes del estado de Florida, Estados Unidos, sin tener en cuenta sus disposiciones sobre conflictos de leyes.\n\nCualquier disputa, controversia o reclamo que surja de o esté relacionado con estos Términos, incluyendo su validez, interpretación, cumplimiento o terminación, será resuelta mediante arbitraje vinculante administrado por la American Arbitration Association (AAA) de acuerdo con sus Reglas de Arbitraje Comercial, y el laudo arbitral podrá ser presentado en cualquier tribunal que tenga jurisdicción sobre las partes. La sede del arbitraje será Doral, Florida, Estados Unidos. El idioma del arbitraje será el español."
+    },
+    "section15": {
+      "title": "15. Cambios en los Términos",
+      "content": "Nos reservamos el derecho, a nuestra entera discreción, de modificar o reemplazar estos Términos en cualquier momento. Si una revisión es material (ej. cambios significativos en los servicios, tarifas o derechos del usuario), haremos esfuerzos razonables para proporcionar un aviso de al menos treinta (30) días antes de que los nuevos términos entren en vigor, a través de una notificación en nuestro sitio web o por correo electrónico. Lo que constituye un cambio material se determinará a nuestra entera discreción. Al continuar accediendo o utilizando nuestros servicios después de que esas revisiones se hagan efectivas, usted acepta estar sujeto/a a los términos revisados. Si no acepta los nuevos términos, debe dejar de usar los servicios de Navnub."
+    },
+    "section16": {
+      "title": "16. Divisibilidad",
+      "content": "Si alguna disposición de estos Términos es considerada inválida o inaplicable por un tribunal de jurisdicción competente, las demás disposiciones de estos Términos permanecerán en pleno vigor y efecto."
+    },
+    "section17": {
+      "title": "17. Acuerdo Completo",
+      "content": "Estos Términos, junto con cualquier contrato de servicio individual, la Política de Privacidad y la Política de Cookies, constituyen el acuerdo completo entre usted y Navnub con respecto a los servicios y sustituyen cualquier acuerdo anterior o contemporáneo, ya sea oral o escrito, con respecto a dichos servicios."
+    },
+    "section18": {
+      "title": "18. Contacto",
       "content": "Si tiene alguna pregunta sobre estos Términos de Servicio, puede ponerse en contacto con Navnub a través de los medios de contacto disponibles en nuestro sitio web: www.navnub.com."
+    },
+    "finalNote": {
+      "title": "Nota Importante",
+      "content": "Este documento es un borrador para discusión. Para la implementación final, es imprescindible que un abogado especializado en derecho tecnológico y comercial revise y adapte estos Términos a las leyes específicas de todas las jurisdicciones donde Navnub opera y a las de sus clientes, garantizando la máxima protección legal para ambas partes y la conformidad con la normativa local e internacional."
     }
   }
 }
