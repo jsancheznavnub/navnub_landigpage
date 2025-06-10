@@ -203,5 +203,49 @@
   "testimonialsPage": {
     "title": "Testimonios de Clientes",
     "description": "Escucha lo que nuestros clientes tienen que decir sobre su experiencia trabajando con Navnub."
-  }
+  },
+  "testimonialsList": [
+    {
+      "id": "1",
+      "name": "Jane Doe",
+      "company": "Tech Solutions Inc.",
+      "quote": "Navnub transformó nuestra presencia online con sus innovadoras soluciones web. Su equipo es profesional, creativo y realmente entiende las necesidades del negocio. ¡Muy recomendados!",
+      "imageUrl": "https://placehold.co/100x100.png",
+      "imageHint": "mujer profesional"
+    },
+    {
+      "id": "2",
+      "name": "John Smith",
+      "company": "Cloud Innovations Ltd.",
+      "quote": "El chatbot con IA que Navnub desarrolló para nosotros ha mejorado significativamente nuestra interacción con clientes y eficiencia operativa. ¡Un cambio radical para nuestra PYME!",
+      "imageUrl": "https://placehold.co/100x100.png",
+      "imageHint": "hombre sonriente"
+    },
+    {
+      "id": "3",
+      "name": "Alice Brown",
+      "company": "Future Web Co.",
+      "quote": "Trabajar con Navnub en nuestra migración a la nube fue impecable. Su experiencia en IA y tecnologías cloud es de primer nivel, entregando resultados más allá de nuestras expectativas.",
+      "imageUrl": "https://placehold.co/100x100.png",
+      "imageHint": "persona de negocios"
+    },
+    {
+      "id": "4",
+      "name": "Carlos Rodríguez",
+      "company": "Soluciones Digitales PYME",
+      "quote": "El equipo de Navnub nos ayudó a automatizar procesos clave con IA, lo que nos permitió enfocarnos en crecer nuestro negocio. ¡Excelente servicio!",
+      "imageUrl": "https://placehold.co/100x100.png",
+      "imageHint": "desarrollador enfocado"
+    },
+    {
+      "id": "5",
+      "name": "Sofia Chen",
+      "company": "Innovatech Startups",
+      "quote": "Desde el diseño web hasta la implementación de soluciones en la nube, Navnub ha sido un socio tecnológico invaluable para nuestra startup.",
+      "imageUrl": "https://placehold.co/100x100.png",
+      "imageHint": "directora creativa"
+    }
+  ]
 }
+
+    

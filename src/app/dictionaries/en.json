@@ -203,5 +203,49 @@
   "testimonialsPage": {
     "title": "Client Testimonials",
     "description": "Hear what our clients have to say about their experience working with Navnub."
-  }
+  },
+  "testimonialsList": [
+    {
+      "id": "1",
+      "name": "Jane Doe",
+      "company": "Tech Solutions Inc.",
+      "quote": "Navnub transformed our online presence with their innovative web solutions. Their team is professional, creative, and truly understands business needs. Highly recommended!",
+      "imageUrl": "https://placehold.co/100x100.png",
+      "imageHint": "professional woman"
+    },
+    {
+      "id": "2",
+      "name": "John Smith",
+      "company": "Cloud Innovations Ltd.",
+      "quote": "The AI-powered chatbot Navnub developed for us has significantly improved our customer engagement and operational efficiency. A game-changer for our PYME!",
+      "imageUrl": "https://placehold.co/100x100.png",
+      "imageHint": "smiling man"
+    },
+    {
+      "id": "3",
+      "name": "Alice Brown",
+      "company": "Future Web Co.",
+      "quote": "Working with Navnub on our cloud migration was seamless. Their expertise in AI and cloud technologies is top-notch, delivering results beyond our expectations.",
+      "imageUrl": "https://placehold.co/100x100.png",
+      "imageHint": "business person"
+    },
+    {
+      "id": "4",
+      "name": "Carlos Rodríguez",
+      "company": "Soluciones Digitales PYME",
+      "quote": "The Navnub team helped us automate key processes with AI, allowing us to focus on growing our business. Excellent service!",
+      "imageUrl": "https://placehold.co/100x100.png",
+      "imageHint": "focused developer"
+    },
+    {
+      "id": "5",
+      "name": "Sofia Chen",
+      "company": "Innovatech Startups",
+      "quote": "From web design to implementing cloud solutions, Navnub has been an invaluable technology partner for our startup.",
+      "imageUrl": "https://placehold.co/100x100.png",
+      "imageHint": "creative director"
+    }
+  ]
 }
+
+    
