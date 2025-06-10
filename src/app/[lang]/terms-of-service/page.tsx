@@ -13,7 +13,7 @@ export default async function TermsOfServicePage({ params: { lang } }: { params:
         <p className="text-body text-muted-foreground mt-2">{d.effectiveDate.replace('{date}', lang === 'es' ? '10 de junio de 2025' : 'June 10, 2025')}</p>
       </header>
 
-      <article className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-none mx-auto bg-card p-6 sm:p-8 md:p-10 rounded-lg shadow-xl border border-border/50 text-foreground">
+      <article className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl dark:prose-invert max-w-none mx-auto bg-card p-6 sm:p-8 md:p-10 rounded-lg shadow-xl border border-border/50 text-foreground">
         <p>{d.introduction}</p>
         <p>{d.acceptanceIntro}</p>
 
@@ -73,3 +73,4 @@ export default async function TermsOfServicePage({ params: { lang } }: { params:
     </div>
   );
 }
+
