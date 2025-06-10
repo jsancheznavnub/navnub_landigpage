@@ -140,7 +140,8 @@
     "infoTitle": "Our Information",
     "addressDetail": "123 Innovation Drive, Tech City, TX 75001",
     "phoneDetail": "+1 (555) 123-4567",
-    "emailDetail": "info@navnub.com"
+    "emailDetail": "info@navnub.com",
+    "talkToUsButton": "Talk to Us"
   },
   "solutionsPage": {
     "title": "Our Solutions",

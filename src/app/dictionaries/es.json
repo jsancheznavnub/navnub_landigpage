@@ -140,7 +140,8 @@
     "infoTitle": "Nuestra Información",
     "addressDetail": "Calle Innovación 123, Ciudad Tecnológica, TX 75001",
     "phoneDetail": "+1 (555) 123-4567",
-    "emailDetail": "info@navnub.com"
+    "emailDetail": "info@navnub.com",
+    "talkToUsButton": "Habla con Nosotros"
   },
   "solutionsPage": {
     "title": "Nuestras Soluciones",
