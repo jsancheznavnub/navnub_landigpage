@@ -22,14 +22,14 @@ export default function WhyNavnubSection({ dictionary }: WhyNavnubSectionProps) 
         <div className="mt-4 h-1 w-20 bg-accent mx-auto rounded-full"></div>
       </div>
       <div className="grid lg:grid-cols-2 gap-10 items-stretch mb-16 md:mb-20">
-        <div className="bg-card p-8 md:p-10 rounded-xl shadow-xl border border-border/50">
+        <div className="bg-card p-8 md:p-10 rounded-xl shadow-xl border border-border/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
           <div className="flex items-center justify-start mb-4">
             <Target size={32} strokeWidth={1.5} className="text-accent mr-4" />
             <h3 className="font-headline text-3xl text-primary">{dictionary.mission.split(':')[0]}</h3>
           </div>
           <p className="text-body text-muted-foreground leading-relaxed">{dictionary.mission.split(':')[1]?.trim()}</p>
         </div>
-        <div className="bg-card p-8 md:p-10 rounded-xl shadow-xl border border-border/50">
+        <div className="bg-card p-8 md:p-10 rounded-xl shadow-xl border border-border/50 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
           <div className="flex items-center justify-start mb-4">
             <Eye size={32} strokeWidth={1.5} className="text-accent mr-4" />
             <h3 className="font-headline text-3xl text-primary">{dictionary.vision.split(':')[0]}</h3>
