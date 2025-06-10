@@ -5,7 +5,7 @@
 @layer base {
   :root {
     /* Modo Claro - Paleta Reciente */
-    --background: 0 0% 98%; /* #F9F9F9 - Gris muy claro, casi blanco */
+    --background: 210 60% 98%; /* Blanco muy claro con tinte azulado */
     --foreground: 220 10% 20%; /* #2D3036 - Carbón oscuro / Azul desaturado */
 
     --card: 0 0% 100%; /* #FFFFFF - Blanco puro para tarjetas */
@@ -23,7 +23,7 @@
     --muted: 0 0% 94%; /* #F0F0F0 - Gris claro para fondos sutiles */
     --muted-foreground: 0 0% 40%; /* #666666 - Gris medio para texto silenciado */
 
-    --accent: 180 98% 24%; /* #017979 - Nuevo verde azulado oscuro */
+    --accent: 180 98% 24%; /* #017979 - Verde azulado oscuro */
     --accent-foreground: 0 0% 100%; /* Blanco para texto sobre acento */
 
     --destructive: 0 70% 50%;
@@ -57,7 +57,7 @@
 
   .dark {
     /* Modo Oscuro - Paleta Reciente */
-    --background: 220 15% 10%; /* #15191C - Azul desaturado muy oscuro */
+    --background: 210 30% 12%; /* Azul oscuro profundo */
     --foreground: 0 0% 95%; /* #F2F2F2 - Gris muy claro/blanco */
 
     --card: 220 15% 15%; /* #1F252A - Un poco más claro que el fondo */
