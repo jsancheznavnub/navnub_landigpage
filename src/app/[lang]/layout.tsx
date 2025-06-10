@@ -1,11 +1,12 @@
 
 import type { Metadata } from 'next';
-import { ThemeProvider } from 'next-themes'; // Import ThemeProvider
+import { ThemeProvider } from 'next-themes';
 import { i18n, type Locale } from '@/app/i18n-config';
 import { Toaster } from "@/components/ui/toaster";
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import { getDictionary } from '@/lib/dictionaries';
+import CookieConsentManager from '@/components/CookieConsentManager';
 import '../globals.css';
 
 export async function generateStaticParams() {
@@ -28,7 +29,6 @@ export default async function RootLayout({
   return (
     <html lang={params.lang} className="h-full" suppressHydrationWarning>
       <head>
-        {/* The initial theme script is now handled by next-themes, so we can remove the manual one */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
@@ -40,11 +40,13 @@ export default async function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header lang={params.lang} dictionary={dictionary.navigation} themeDictionary={dictionary.themeToggle} />
-          <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            {children}
-          </main>
-          <Footer lang={params.lang} dictionary={dictionary.footer} />
+          <CookieConsentManager dictionary={dictionary.cookiePolicyModal}>
+            <Header lang={params.lang} dictionary={dictionary.navigation} themeDictionary={dictionary.themeToggle} />
+            <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+              {children}
+            </main>
+            <Footer lang={params.lang} dictionary={dictionary.footer} />
+          </CookieConsentManager>
           <Toaster />
         </ThemeProvider>
       </body>

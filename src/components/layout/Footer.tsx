@@ -1,9 +1,12 @@
 
+'use client';
+
 import Link from 'next/link';
 import { Linkedin, Instagram, Facebook, Mail, Phone } from 'lucide-react';
 import type { Dictionary } from '@/lib/dictionaries';
 import LanguageToggle from '@/components/LanguageToggle';
 import type { Locale } from '@/app/i18n-config';
+import { useCookieModal } from '@/contexts/CookieModalContext';
 
 type FooterProps = {
   dictionary: Dictionary['footer'];
@@ -12,6 +15,8 @@ type FooterProps = {
 
 export default function Footer({ dictionary, lang }: FooterProps) {
   const currentYear = new Date().getFullYear();
+  const { openModal: openCookiePolicyModal } = useCookieModal();
+
   return (
     <footer className="bg-footer-background text-footer-foreground py-12 mt-auto">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -29,7 +34,12 @@ export default function Footer({ dictionary, lang }: FooterProps) {
             <h3 className="text-md font-display font-semibold mb-3 uppercase tracking-wider">{dictionary.legalLinksTitle}</h3>
             <Link href="#" className="block text-sm font-body hover:text-accent transition-colors">{dictionary.privacyPolicy}</Link>
             <Link href="#" className="block text-sm font-body hover:text-accent transition-colors">{dictionary.termsOfService}</Link>
-            <Link href="#" className="block text-sm font-body hover:text-accent transition-colors">{dictionary.cookiePolicy}</Link>
+            <button
+              onClick={openCookiePolicyModal}
+              className="text-sm font-body hover:text-accent transition-colors text-left w-full md:w-auto block"
+            >
+              {dictionary.cookiePolicy}
+            </button>
           </div>
 
           {/* Column 3: Contact Info & Social */}
