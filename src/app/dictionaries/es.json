@@ -226,8 +226,8 @@
       },
       {
         "id": "6",
-        "title": "Bot Asistente de Ventas Automatizado",
-        "description": "Un chatbot diseñado para asistir a los equipos de ventas calificando leads y programando citas.",
+        "title": "Agentes de Ventas con IA",
+        "description": "Potencie su equipo de ventas con agentes impulsados por IA que interactúan proactivamente con prospectos, califican leads con conversaciones de tipo humano y programan citas de manera fluida, aumentando la eficiencia y las tasas de conversión.",
         "imageUrl": "https://placehold.co/600x400.png",
         "imageHint": "sales automation",
         "categoryKey": "Chatbot",

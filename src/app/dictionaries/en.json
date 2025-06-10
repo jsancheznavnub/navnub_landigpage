@@ -226,8 +226,8 @@
       },
       {
         "id": "6",
-        "title": "Automated Sales Assistant Bot",
-        "description": "A chatbot designed to assist sales teams by qualifying leads and scheduling appointments.",
+        "title": "AI Sales Agents",
+        "description": "Empower your sales force with AI-driven agents that proactively engage prospects, qualify leads with human-like conversation, and seamlessly schedule appointments, boosting efficiency and conversion rates.",
         "imageUrl": "https://placehold.co/600x400.png",
         "imageHint": "sales automation",
         "categoryKey": "Chatbot",

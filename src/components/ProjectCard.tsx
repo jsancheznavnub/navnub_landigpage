@@ -30,9 +30,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         />
       </div>
       <CardHeader>
-        <div className="flex justify-between items-start">
-          <CardTitle className="font-headline text-xl text-primary mb-1">{project.title}</CardTitle>
-          <Badge variant="secondary" className="ml-2 whitespace-nowrap">{project.category}</Badge>
+        <div className="flex justify-between items-start gap-2">
+          <CardTitle className="font-headline text-xl text-primary mb-1 flex-grow">{project.title}</CardTitle>
+          <Badge variant="secondary" className="ml-2 flex-shrink-0">{project.category}</Badge>
         </div>
         <CardDescription className="text-body text-muted-foreground text-sm h-20 overflow-hidden">
           {project.description}
