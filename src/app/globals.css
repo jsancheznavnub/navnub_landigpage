@@ -14,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 20% 10%;
 
-    --primary: 217 91% 50%;         /* Vibrant Blue (slightly adjusted for light bg) */
+    --primary: 210 100% 20%;         /* Deep Blue #003366 */
     --primary-foreground: 0 0% 100%; /* White text on primary */
 
     --secondary: 215 30% 85%;        /* Lighter Muted Blue */
@@ -23,15 +23,15 @@
     --muted: 210 40% 90%;           /* Light Gray */
     --muted-foreground: 210 30% 45%; /* Darker Gray for muted text */
 
-    --accent: 195 90% 45%;          /* Celeste (slightly adjusted for light bg) */
-    --accent-foreground: 0 0% 100%;   /* White text on accent */
+    --accent: 195 100% 50%;          /* Celeste #00BFFF */
+    --accent-foreground: 220 20% 5%;   /* Dark text on accent for light mode */
 
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 220 20% 85%;         /* Light Gray Border */
     --input: 220 20% 92%;          /* Light Input Background */
-    --ring: 217 91% 55%;            /* Primary color for focus rings */
+    --ring: 210 100% 25%;            /* Primary color for focus rings */
 
     --radius: 0.5rem;
 
@@ -41,8 +41,8 @@
     --footer-background: 223 47% 11%; /* Dark Navy Blue #0A1128 (Consistent for both themes) */
     --footer-foreground: 210 30% 85%; /* Light Gray for footer text */
 
-    --chart-1: 217 91% 50%;
-    --chart-2: 195 90% 45%;
+    --chart-1: 210 100% 20%;
+    --chart-2: 195 100% 50%;
     --chart-3: 210 40% 60%;
     --chart-4: 43 74% 55%;
     --chart-5: 27 87% 55%;
@@ -50,12 +50,12 @@
     /* Light Sidebar Theme */
     --sidebar-background: 210 40% 97%;      /* Very light gray */
     --sidebar-foreground: 220 20% 25%;      /* Dark gray */
-    --sidebar-primary: 217 91% 55%;        /* Main primary color */
+    --sidebar-primary: 210 100% 25%;        /* Main primary color */
     --sidebar-primary-foreground: 0 0% 100%; /* White */
-    --sidebar-accent: 195 90% 50%;         /* Main accent color */
-    --sidebar-accent-foreground: 0 0% 100%;  /* White */
+    --sidebar-accent: 195 100% 50%;         /* Main accent color */
+    --sidebar-accent-foreground: 220 20% 5%;  /* Dark text on accent */
     --sidebar-border: 220 20% 88%;        /* Light border */
-    --sidebar-ring: 217 91% 55%;
+    --sidebar-ring: 210 100% 25%;
   }
 
   .dark {
@@ -69,8 +69,8 @@
     --popover: 220 20% 10%;
     --popover-foreground: 210 30% 90%;
 
-    --primary: 217 91% 60%;   /* Vibrant Blue */
-    --primary-foreground: 210 40% 98%;
+    --primary: 210 100% 30%;   /* Deep Blue #003366 (darker shade for dark mode text contrast) */
+    --primary-foreground: 210 30% 95%; /* Lighter text on primary for dark mode */
 
     --secondary: 215 28% 25%;  /* Muted Dark Blue */
     --secondary-foreground: 210 40% 98%;
@@ -78,20 +78,25 @@
     --muted: 215 28% 18%;    /* Darker Muted Blue */
     --muted-foreground: 210 30% 70%;
 
-    --accent: 195 100% 50%;    /* Celeste #00BFFF */
-    --accent-foreground: 220 20% 5%; /* Dark for text on celeste */
+    --accent: 150 56% 60%;    /* Mint Green #66CC99 */
+    --accent-foreground: 220 20% 5%; /* Dark text on accent for dark mode */
 
     --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 220 20% 15%;   /* Subtle Border for dark theme */
     --input: 220 20% 12%;    /* Dark Input Background */
-    --ring: 195 100% 50%;      /* Accent color for focus rings */
+    --ring: 150 56% 65%;      /* Accent color for focus rings */
 
     /* CTA and Footer are kept consistent or defined above for :root */
+     --cta: 134 61% 40%;             /* Green #28a745 - kept consistent */
+     --cta-foreground: 0 0% 100%;    /* White - kept consistent */
 
-    --chart-1: 217 91% 60%;
-    --chart-2: 195 100% 50%;
+     --footer-background: 223 47% 11%; /* Dark Navy Blue #0A1128 - kept consistent */
+     --footer-foreground: 210 30% 85%; /* Light Gray for footer text - kept consistent */
+
+    --chart-1: 210 100% 30%;
+    --chart-2: 150 56% 60%;
     --chart-3: 210 40% 70%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
@@ -99,12 +104,12 @@
     /* Dark Sidebar Theme */
     --sidebar-background: 220 20% 8%;
     --sidebar-foreground: 210 30% 85%;
-    --sidebar-primary: 217 91% 65%;
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 195 100% 55%;
+    --sidebar-primary: 210 100% 35%;
+    --sidebar-primary-foreground: 210 30% 95%;
+    --sidebar-accent: 150 56% 65%;
     --sidebar-accent-foreground: 220 20% 5%;
     --sidebar-border: 220 20% 14%;
-    --sidebar-ring: 195 100% 55%;
+    --sidebar-ring: 150 56% 65%;
   }
 }
 
@@ -119,22 +124,27 @@
   main {
     @apply flex-grow;
   }
+  /* Updated font family definitions */
   h1, h2, h3, h4, h5, h6 {
     @apply font-display; /* Montserrat for headings */
   }
-  p, span, div, li, a, label, input, textarea, button, select {
-    @apply font-body; /* Lato for body text */
+  p, span, div, li, a, label, input, textarea, button, select, option { /* Added option */
+    @apply font-body; /* Open Sans for body text */
   }
-  /* Adjusted heading styles for a modern feel */
+  /* Text Body (using Lato as per later requirement, Open Sans for general body/UI) */
+  p.text-body-lato, .text-body-lato { /* Specific class if Lato is needed only for p */
+    @apply font-lato; /* Lato specifically for p tags if differentiated */
+  }
+
   h1 {
     @apply text-4xl font-bold leading-tight md:text-5xl;
   }
   h2 {
     @apply text-3xl font-bold leading-snug md:text-4xl;
   }
-   /* Text Body */
+  /* Text Body */
   p, .text-body {
-    @apply text-base leading-relaxed text-foreground/80; /* Lato 16px */
+    @apply text-base leading-relaxed text-foreground/80; /* Open Sans 16px */
   }
   /* Navigation Text */
   nav a, .nav-text {

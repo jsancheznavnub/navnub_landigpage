@@ -12,7 +12,8 @@ export default {
       fontFamily: {
         sans: ['Open Sans', 'sans-serif'], // Default sans-serif
         display: ['Montserrat', 'sans-serif'], // For titles/headings
-        body: ['Lato', 'sans-serif'], // For body text
+        body: ['Open Sans', 'sans-serif'], // For general body text
+        lato: ['Lato', 'sans-serif'], // Specific Lato font
         code: ['monospace'],
       },
       colors: {
@@ -39,7 +40,7 @@ export default {
           foreground: 'hsl(var(--muted-foreground))',
         },
         accent: {
-          DEFAULT: 'hsl(var(--accent))', // Celeste: #00BFFF
+          DEFAULT: 'hsl(var(--accent))',
           foreground: 'hsl(var(--accent-foreground))',
         },
         destructive: {
@@ -50,10 +51,10 @@ export default {
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
         cta: {
-          DEFAULT: 'hsl(var(--cta))', // Green: #28a745
+          DEFAULT: 'hsl(var(--cta))',
           foreground: 'hsl(var(--cta-foreground))',
         },
-        'footer-background': 'hsl(var(--footer-background))', // Dark Navy Blue: #0A1128
+        'footer-background': 'hsl(var(--footer-background))',
         'footer-foreground': 'hsl(var(--footer-foreground))',
         chart: {
           '1': 'hsl(var(--chart-1))',
