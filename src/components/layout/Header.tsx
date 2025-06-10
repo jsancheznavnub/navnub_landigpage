@@ -16,7 +16,7 @@ const NavLink = ({ href, children, lang, onClick }: { href: string; children: Re
   <Link
     href={`/${lang}${href}`}
     onClick={onClick}
-    className="nav-text text-foreground hover:text-primary transition-colors px-3 py-2 rounded-md"
+    className="nav-text text-foreground/80 hover:text-primary transition-colors px-3 py-2 rounded-md"
   >
     {children}
   </Link>
@@ -32,11 +32,11 @@ export default function Header({ lang, dictionary }: HeaderProps) {
   ];
 
   return (
-    <header className="bg-card shadow-md sticky top-0 z-50">
+    <header className="bg-background shadow-lg sticky top-0 z-50 border-b border-border">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href={`/${lang}`} className="flex items-center space-x-2">
-            <Image src="https://placehold.co/120x40.png?text=Navnub" alt={dictionary.navnubLogoAlt} width={120} height={40} data-ai-hint="logo minimal" />
+            <Image src="https://placehold.co/120x40.png?text=Navnub" alt={dictionary.navnubLogoAlt} width={120} height={40} data-ai-hint="logo modern dark" />
           </Link>
 
           {/* Desktop Navigation */}
@@ -53,18 +53,18 @@ export default function Header({ lang, dictionary }: HeaderProps) {
             <Sheet>
               <SheetTrigger asChild>
                 <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6" />
+                  <Menu className="h-6 w-6 text-foreground/80" />
                   <span className="sr-only">Open menu</span>
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-[280px] bg-card p-6">
+              <SheetContent side="right" className="w-[280px] bg-background p-6 border-l border-border">
                 <div className="flex justify-between items-center mb-6">
                    <Link href={`/${lang}`} className="flex items-center space-x-2">
-                     <Image src="https://placehold.co/120x40.png?text=Navnub" alt={dictionary.navnubLogoAlt} width={120} height={40} data-ai-hint="logo minimal" />
+                     <Image src="https://placehold.co/120x40.png?text=Navnub" alt={dictionary.navnubLogoAlt} width={120} height={40} data-ai-hint="logo modern dark" />
                    </Link>
                   <SheetClose asChild>
                      <Button variant="ghost" size="icon">
-                       <X className="h-6 w-6" />
+                       <X className="h-6 w-6 text-foreground/80" />
                        <span className="sr-only">Close menu</span>
                      </Button>
                   </SheetClose>

@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import type { Dictionary } from '@/lib/dictionaries';
@@ -12,18 +11,19 @@ type ChatbotCTASectionProps = {
 
 export default function ChatbotCTASection({ dictionary, lang }: ChatbotCTASectionProps) {
   return (
-    <section className="py-20 md:py-32">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center bg-gradient-to-br from-primary to-primary/80 text-primary-foreground p-12 md:p-20 rounded-2xl shadow-2xl relative overflow-hidden">
-        <div className="absolute -top-10 -left-10 text-primary/20">
-            <Sparkles size={128} strokeWidth={1} />
+    <section className="py-20 md:py-32 bg-card border-t border-b border-border/50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+        {/* Optional decorative elements, adjust opacity/color for dark theme */}
+        <div className="absolute -top-16 -left-16 text-primary/10 hidden md:block">
+            <Sparkles size={160} strokeWidth={0.5} />
         </div>
-        <div className="absolute -bottom-10 -right-10 text-primary/20">
-            <Sparkles size={128} strokeWidth={1} />
+        <div className="absolute -bottom-16 -right-16 text-primary/10 hidden md:block">
+            <Sparkles size={160} strokeWidth={0.5} />
         </div>
-        <div className="relative z-10">
-            <Bot size={64} strokeWidth={1.5} className="mx-auto mb-8 text-accent" />
-            <h2 className="mb-6 text-4xl md:text-5xl !leading-tight">{dictionary.title}</h2>
-            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto opacity-90">
+        <div className="relative z-10 max-w-3xl mx-auto">
+            <Bot size={56} strokeWidth={1.5} className="mx-auto mb-8 text-accent" />
+            <h2 className="mb-6 text-4xl md:text-5xl !leading-tight text-foreground">{dictionary.title}</h2>
+            <p className="text-xl md:text-2xl mb-10 text-muted-foreground">
             {dictionary.description}
             </p>
             <Button asChild size="lg" className="button-text text-lg px-10 py-7 bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg transform hover:scale-105 transition-transform duration-300">

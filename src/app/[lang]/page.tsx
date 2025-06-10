@@ -1,14 +1,12 @@
-
 import type { Locale } from '@/app/i18n-config';
 import { getDictionary } from '@/lib/dictionaries';
 import HeroSection from '@/components/sections/HeroSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import WhyNavnubSection from '@/components/sections/WhyNavnubSection';
 import ChatbotCTASection from '@/components/sections/ChatbotCTASection';
-import HomePageClient from '@/components/HomePageClient'; // New Client Component
+import HomePageClient from '@/components/HomePageClient';
 import type { Testimonial } from '@/components/TestimonialCard';
 
-// Placeholder data for testimonials - This can remain here or be moved if preferred
 const staticTestimonials: Testimonial[] = [
   {
     id: '1',
@@ -56,20 +54,21 @@ export default async function HomePage({ params: { lang } }: { params: { lang: L
   const dictionary = await getDictionary(lang);
 
   return (
-    <div className="space-y-20 md:space-y-32">
+    <div className="flex flex-col">
       <HeroSection dictionary={dictionary.hero} lang={lang} />
       
-      <div className="bg-muted/30 py-16 md:py-24">
+      <div className="py-20 md:py-32 bg-background">
         <ServicesSection dictionary={dictionary.services} />
       </div>
 
-      {/* Client component handles the carousel and its state */}
-      <HomePageClient
-        dictionary={dictionary.homePageTestimonials}
-        testimonials={staticTestimonials}
-      />
-
-      <div className="bg-card py-16 md:py-24">
+      <div className="py-20 md:py-32 bg-card border-t border-b border-border/50">
+        <HomePageClient
+          dictionary={dictionary.homePageTestimonials}
+          testimonials={staticTestimonials}
+        />
+      </div>
+      
+      <div className="py-20 md:py-32 bg-background">
         <WhyNavnubSection dictionary={dictionary.whyNavnub} />
       </div>
       
