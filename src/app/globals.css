@@ -23,7 +23,7 @@
     --muted: 0 0% 94%; /* #F0F0F0 - Gris claro para fondos sutiles */
     --muted-foreground: 0 0% 40%; /* #666666 - Gris medio para texto silenciado */
 
-    --accent: 320 70% 55%; /* #D949A0 - Magenta vibrante */
+    --accent: 180 98% 24%; /* #017979 - Nuevo verde azulado oscuro */
     --accent-foreground: 0 0% 100%; /* Blanco para texto sobre acento */
 
     --destructive: 0 70% 50%;
@@ -75,8 +75,8 @@
     --muted: 220 15% 12%; /* #1A1F23 - Para fondos sutiles oscuros */
     --muted-foreground: 0 0% 70%; /* #B3B3B3 - Gris claro para texto silenciado */
 
-    --accent: 320 75% 60%; /* #E65AAA - Magenta, ligeramente más brillante */
-    --accent-foreground: 0 0% 100%;
+    --accent: 180 70% 50%; /* Variante más clara de #017979 para modo oscuro, verde azulado brillante */
+    --accent-foreground: 0 0% 100%; /* Blanco para texto sobre acento */
 
     --destructive: 0 60% 50%;
     --destructive-foreground: 0 0% 100%;
