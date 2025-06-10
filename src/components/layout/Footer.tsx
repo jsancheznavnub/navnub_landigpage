@@ -31,17 +31,17 @@ export default function Footer({ dictionary, lang }: FooterProps) {
             <Link href={`/${lang}`} className="inline-block mb-2">
                <span className="text-2xl font-bold font-display text-white">{dictionary.navnubLogoAlt}</span>
             </Link>
-            <p className="text-sm font-body">{dictionary.slogan}</p>
+            <p className="text-sm font-body text-white">{dictionary.slogan}</p>
           </div>
 
           {/* Column 2: Legal Links */}
           <div className="space-y-2">
-            <h3 className="text-md font-display font-semibold mb-3 uppercase tracking-wider">{dictionary.legalLinksTitle}</h3>
-            <Link href={`/${lang}/privacy-policy`} className="block text-sm font-body hover:text-accent transition-colors">{dictionary.privacyPolicy}</Link>
-            <Link href={`/${lang}/terms-of-service`} className="block text-sm font-body hover:text-accent transition-colors">{dictionary.termsOfService}</Link>
+            <h3 className="text-md font-display font-semibold mb-3 uppercase tracking-wider text-white">{dictionary.legalLinksTitle}</h3>
+            <Link href={`/${lang}/privacy-policy`} className="block text-sm font-body text-white hover:text-accent transition-colors">{dictionary.privacyPolicy}</Link>
+            <Link href={`/${lang}/terms-of-service`} className="block text-sm font-body text-white hover:text-accent transition-colors">{dictionary.termsOfService}</Link>
             <button
               onClick={openCookiePolicyModal}
-              className="text-sm font-body hover:text-accent transition-colors text-left w-full md:w-auto block"
+              className="text-sm font-body text-white hover:text-accent transition-colors text-left w-full md:w-auto block"
             >
               {dictionary.cookiePolicy}
             </button>
@@ -49,27 +49,22 @@ export default function Footer({ dictionary, lang }: FooterProps) {
 
           {/* Column 3: Contact Info & Social */}
           <div className="space-y-3">
-             <h3 className="text-md font-display font-semibold mb-3 uppercase tracking-wider">{dictionary.contactTitle}</h3>
+             <h3 className="text-md font-display font-semibold mb-3 uppercase tracking-wider text-white">{dictionary.contactTitle}</h3>
             <div className="flex items-center justify-center md:justify-start space-x-2">
               <Mail size={18} className="text-accent"/>
-              <a href={`mailto:${contactEmail}`} className="text-sm font-body hover:text-accent transition-colors">{contactEmail}</a>
+              <a href={`mailto:${contactEmail}`} className="text-sm font-body text-white hover:text-accent transition-colors">{contactEmail}</a>
             </div>
             <div className="flex items-center justify-center md:justify-start space-x-2">
               <Phone size={18} className="text-accent"/>
-              <a href={`tel:${contactPhone.replace(/\s|-/g, '')}`} className="text-sm font-body hover:text-accent transition-colors">{contactPhone}</a>
+              <a href={`tel:${contactPhone.replace(/\s|-/g, '')}`} className="text-sm font-body text-white hover:text-accent transition-colors">{contactPhone}</a>
             </div>
             <div className="flex justify-center md:justify-start space-x-4 mt-4">
-              <Link href={linkedinUrl} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="text-footer-foreground hover:text-accent transition-colors">
+              <Link href={linkedinUrl} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent transition-colors">
                 <Linkedin size={22} />
               </Link>
-              <Link href={instagramUrl} aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="text-footer-foreground hover:text-accent transition-colors">
+              <Link href={instagramUrl} aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="text-white hover:text-accent transition-colors">
                 <Instagram size={22} />
               </Link>
-              {/* Facebook icon and link removed/commented out
-              <Link href="#" aria-label="Facebook" className="text-footer-foreground hover:text-accent transition-colors">
-                <Facebook size={22} />
-              </Link>
-              */}
             </div>
           </div>
         </div>
@@ -86,3 +81,5 @@ export default function Footer({ dictionary, lang }: FooterProps) {
     </footer>
   );
 }
+
+    
