@@ -1,0 +1,123 @@
+{
+  "navigation": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "portfolio": "Portfolio",
+    "chatbotGenerator": "Chatbot Ideas",
+    "testimonials": "Testimonials",
+    "contact": "Contact",
+    "navnubLogoAlt": "Navnub Logo"
+  },
+  "hero": {
+    "title": "Fusing Creativity with Advanced Technology",
+    "subtitle": "Navnub: Leading the evolution of web development with innovative AI and cloud solutions for exceptional digital experiences.",
+    "ctaExplore": "Explore Solutions",
+    "ctaContact": "Get in Touch"
+  },
+  "services": {
+    "title": "Our Specializations",
+    "cloudSolutions": {
+      "title": "Cloud Solutions",
+      "description": "Tailored cloud infrastructure and services for PYMEs, ensuring scalability and efficiency."
+    },
+    "webDevelopment": {
+      "title": "Web & App Development",
+      "description": "Creation of high-quality websites and applications focused on user experience and performance."
+    },
+    "chatbots": {
+      "title": "Chatbots & Automation",
+      "description": "Custom chatbots with WhatsApp Business integration and AI-powered process automation."
+    }
+  },
+  "whyNavnub": {
+    "title": "Why Choose Navnub?",
+    "mission": "Mission: To merge creativity with advanced technology to create exceptional digital experiences.",
+    "vision": "Vision: To forge a future where web technology is a natural extension of human and business aspirations.",
+    "excellence": "Excellence",
+    "innovation": "Constant Innovation",
+    "collaboration": "Collaborative Approach",
+    "customization": "Personalization",
+    "predictiveAnalysis": "Predictive Analysis"
+  },
+  "chatbotCTA": {
+    "title": "Need a Chatbot for Your Business?",
+    "description": "Use our AI-powered tool to generate chatbot ideas tailored to your needs.",
+    "button": "Generate Chatbot Ideas"
+  },
+  "footer": {
+    "copyright": "© {year} Navnub. All rights reserved.",
+    "developedBy": "A site by Navnub Digital Fusion."
+  },
+  "contactPage": {
+    "title": "Contact Us",
+    "description": "Let's discuss how Navnub can help your business thrive. Fill out the form below or reach out to us directly.",
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "Your full name",
+      "email": "Email Address",
+      "emailPlaceholder": "your.email@example.com",
+      "subject": "Subject",
+      "subjectPlaceholder": "Inquiry about...",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your project or needs...",
+      "submit": "Send Message",
+      "success": "Message sent successfully! We'll be in touch soon.",
+      "error": "Failed to send message. Please try again."
+    },
+    "infoTitle": "Our Information",
+    "address": "123 Innovation Drive, Tech City, TX 75001",
+    "phone": "+1 (555) 123-4567",
+    "email": "info@navnub.com"
+  },
+  "chatbotGeneratorPage": {
+    "title": "Chatbot Idea Generator",
+    "description": "Describe your business needs, and our AI will suggest chatbot solutions for you.",
+    "businessNeedsLabel": "Describe your business needs:",
+    "businessNeedsPlaceholder": "e.g., We want to improve customer support and automate sales inquiries for our e-commerce store...",
+    "generateButton": "Generate Ideas",
+    "generating": "Generating ideas...",
+    "ideasTitle": "Generated Chatbot Ideas:",
+    "noIdeas": "No ideas generated yet. Please describe your business needs above."
+  },
+  "solutionsPage": {
+    "title": "Our Solutions",
+    "cloudTitle": "AI-Powered Cloud Solutions",
+    "cloudDescription": "We specialize in leveraging cloud computing and artificial intelligence to provide scalable, efficient, and intelligent solutions for small and medium-sized businesses. From cloud migration to custom AI model development, we help you harness the power of modern technology.",
+    "cloudBenefits": [
+      "Scalability and Flexibility",
+      "Cost Efficiency",
+      "Enhanced Security",
+      "Data-driven Insights with AI",
+      "Automation of Complex Processes"
+    ],
+    "webDevTitle": "Innovative Web & App Development",
+    "webDevDescription": "Our team crafts bespoke websites and mobile applications that are not only visually stunning but also highly functional and user-friendly. We focus on creating digital platforms that drive engagement and achieve business objectives.",
+    "webDevBenefits": [
+      "Custom Design and Development",
+      "Responsive and Mobile-First Approach",
+      "SEO Optimization",
+      "Integration with Third-Party Services",
+      "Ongoing Support and Maintenance"
+    ],
+    "chatbotsTitle": "Intelligent Chatbots & Automation",
+    "chatbotsDescription": "Transform your customer interactions and streamline operations with our custom chatbot solutions. We develop AI-driven chatbots that integrate seamlessly with landing pages and WhatsApp Business, providing 24/7 support and automating repetitive tasks.",
+    "chatbotsBenefits": [
+      "Improved Customer Engagement",
+      "24/7 Availability",
+      "Lead Generation and Qualification",
+      "Task Automation",
+      "Seamless WhatsApp Integration"
+    ]
+  },
+  "portfolioPage": {
+    "title": "Our Portfolio",
+    "description": "Explore a selection of our projects showcasing our expertise in AI, cloud solutions, web development, and chatbot automation.",
+    "projectCategoryAI": "AI Projects",
+    "projectCategoryWeb": "Web & Mobile Apps",
+    "projectCategoryChatbot": "Chatbot Solutions"
+  },
+  "testimonialsPage": {
+    "title": "Client Testimonials",
+    "description": "Hear what our clients have to say about their experience working with Navnub."
+  }
+}

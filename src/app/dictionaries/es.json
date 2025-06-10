@@ -1,0 +1,123 @@
+{
+  "navigation": {
+    "home": "Inicio",
+    "solutions": "Soluciones",
+    "portfolio": "Portafolio",
+    "chatbotGenerator": "Ideas Chatbot",
+    "testimonials": "Testimonios",
+    "contact": "Contacto",
+    "navnubLogoAlt": "Logo de Navnub"
+  },
+  "hero": {
+    "title": "Fusionando Creatividad con Tecnología Avanzada",
+    "subtitle": "Navnub: Liderando la evolución del desarrollo web con soluciones innovadoras de IA y nube para experiencias digitales excepcionales.",
+    "ctaExplore": "Explorar Soluciones",
+    "ctaContact": "Contáctanos"
+  },
+  "services": {
+    "title": "Nuestras Especializaciones",
+    "cloudSolutions": {
+      "title": "Soluciones en la Nube",
+      "description": "Infraestructura y servicios en la nube a medida para PYMEs, garantizando escalabilidad y eficiencia."
+    },
+    "webDevelopment": {
+      "title": "Desarrollo Web y Apps",
+      "description": "Creación de sitios web y aplicaciones de alta calidad enfocados en la experiencia de usuario y rendimiento."
+    },
+    "chatbots": {
+      "title": "Chatbots y Automatización",
+      "description": "Chatbots personalizados con integración en WhatsApp Business y automatización de procesos impulsada por IA."
+    }
+  },
+  "whyNavnub": {
+    "title": "¿Por Qué Elegir Navnub?",
+    "mission": "Misión: Fusionar la creatividad con la tecnología avanzada para crear experiencias digitales excepcionales.",
+    "vision": "Visión: Forjar un futuro donde la tecnología web sea una extensión natural de las aspiraciones humanas y empresariales.",
+    "excellence": "Excelencia",
+    "innovation": "Innovación Constante",
+    "collaboration": "Enfoque Colaborativo",
+    "customization": "Personalización",
+    "predictiveAnalysis": "Análisis Predictivo"
+  },
+  "chatbotCTA": {
+    "title": "¿Necesitas un Chatbot para tu Negocio?",
+    "description": "Usa nuestra herramienta impulsada por IA para generar ideas de chatbot adaptadas a tus necesidades.",
+    "button": "Generar Ideas de Chatbot"
+  },
+  "footer": {
+    "copyright": "© {year} Navnub. Todos los derechos reservados.",
+    "developedBy": "Un sitio por Navnub Digital Fusion."
+  },
+  "contactPage": {
+    "title": "Contáctanos",
+    "description": "Conversemos sobre cómo Navnub puede ayudar a tu negocio a prosperar. Completa el formulario o contáctanos directamente.",
+    "form": {
+      "name": "Nombre Completo",
+      "namePlaceholder": "Tu nombre completo",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "tu.correo@ejemplo.com",
+      "subject": "Asunto",
+      "subjectPlaceholder": "Consulta sobre...",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntanos sobre tu proyecto o necesidades...",
+      "submit": "Enviar Mensaje",
+      "success": "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.",
+      "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo."
+    },
+    "infoTitle": "Nuestra Información",
+    "address": "Calle Innovación 123, Ciudad Tecnológica, TX 75001",
+    "phone": "+1 (555) 123-4567",
+    "email": "info@navnub.com"
+  },
+  "chatbotGeneratorPage": {
+    "title": "Generador de Ideas para Chatbots",
+    "description": "Describe las necesidades de tu negocio y nuestra IA te sugerirá soluciones de chatbot.",
+    "businessNeedsLabel": "Describe las necesidades de tu negocio:",
+    "businessNeedsPlaceholder": "Ej: Queremos mejorar el soporte al cliente y automatizar consultas de ventas para nuestra tienda online...",
+    "generateButton": "Generar Ideas",
+    "generating": "Generando ideas...",
+    "ideasTitle": "Ideas de Chatbot Generadas:",
+    "noIdeas": "Aún no se han generado ideas. Por favor, describe las necesidades de tu negocio arriba."
+  },
+  "solutionsPage": {
+    "title": "Nuestras Soluciones",
+    "cloudTitle": "Soluciones Cloud Potenciadas por IA",
+    "cloudDescription": "Nos especializamos en aprovechar la computación en la nube y la inteligencia artificial para ofrecer soluciones escalables, eficientes e inteligentes para pequeñas y medianas empresas. Desde la migración a la nube hasta el desarrollo de modelos de IA personalizados, te ayudamos a aprovechar el poder de la tecnología moderna.",
+    "cloudBenefits": [
+      "Escalabilidad y Flexibilidad",
+      "Eficiencia de Costos",
+      "Seguridad Mejorada",
+      "Perspectivas Basadas en Datos con IA",
+      "Automatización de Procesos Complejos"
+    ],
+    "webDevTitle": "Desarrollo Innovador de Web y Apps",
+    "webDevDescription": "Nuestro equipo crea sitios web y aplicaciones móviles a medida que no solo son visualmente impactantes, sino también altamente funcionales y fáciles de usar. Nos enfocamos en crear plataformas digitales que impulsen la participación y alcancen los objetivos comerciales.",
+    "webDevBenefits": [
+      "Diseño y Desarrollo Personalizado",
+      "Enfoque Responsivo y Mobile-First",
+      "Optimización SEO",
+      "Integración con Servicios de Terceros",
+      "Soporte y Mantenimiento Continuo"
+    ],
+    "chatbotsTitle": "Chatbots Inteligentes y Automatización",
+    "chatbotsDescription": "Transforma tus interacciones con clientes y optimiza operaciones con nuestras soluciones de chatbot personalizadas. Desarrollamos chatbots impulsados por IA que se integran perfectamente con páginas de destino y WhatsApp Business, brindando soporte 24/7 y automatizando tareas repetitivas.",
+    "chatbotsBenefits": [
+      "Mejora de la Interacción con el Cliente",
+      "Disponibilidad 24/7",
+      "Generación y Calificación de Leads",
+      "Automatización de Tareas",
+      "Integración Fluida con WhatsApp"
+    ]
+  },
+  "portfolioPage": {
+    "title": "Nuestro Portafolio",
+    "description": "Explora una selección de nuestros proyectos que demuestran nuestra experiencia en IA, soluciones en la nube, desarrollo web y automatización con chatbots.",
+    "projectCategoryAI": "Proyectos de IA",
+    "projectCategoryWeb": "Apps Web y Móviles",
+    "projectCategoryChatbot": "Soluciones de Chatbot"
+  },
+  "testimonialsPage": {
+    "title": "Testimonios de Clientes",
+    "description": "Escucha lo que nuestros clientes tienen que decir sobre su experiencia trabajando con Navnub."
+  }
+}
