@@ -31,7 +31,7 @@ export default function HeroSection({ dictionary, lang }: HeroSectionProps) {
           {dictionary.subtitle}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button asChild size="lg" className="button-text text-lg px-8 py-6 bg-secondary hover:bg-secondary/90 text-secondary-foreground">
+          <Button asChild size="lg" className="button-text text-lg px-8 py-6 bg-accent hover:bg-accent/90 text-accent-foreground">
             <Link href={`/${lang}/solutions`}>{dictionary.ctaExplore}</Link>
           </Button>
           <Button asChild variant="outline" size="lg" className="button-text text-lg px-8 py-6 text-white border-white hover:bg-white/10 hover:text-white">

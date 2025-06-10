@@ -21,12 +21,12 @@ export default function ChatbotCTASection({ dictionary, lang }: ChatbotCTASectio
             <Sparkles size={128} strokeWidth={1} />
         </div>
         <div className="relative z-10">
-            <Bot size={64} strokeWidth={1.5} className="mx-auto mb-8 text-secondary" />
+            <Bot size={64} strokeWidth={1.5} className="mx-auto mb-8 text-accent" />
             <h2 className="mb-6 text-4xl md:text-5xl !leading-tight">{dictionary.title}</h2>
             <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto opacity-90">
             {dictionary.description}
             </p>
-            <Button asChild size="lg" className="button-text text-lg px-10 py-7 bg-secondary hover:bg-secondary/90 text-secondary-foreground shadow-lg transform hover:scale-105 transition-transform duration-300">
+            <Button asChild size="lg" className="button-text text-lg px-10 py-7 bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg transform hover:scale-105 transition-transform duration-300">
             <Link href={`/${lang}/chatbot-generator`}>{dictionary.button}</Link>
             </Button>
         </div>
