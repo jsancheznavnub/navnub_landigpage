@@ -4,86 +4,99 @@
 
 @layer base {
   :root {
+    /* Light Theme (New Default) */
+    --background: 0 0% 100%;       /* White */
+    --foreground: 220 20% 10%;     /* Dark Blue/Charcoal */
+
+    --card: 0 0% 97%;             /* Off-white */
+    --card-foreground: 220 20% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 20% 10%;
+
+    --primary: 217 91% 50%;         /* Vibrant Blue (slightly adjusted for light bg) */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+
+    --secondary: 215 30% 85%;        /* Lighter Muted Blue */
+    --secondary-foreground: 220 20% 15%; /* Dark text on secondary */
+
+    --muted: 210 40% 90%;           /* Light Gray */
+    --muted-foreground: 210 30% 45%; /* Darker Gray for muted text */
+
+    --accent: 195 90% 45%;          /* Celeste (slightly adjusted for light bg) */
+    --accent-foreground: 0 0% 100%;   /* White text on accent */
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 20% 85%;         /* Light Gray Border */
+    --input: 220 20% 92%;          /* Light Input Background */
+    --ring: 217 91% 55%;            /* Primary color for focus rings */
+
+    --radius: 0.5rem;
+
+    --cta: 134 61% 40%;             /* Green #28a745 */
+    --cta-foreground: 0 0% 100%;    /* White */
+
+    --footer-background: 223 47% 11%; /* Dark Navy Blue #0A1128 (Consistent for both themes) */
+    --footer-foreground: 210 30% 85%; /* Light Gray for footer text */
+
+    --chart-1: 217 91% 50%;
+    --chart-2: 195 90% 45%;
+    --chart-3: 210 40% 60%;
+    --chart-4: 43 74% 55%;
+    --chart-5: 27 87% 55%;
+
+    /* Light Sidebar Theme */
+    --sidebar-background: 210 40% 97%;      /* Very light gray */
+    --sidebar-foreground: 220 20% 25%;      /* Dark gray */
+    --sidebar-primary: 217 91% 55%;        /* Main primary color */
+    --sidebar-primary-foreground: 0 0% 100%; /* White */
+    --sidebar-accent: 195 90% 50%;         /* Main accent color */
+    --sidebar-accent-foreground: 0 0% 100%;  /* White */
+    --sidebar-border: 220 20% 88%;        /* Light border */
+    --sidebar-ring: 217 91% 55%;
+  }
+
+  .dark {
     /* Wingsoft-inspired Dark Theme */
     --background: 220 20% 7%; /* Very Dark Blue/Charcoal */
     --foreground: 210 30% 90%; /* Light Gray/Off-white */
 
     --card: 220 20% 10%;       /* Slightly lighter than bg */
-    --card-foreground: 210 30% 90%; 
+    --card-foreground: 210 30% 90%;
 
-    --popover: 220 20% 10%;    
+    --popover: 220 20% 10%;
     --popover-foreground: 210 30% 90%;
 
-    --primary: 217 91% 60%;   /* Vibrant Blue (e.g., #3B82F6 from previous theme) */
-    --primary-foreground: 210 40% 98%; 
+    --primary: 217 91% 60%;   /* Vibrant Blue */
+    --primary-foreground: 210 40% 98%;
 
     --secondary: 215 28% 25%;  /* Muted Dark Blue */
     --secondary-foreground: 210 40% 98%;
 
     --muted: 215 28% 18%;    /* Darker Muted Blue */
-    --muted-foreground: 210 30% 70%; 
+    --muted-foreground: 210 30% 70%;
 
     --accent: 195 100% 50%;    /* Celeste #00BFFF */
     --accent-foreground: 220 20% 5%; /* Dark for text on celeste */
 
-    --destructive: 0 70% 55%; 
-    --destructive-foreground: 0 0% 98%; 
+    --destructive: 0 70% 55%;
+    --destructive-foreground: 0 0% 98%;
 
     --border: 220 20% 15%;   /* Subtle Border for dark theme */
     --input: 220 20% 12%;    /* Dark Input Background */
     --ring: 195 100% 50%;      /* Accent color for focus rings */
 
-    --radius: 0.5rem; /* As per user previous acceptance */
+    /* CTA and Footer are kept consistent or defined above for :root */
 
-    --cta: 134 61% 40%; /* Green #28a745 */
-    --cta-foreground: 0 0% 100%; /* White */
+    --chart-1: 217 91% 60%;
+    --chart-2: 195 100% 50%;
+    --chart-3: 210 40% 70%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
 
-    --footer-background: 223 47% 11%; /* Dark Navy Blue #0A1128 */
-    --footer-foreground: 210 30% 85%; /* Light Gray for footer text */
-
-
-    --chart-1: 217 91% 60%; 
-    --chart-2: 195 100% 50%; 
-    --chart-3: 210 40% 70%; 
-    --chart-4: 43 74% 66%; 
-    --chart-5: 27 87% 67%; 
-
-    --sidebar-background: 220 20% 8%; 
-    --sidebar-foreground: 210 30% 85%;
-    --sidebar-primary: 217 91% 65%; 
-    --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 195 100% 55%; 
-    --sidebar-accent-foreground: 220 20% 5%;
-    --sidebar-border: 220 20% 14%;
-    --sidebar-ring: 195 100% 55%;
-  }
-
-  .dark {
-    /* Ensure .dark class is consistent with the new default dark theme */
-    --background: 220 20% 7%;
-    --foreground: 210 30% 90%;
-    --card: 220 20% 10%;
-    --card-foreground: 210 30% 90%;
-    --popover: 220 20% 10%;
-    --popover-foreground: 210 30% 90%;
-    --primary: 217 91% 60%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 215 28% 25%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 215 28% 18%;
-    --muted-foreground: 210 30% 70%;
-    --accent: 195 100% 50%;
-    --accent-foreground: 220 20% 5%;
-    --destructive: 0 70% 55%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 220 20% 15%;
-    --input: 220 20% 12%;
-    --ring: 195 100% 50%;
-    --cta: 134 61% 40%; 
-    --cta-foreground: 0 0% 100%;
-    --footer-background: 223 47% 11%; 
-    --footer-foreground: 210 30% 85%;
-
+    /* Dark Sidebar Theme */
     --sidebar-background: 220 20% 8%;
     --sidebar-foreground: 210 30% 85%;
     --sidebar-primary: 217 91% 65%;
@@ -114,7 +127,7 @@
   }
   /* Adjusted heading styles for a modern feel */
   h1 {
-    @apply text-4xl font-bold leading-tight md:text-5xl; 
+    @apply text-4xl font-bold leading-tight md:text-5xl;
   }
   h2 {
     @apply text-3xl font-bold leading-snug md:text-4xl;

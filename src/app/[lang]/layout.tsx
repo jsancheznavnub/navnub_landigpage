@@ -24,8 +24,35 @@ export default async function RootLayout({
 }) {
   const dictionary = await getDictionary(params.lang);
   return (
-    <html lang={params.lang} className="h-full">
+    <html lang={params.lang} className="h-full" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                function setTheme(theme) {
+                  if (theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.documentElement.classList.add('dark');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                }
+                let preferredTheme = localStorage.getItem('theme');
+                if (preferredTheme) {
+                  setTheme(preferredTheme);
+                } else {
+                  setTheme('system');
+                }
+                // Listen for changes in system preference
+                window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
+                  if (!localStorage.getItem('theme') || localStorage.getItem('theme') === 'system') {
+                    setTheme('system');
+                  }
+                });
+              })();
+            `,
+          }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
