@@ -41,8 +41,8 @@
     --footer-background: 223 47% 11%; /* Dark Navy Blue #0A1128 (Consistent for both themes) */
     --footer-foreground: 210 30% 85%; /* Light Gray for footer text */
 
-    --chart-1: 210 100% 20%;
-    --chart-2: 195 100% 50%;
+    --chart-1: hsl(var(--primary));
+    --chart-2: hsl(var(--accent));
     --chart-3: 210 40% 60%;
     --chart-4: 43 74% 55%;
     --chart-5: 27 87% 55%;
@@ -59,57 +59,57 @@
   }
 
   .dark {
-    /* Wingsoft-inspired Dark Theme */
-    --background: 220 20% 7%; /* Very Dark Blue/Charcoal */
-    --foreground: 210 30% 90%; /* Light Gray/Off-white */
+    /* Dark Theme with more distinct cool grays for differentiation */
+    --background: 220 10% 8%;       /* Very dark, slightly cool gray */
+    --foreground: 210 30% 90%;     /* Light Gray/Off-white */
 
-    --card: 220 20% 10%;       /* Slightly lighter than bg */
+    --card: 220 8% 14%;           /* Noticeably lighter cool gray for cards */
     --card-foreground: 210 30% 90%;
 
-    --popover: 220 20% 10%;
+    --popover: 220 9% 11%;          /* Dark cool gray for popovers */
     --popover-foreground: 210 30% 90%;
 
-    --primary: 210 100% 30%;   /* Deep Blue #003366 (darker shade for dark mode text contrast) */
+    --primary: 210 100% 56%;       /* Vibrant Blue (Wingsoft style) */
     --primary-foreground: 210 30% 95%; /* Lighter text on primary for dark mode */
 
-    --secondary: 215 28% 25%;  /* Muted Dark Blue */
+    --secondary: 215 15% 28%;      /* Muted cool dark blue/gray */
     --secondary-foreground: 210 40% 98%;
 
-    --muted: 215 28% 18%;    /* Darker Muted Blue */
+    --muted: 220 9% 11%;           /* Dark cool gray for muted backgrounds (e.g., alternating sections) */
     --muted-foreground: 210 30% 70%;
 
-    --accent: 150 56% 60%;    /* Mint Green #66CC99 */
+    --accent: 195 100% 50%;        /* Celeste/Teal (Wingsoft style) */
     --accent-foreground: 220 20% 5%; /* Dark text on accent for dark mode */
 
-    --destructive: 0 70% 55%;
+    --destructive: 0 63% 31%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 20% 15%;   /* Subtle Border for dark theme */
-    --input: 220 20% 12%;    /* Dark Input Background */
-    --ring: 150 56% 65%;      /* Accent color for focus rings */
+    --border: 220 7% 20%;         /* Cool gray border */
+    --input: 220 8% 12%;          /* Cool dark gray input background */
+    --ring: 195 100% 55%;          /* Accent color for focus rings */
 
-    /* CTA and Footer are kept consistent or defined above for :root */
-     --cta: 134 61% 40%;             /* Green #28a745 - kept consistent */
-     --cta-foreground: 0 0% 100%;    /* White - kept consistent */
+    /* CTA and Footer remain consistent */
+    --cta: 134 61% 40%;
+    --cta-foreground: 0 0% 100%;
+    --footer-background: 223 47% 11%;
+    --footer-foreground: 210 30% 85%;
 
-     --footer-background: 223 47% 11%; /* Dark Navy Blue #0A1128 - kept consistent */
-     --footer-foreground: 210 30% 85%; /* Light Gray for footer text - kept consistent */
-
-    --chart-1: 210 100% 30%;
-    --chart-2: 150 56% 60%;
+    /* Chart colors for dark theme */
+    --chart-1: hsl(var(--primary));
+    --chart-2: hsl(var(--accent));
     --chart-3: 210 40% 70%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
 
-    /* Dark Sidebar Theme */
-    --sidebar-background: 220 20% 8%;
+    /* Dark Sidebar Theme with cool grays */
+    --sidebar-background: 220 10% 7%;      /* Darkest cool gray for sidebar */
     --sidebar-foreground: 210 30% 85%;
-    --sidebar-primary: 210 100% 35%;
+    --sidebar-primary: 210 100% 60%;       /* Brighter primary for sidebar highlights */
     --sidebar-primary-foreground: 210 30% 95%;
-    --sidebar-accent: 150 56% 65%;
+    --sidebar-accent: 195 100% 55%;        /* Brighter accent for sidebar */
     --sidebar-accent-foreground: 220 20% 5%;
-    --sidebar-border: 220 20% 14%;
-    --sidebar-ring: 150 56% 65%;
+    --sidebar-border: 220 8% 12%;        /* Cool gray sidebar border */
+    --sidebar-ring: 195 100% 55%;
   }
 }
 
