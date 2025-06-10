@@ -10,8 +10,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['PT Sans', 'sans-serif'],
-        headline: ['Poppins', 'sans-serif'],
+        sans: ['Open Sans', 'sans-serif'], // Default sans-serif
+        display: ['Montserrat', 'sans-serif'], // For titles/headings
+        body: ['Lato', 'sans-serif'], // For body text
         code: ['monospace'],
       },
       colors: {
@@ -38,7 +39,7 @@ export default {
           foreground: 'hsl(var(--muted-foreground))',
         },
         accent: {
-          DEFAULT: 'hsl(var(--accent))',
+          DEFAULT: 'hsl(var(--accent))', // Celeste: #00BFFF
           foreground: 'hsl(var(--accent-foreground))',
         },
         destructive: {
@@ -48,6 +49,12 @@ export default {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
+        cta: {
+          DEFAULT: 'hsl(var(--cta))', // Green: #28a745
+          foreground: 'hsl(var(--cta-foreground))',
+        },
+        'footer-background': 'hsl(var(--footer-background))', // Dark Navy Blue: #0A1128
+        'footer-foreground': 'hsl(var(--footer-foreground))',
         chart: {
           '1': 'hsl(var(--chart-1))',
           '2': 'hsl(var(--chart-2))',

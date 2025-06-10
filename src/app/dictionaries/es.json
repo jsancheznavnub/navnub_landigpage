@@ -2,33 +2,67 @@
 {
   "navigation": {
     "home": "Inicio",
-    "solutions": "Soluciones",
-    "portfolio": "Portafolio",
-    "chatbotGenerator": "Ideas Chatbot",
-    "testimonials": "Testimonios",
+    "servicesDropdown": {
+      "title": "Servicios",
+      "cloudSolutions": "Soluciones Cloud",
+      "webDevelopment": "Desarrollo Web y Apps",
+      "aiAndChatbots": "IA y Chatbots",
+      "techConsulting": "Consultoría Tecnológica"
+    },
+    "successCases": "Casos de Éxito",
+    "blog": "Blog",
     "contact": "Contacto",
+    "ctaDemo": "Solicita una Demo",
     "navnubLogoAlt": "Logo de Navnub"
   },
   "hero": {
     "title": "Fusionando Creatividad con Tecnología Avanzada",
     "subtitle": "Navnub: Liderando la evolución del desarrollo web con soluciones innovadoras de IA y nube para experiencias digitales excepcionales.",
     "ctaExplore": "Explorar Soluciones",
-    "ctaContact": "Contáctanos"
+    "ctaContact": "Contáctanos",
+     "form": {
+      "name": "Nombre",
+      "namePlaceholder": "Tu Nombre",
+      "email": "Correo Electrónico",
+      "emailPlaceholder": "tu.correo@ejemplo.com",
+      "company": "Empresa",
+      "companyPlaceholder": "Nombre de tu Empresa",
+      "submit": "Solicitar Demo Ahora",
+      "legalText": "Al enviar aceptas nuestra Política de Privacidad y Términos."
+    }
+  },
+  "trustLogos": {
+    "title": "Con la Confianza de Empresas Líderes"
   },
   "services": {
     "title": "Nuestras Especializaciones",
     "cloudSolutions": {
       "title": "Soluciones en la Nube",
-      "description": "Infraestructura y servicios en la nube a medida para PYMEs, garantizando escalabilidad y eficiencia."
+      "description": "Infraestructura y servicios en la nube a medida para PYMEs, garantizando escalabilidad y eficiencia.",
+      "seeMore": "Ver Más"
     },
     "webDevelopment": {
       "title": "Desarrollo Web y Apps",
-      "description": "Creación de sitios web y aplicaciones de alta calidad enfocados en la experiencia de usuario y rendimiento."
+      "description": "Creación de sitios web y aplicaciones de alta calidad enfocados en la experiencia de usuario y rendimiento.",
+      "seeMore": "Ver Más"
     },
     "chatbots": {
       "title": "Chatbots y Automatización",
-      "description": "Chatbots personalizados con integración en WhatsApp Business y automatización de procesos impulsada por IA."
-    }
+      "description": "Chatbots personalizados con integración en WhatsApp Business y automatización de procesos impulsada por IA.",
+      "seeMore": "Ver Más"
+    },
+    "exploreButton": "Explorar Todos los Servicios"
+  },
+  "workProcess": {
+    "title": "Nuestro Proceso de Trabajo",
+    "step1Title": "Descubrimiento y Estrategia",
+    "step1Desc": "Entendiendo tus necesidades y planificando el mejor enfoque.",
+    "step2Title": "Diseño y Desarrollo",
+    "step2Desc": "Creando soluciones con tecnología y diseño de vanguardia.",
+    "step3Title": "Pruebas y Despliegue",
+    "step3Desc": "Asegurando la calidad y lanzando tu proyecto con éxito.",
+    "step4Title": "Evaluación e Iteración",
+    "step4Desc": "Analizando resultados y mejorando continuamente."
   },
   "whyNavnub": {
     "title": "¿Por Qué Elegir Navnub?",
@@ -38,10 +72,16 @@
     "innovation": "Innovación Constante",
     "collaboration": "Enfoque Colaborativo",
     "customization": "Personalización",
-    "predictiveAnalysis": "Análisis Predictivo"
+    "predictiveAnalysis": "Análisis Predictivo",
+    "dedicatedSupport": "Soporte Dedicado"
   },
   "homePageTestimonials": {
     "title": "Lo Que Dicen Nuestros Clientes"
+  },
+  "integrationPersonalization": {
+    "title": "Integración Fluida y Personalización",
+    "paragraph1": "Nuestras soluciones están diseñadas para integrarse perfectamente con tus herramientas existentes, incluyendo WhatsApp Business y tus plataformas web.",
+    "paragraph2": "Ofrecemos una personalización profunda para asegurar que nuestra tecnología se adapte a tus procesos y objetivos de negocio únicos."
   },
   "chatbotCTA": {
     "title": "¿Necesitas un Chatbot para tu Negocio?",
@@ -49,29 +89,55 @@
     "button": "Generar Ideas de Chatbot"
   },
   "footer": {
-    "copyright": "© {year} Navnub. Todos los derechos reservados.",
-    "developedBy": "Un sitio por Navnub Digital Fusion."
+    "navnubLogoAlt": "Logo de Navnub - Pie de página",
+    "slogan": "Innovando Futuros Digitales, Juntos.",
+    "legalLinksTitle": "Legal",
+    "privacyPolicy": "Política de Privacidad",
+    "termsOfService": "Términos de Servicio",
+    "cookiePolicy": "Política de Cookies",
+    "contactTitle": "Contáctanos",
+    "address": "Calle Innovación 123, Ciudad Tecnológica, TX 75001",
+    "phone": "+1 (555) 123-4567",
+    "email": "info@navnub.com",
+    "copyright": "© {year} Navnub.",
+    "developedBy": "Todos los derechos reservados."
   },
   "contactPage": {
     "title": "Contáctanos",
     "description": "Conversemos sobre cómo Navnub puede ayudar a tu negocio a prosperar. Completa el formulario o contáctanos directamente.",
     "form": {
-      "name": "Nombre Completo",
-      "namePlaceholder": "Tu nombre completo",
+      "firstName": "Nombre",
+      "firstNamePlaceholder": "Tu nombre",
+      "lastName": "Apellidos",
+      "lastNamePlaceholder": "Tus apellidos",
       "email": "Correo Electrónico",
       "emailPlaceholder": "tu.correo@ejemplo.com",
-      "subject": "Asunto",
-      "subjectPlaceholder": "Consulta sobre...",
+      "phone": "Número de Teléfono",
+      "phonePlaceholder": "(+XX) XXX-XXXX",
+      "company": "Nombre de Empresa",
+      "companyPlaceholder": "El nombre de tu empresa",
+      "role": "Tu Cargo",
+      "rolePlaceholder": "Ej: CEO, Gerente de Marketing",
+      "serviceInterest": "Servicio de Interés",
+      "serviceInterestPlaceholder": "Selecciona un servicio",
+      "serviceOptions": {
+        "webDev": "Desarrollo Web y Apps",
+        "cloud": "Soluciones Cloud",
+        "aiChatbots": "IA y Chatbots",
+        "consulting": "Consultoría Tecnológica",
+        "other": "Otro"
+      },
       "message": "Mensaje",
       "messagePlaceholder": "Cuéntanos sobre tu proyecto o necesidades...",
+      "agreeToTerms": "Acepto la Política de Privacidad y los Términos de Servicio.",
       "submit": "Enviar Mensaje",
       "success": "¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.",
       "error": "Error al enviar el mensaje. Por favor, inténtalo de nuevo."
     },
     "infoTitle": "Nuestra Información",
-    "address": "Calle Innovación 123, Ciudad Tecnológica, TX 75001",
-    "phone": "+1 (555) 123-4567",
-    "email": "info@navnub.com"
+    "addressDetail": "Calle Innovación 123, Ciudad Tecnológica, TX 75001",
+    "phoneDetail": "+1 (555) 123-4567",
+    "emailDetail": "info@navnub.com"
   },
   "chatbotGeneratorPage": {
     "title": "Generador de Ideas para Chatbots",
@@ -113,12 +179,17 @@
       "Integración Fluida con WhatsApp"
     ]
   },
-  "portfolioPage": {
-    "title": "Nuestro Portafolio",
+  "successCasesPage": {
+    "title": "Nuestros Casos de Éxito",
     "description": "Explora una selección de nuestros proyectos que demuestran nuestra experiencia en IA, soluciones en la nube, desarrollo web y automatización con chatbots.",
     "projectCategoryAI": "Proyectos de IA",
     "projectCategoryWeb": "Apps Web y Móviles",
     "projectCategoryChatbot": "Soluciones de Chatbot"
+  },
+  "blogPage": {
+    "title": "Nuestro Blog",
+    "description": "Ideas, noticias y artículos del equipo Navnub sobre IA, Cloud, Desarrollo Web y más.",
+    "comingSoon": "¡Contenido próximamente!"
   },
   "testimonialsPage": {
     "title": "Testimonios de Clientes",

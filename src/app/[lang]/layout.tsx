@@ -28,15 +28,14 @@ export default async function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet" />
       </head>
-      <body className="font-body antialiased text-foreground flex flex-col min-h-screen">
+      <body className="font-sans antialiased text-foreground flex flex-col min-h-screen bg-background">
         <Header lang={params.lang} dictionary={dictionary.navigation} />
         <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {children}
         </main>
-        <Footer dictionary={dictionary.footer} />
+        <Footer lang={params.lang} dictionary={dictionary.footer} />
         <Toaster />
       </body>
     </html>

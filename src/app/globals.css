@@ -4,84 +4,94 @@
 
 @layer base {
   :root {
-    /* New Wingsoft-inspired Dark Theme (as default/light) */
-    --background: 222 40% 10%; /* Very Dark Desaturated Blue */
-    --foreground: 210 40% 95%; /* Light Grayish Blue */
+    /* Wingsoft-inspired Dark Theme */
+    --background: 220 20% 7%; /* Very Dark Blue/Charcoal */
+    --foreground: 210 30% 90%; /* Light Gray/Off-white */
 
-    --card: 222 40% 13%;       /* Slightly lighter than bg */
-    --card-foreground: 210 40% 95%; /* Light Grayish Blue */
+    --card: 220 20% 10%;       /* Slightly lighter than bg */
+    --card-foreground: 210 30% 90%; 
 
-    --popover: 222 40% 13%;    /* Slightly lighter than bg */
-    --popover-foreground: 210 40% 95%; /* Light Grayish Blue */
+    --popover: 220 20% 10%;    
+    --popover-foreground: 210 30% 90%;
 
-    --primary: 217 91% 60%;   /* Vibrant Blue (e.g., #3B82F6) */
-    --primary-foreground: 210 40% 98%; /* Almost White */
+    --primary: 217 91% 60%;   /* Vibrant Blue (e.g., #3B82F6 from previous theme) */
+    --primary-foreground: 210 40% 98%; 
 
     --secondary: 215 28% 25%;  /* Muted Dark Blue */
-    --secondary-foreground: 210 40% 98%; /* Almost White */
+    --secondary-foreground: 210 40% 98%;
 
     --muted: 215 28% 18%;    /* Darker Muted Blue */
-    --muted-foreground: 210 30% 70%; /* Medium Light Grayish Blue */
+    --muted-foreground: 210 30% 70%; 
 
-    --accent: 173 80% 45%;    /* Bright Teal/Turquoise (e.g., #10B981 adjusted) */
-    --accent-foreground: 222 40% 10%; /* Very Dark Blue/Black for text on Accent */
+    --accent: 195 100% 50%;    /* Celeste #00BFFF */
+    --accent-foreground: 220 20% 5%; /* Dark for text on celeste */
 
-    --destructive: 0 70% 55%; /* Brighter Red for dark theme */
+    --destructive: 0 70% 55%; 
     --destructive-foreground: 0 0% 98%; 
 
-    --border: 215 28% 22%;   /* Subtle Border */
-    --input: 215 28% 22%;    /* Dark Input Background */
-    --ring: 217 91% 60%;      /* Primary color for focus rings */
+    --border: 220 20% 15%;   /* Subtle Border for dark theme */
+    --input: 220 20% 12%;    /* Dark Input Background */
+    --ring: 195 100% 50%;      /* Accent color for focus rings */
 
-    --radius: 0.5rem;
+    --radius: 0.5rem; /* As per user previous acceptance */
 
-    --chart-1: 217 91% 60%; /* Primary */
-    --chart-2: 173 80% 45%; /* Accent */
-    --chart-3: 210 40% 70%; /* Lighter Muted */
-    --chart-4: 43 74% 66%; /* Existing Orange/Yellow - might need adjustment */
-    --chart-5: 27 87% 67%; /* Existing Orange - might need adjustment */
+    --cta: 134 61% 40%; /* Green #28a745 */
+    --cta-foreground: 0 0% 100%; /* White */
 
-    /* Sidebar colors to match the new dark theme */
-    --sidebar-background: 222 40% 11%; /* Slightly different from main bg for separation */
-    --sidebar-foreground: 210 40% 90%;
+    --footer-background: 223 47% 11%; /* Dark Navy Blue #0A1128 */
+    --footer-foreground: 210 30% 85%; /* Light Gray for footer text */
+
+
+    --chart-1: 217 91% 60%; 
+    --chart-2: 195 100% 50%; 
+    --chart-3: 210 40% 70%; 
+    --chart-4: 43 74% 66%; 
+    --chart-5: 27 87% 67%; 
+
+    --sidebar-background: 220 20% 8%; 
+    --sidebar-foreground: 210 30% 85%;
     --sidebar-primary: 217 91% 65%; 
     --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 173 80% 50%; 
-    --sidebar-accent-foreground: 222 40% 10%;
-    --sidebar-border: 215 28% 20%;
-    --sidebar-ring: 173 80% 50%;
+    --sidebar-accent: 195 100% 55%; 
+    --sidebar-accent-foreground: 220 20% 5%;
+    --sidebar-border: 220 20% 14%;
+    --sidebar-ring: 195 100% 55%;
   }
 
   .dark {
-    /* Making .dark consistent with the new default dark theme */
-    --background: 222 40% 10%;
-    --foreground: 210 40% 95%;
-    --card: 222 40% 13%;
-    --card-foreground: 210 40% 95%;
-    --popover: 222 40% 13%;
-    --popover-foreground: 210 40% 95%;
+    /* Ensure .dark class is consistent with the new default dark theme */
+    --background: 220 20% 7%;
+    --foreground: 210 30% 90%;
+    --card: 220 20% 10%;
+    --card-foreground: 210 30% 90%;
+    --popover: 220 20% 10%;
+    --popover-foreground: 210 30% 90%;
     --primary: 217 91% 60%;
     --primary-foreground: 210 40% 98%;
     --secondary: 215 28% 25%;
     --secondary-foreground: 210 40% 98%;
     --muted: 215 28% 18%;
     --muted-foreground: 210 30% 70%;
-    --accent: 173 80% 45%;
-    --accent-foreground: 222 40% 10%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 220 20% 5%;
     --destructive: 0 70% 55%;
     --destructive-foreground: 0 0% 98%;
-    --border: 215 28% 22%;
-    --input: 215 28% 22%;
-    --ring: 217 91% 60%;
+    --border: 220 20% 15%;
+    --input: 220 20% 12%;
+    --ring: 195 100% 50%;
+    --cta: 134 61% 40%; 
+    --cta-foreground: 0 0% 100%;
+    --footer-background: 223 47% 11%; 
+    --footer-foreground: 210 30% 85%;
 
-    --sidebar-background: 222 40% 11%;
-    --sidebar-foreground: 210 40% 90%;
+    --sidebar-background: 220 20% 8%;
+    --sidebar-foreground: 210 30% 85%;
     --sidebar-primary: 217 91% 65%;
     --sidebar-primary-foreground: 210 40% 98%;
-    --sidebar-accent: 173 80% 50%;
-    --sidebar-accent-foreground: 222 40% 10%;
-    --sidebar-border: 215 28% 20%;
-    --sidebar-ring: 173 80% 50%;
+    --sidebar-accent: 195 100% 55%;
+    --sidebar-accent-foreground: 220 20% 5%;
+    --sidebar-border: 220 20% 14%;
+    --sidebar-ring: 195 100% 55%;
   }
 }
 
@@ -97,28 +107,28 @@
     @apply flex-grow;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply font-headline;
+    @apply font-display; /* Montserrat for headings */
   }
   p, span, div, li, a, label, input, textarea, button, select {
-    @apply font-body;
+    @apply font-body; /* Lato for body text */
   }
   /* Adjusted heading styles for a modern feel */
   h1 {
-    @apply text-5xl font-bold leading-tight md:text-6xl; /* Poppins, adjusted size */
+    @apply text-4xl font-bold leading-tight md:text-5xl; 
   }
   h2 {
-    @apply text-3xl font-bold leading-snug md:text-4xl; /* Poppins, adjusted size */
+    @apply text-3xl font-bold leading-snug md:text-4xl;
   }
-  /* Text Body */
+   /* Text Body */
   p, .text-body {
-    @apply text-lg leading-relaxed text-foreground/80; /* PT Sans 18px, slightly muted foreground for body */
+    @apply text-base leading-relaxed text-foreground/80; /* Lato 16px */
   }
   /* Navigation Text */
   nav a, .nav-text {
-    @apply font-headline text-base font-medium; /* Poppins 16px 500 */
+    @apply font-display text-sm font-medium; /* Montserrat 14px 500 for nav */
   }
   /* Button Text */
   .button-text {
-    @apply font-headline text-base font-semibold leading-none; /* Poppins 16px 600 */
+    @apply font-display text-sm font-semibold leading-none; /* Montserrat 14px 600 for buttons */
   }
 }
