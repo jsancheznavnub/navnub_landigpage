@@ -1,9 +1,9 @@
+
 import Link from 'next/link';
 import { Linkedin, Instagram, Facebook, Mail, Phone } from 'lucide-react';
 import type { Dictionary } from '@/lib/dictionaries';
 import LanguageToggle from '@/components/LanguageToggle';
 import type { Locale } from '@/app/i18n-config';
-import Image from 'next/image';
 
 type FooterProps = {
   dictionary: Dictionary['footer'];
@@ -19,7 +19,7 @@ export default function Footer({ dictionary, lang }: FooterProps) {
           {/* Column 1: Navnub + Slogan */}
           <div className="space-y-4">
             <Link href={`/${lang}`} className="inline-block mb-2">
-               <Image src="https://placehold.co/150x50.png?text=Navnub&font=montserrat&bg=0A1128&txt=FFFFFF" alt={dictionary.navnubLogoAlt} width={150} height={50} data-ai-hint="logo modern white" />
+               <span className="text-2xl font-bold font-display text-white">{dictionary.navnubLogoAlt}</span>
             </Link>
             <p className="text-sm font-body">{dictionary.slogan}</p>
           </div>

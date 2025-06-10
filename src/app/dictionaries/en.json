@@ -13,7 +13,7 @@
     "blog": "Blog",
     "contact": "Contact",
     "ctaDemo": "Request a Demo",
-    "navnubLogoAlt": "Navnub Logo"
+    "navnubLogoAlt": "Navnub"
   },
   "themeToggle": {
     "toggleTheme": "Toggle theme",
@@ -95,7 +95,7 @@
     "button": "Generate Chatbot Ideas"
   },
   "footer": {
-    "navnubLogoAlt": "Navnub Logo - Footer",
+    "navnubLogoAlt": "Navnub",
     "slogan": "Innovating Digital Futures, Together.",
     "legalLinksTitle": "Legal",
     "privacyPolicy": "Privacy Policy",

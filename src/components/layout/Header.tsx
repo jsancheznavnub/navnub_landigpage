@@ -1,6 +1,5 @@
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import LanguageToggle from '@/components/LanguageToggle';
 import ThemeToggle from '@/components/ThemeToggle'; // Import ThemeToggle
@@ -73,7 +72,7 @@ export default function Header({ lang, dictionary, themeDictionary }: HeaderProp
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href={`/${lang}`} className="flex items-center space-x-2">
-            <Image src="https://placehold.co/120x40.png?text=Navnub&font=montserrat" alt={dictionary.navnubLogoAlt} width={120} height={40} data-ai-hint="logo modern dark" />
+            <span className="text-2xl font-bold font-display text-primary">{dictionary.navnubLogoAlt}</span>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-1">
@@ -84,7 +83,7 @@ export default function Header({ lang, dictionary, themeDictionary }: HeaderProp
             ))}
           </nav>
           
-          <div className="hidden md:flex items-center space-x-2">
+          <div className="hidden md:flex items-center space-x-3">
             <ThemeToggle dictionary={themeDictionary} />
             <LanguageToggle currentLocale={lang} />
             <Button asChild size="sm" className="button-text bg-cta hover:bg-cta/90 text-cta-foreground px-4 py-2">
@@ -105,7 +104,7 @@ export default function Header({ lang, dictionary, themeDictionary }: HeaderProp
               <SheetContent side="right" className="w-[280px] bg-background p-6 border-l border-border">
                 <div className="flex justify-between items-center mb-6">
                    <Link href={`/${lang}`} className="flex items-center space-x-2">
-                     <Image src="https://placehold.co/120x40.png?text=Navnub&font=montserrat" alt={dictionary.navnubLogoAlt} width={120} height={40} data-ai-hint="logo modern dark" />
+                     <span className="text-2xl font-bold font-display text-primary">{dictionary.navnubLogoAlt}</span>
                    </Link>
                   <SheetClose asChild>
                      <Button variant="ghost" size="icon">
