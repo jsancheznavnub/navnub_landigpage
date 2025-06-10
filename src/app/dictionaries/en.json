@@ -78,10 +78,14 @@
     "paragraph1": "Our solutions are designed to integrate perfectly with your existing tools, including WhatsApp Business and your web platforms.",
     "paragraph2": "We offer deep customization to ensure our technology adapts to your unique business processes and goals."
   },
-  "chatbotCTA": {
-    "title": "Need a Chatbot for Your Business?",
-    "description": "Use our AI-powered tool to generate chatbot ideas tailored to your needs.",
-    "button": "Generate Chatbot Ideas"
+  "howNavnubGrows": {
+    "title": "How Navnub Grows Your Business?",
+    "step1Title": "1. Build",
+    "step1Description": "We design, build, and develop user-centric digital products. Digital innovation will be at the core of your product and will renew your value proposition in the market.",
+    "step2Title": "2. Evaluation",
+    "step2Description": "We analyze your company's current environment and applications to identify strengths, weaknesses, and operations.",
+    "step3Title": "3. Value Proposition",
+    "step3Description": "We generate a solid, powerful, and scalable Cloud Computing value proposition to elevate your company's level."
   },
   "footer": {
     "navnubLogoAlt": "Navnub",
@@ -137,16 +141,6 @@
     "addressDetail": "123 Innovation Drive, Tech City, TX 75001",
     "phoneDetail": "+1 (555) 123-4567",
     "emailDetail": "info@navnub.com"
-  },
-  "chatbotGeneratorPage": {
-    "title": "Chatbot Idea Generator",
-    "description": "Describe your business needs, and our AI will suggest chatbot solutions for you.",
-    "businessNeedsLabel": "Describe your business needs:",
-    "businessNeedsPlaceholder": "e.g., We want to improve customer support and automate sales inquiries for our e-commerce store...",
-    "generateButton": "Generate Ideas",
-    "generating": "Generating ideas...",
-    "ideasTitle": "Generated Chatbot Ideas:",
-    "noIdeas": "No ideas generated yet. Please describe your business needs above."
   },
   "solutionsPage": {
     "title": "Our Solutions",

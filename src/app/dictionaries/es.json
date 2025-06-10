@@ -78,10 +78,14 @@
     "paragraph1": "Nuestras soluciones están diseñadas para integrarse perfectamente con tus herramientas existentes, incluyendo WhatsApp Business y tus plataformas web.",
     "paragraph2": "Ofrecemos una personalización profunda para asegurar que nuestra tecnología se adapte a tus procesos y objetivos de negocio únicos."
   },
-  "chatbotCTA": {
-    "title": "¿Necesitas un Chatbot para tu Negocio?",
-    "description": "Usa nuestra herramienta impulsada por IA para generar ideas de chatbot adaptadas a tus necesidades.",
-    "button": "Generar Ideas de Chatbot"
+  "howNavnubGrows": {
+    "title": "¿Cómo Navnub hace crecer tu empresa?",
+    "step1Title": "1. Construye",
+    "step1Description": "Diseñamos, construimos y desarrollamos productos digitales centrados en el usuario. La innovación digital va a ser el centro de tu producto y vas a renovar tu propuesta de valor en el mercado.",
+    "step2Title": "2. Evaluación",
+    "step2Description": "Analizamos el entorno actual de tu compañía y de tus aplicaciones para identificar fortalezas, debilidades y operación.",
+    "step3Title": "3. Propuesta de valor",
+    "step3Description": "Generamos una propuesta de valor de Cloud Computing sólida, potente y escalable para subir el nivel de tu empresa."
   },
   "footer": {
     "navnubLogoAlt": "Navnub",
@@ -137,16 +141,6 @@
     "addressDetail": "Calle Innovación 123, Ciudad Tecnológica, TX 75001",
     "phoneDetail": "+1 (555) 123-4567",
     "emailDetail": "info@navnub.com"
-  },
-  "chatbotGeneratorPage": {
-    "title": "Generador de Ideas para Chatbots",
-    "description": "Describe las necesidades de tu negocio y nuestra IA te sugerirá soluciones de chatbot.",
-    "businessNeedsLabel": "Describe las necesidades de tu negocio:",
-    "businessNeedsPlaceholder": "Ej: Queremos mejorar el soporte al cliente y automatizar consultas de ventas para nuestra tienda online...",
-    "generateButton": "Generar Ideas",
-    "generating": "Generando ideas...",
-    "ideasTitle": "Ideas de Chatbot Generadas:",
-    "noIdeas": "Aún no se han generado ideas. Por favor, describe las necesidades de tu negocio arriba."
   },
   "solutionsPage": {
     "title": "Nuestras Soluciones",
@@ -395,7 +389,7 @@
       "item2": "Utilizar los servicios de Navnub de manera lícita y de acuerdo con la moral, el orden público y las buenas costumbres.",
       "item3": "No utilizar los servicios para fines ilegales, fraudulentos, engañosos o que puedan dañar la reputación de Navnub o de terceros.",
       "item4": "No cargar, transmitir o distribuir contenido ilegal, difamatorio, obsceno, abusivo, amenazante, dañino, invasivo de la privacidad, racial o étnicamente censurable, o de otro modo objetable.",
-      "item5": "No infringir los derechos de propiedad intelectual de Navnub o de terceros.",
+      "item5": "Not infringir los derechos de propiedad intelectual de Navnub o de terceros.",
       "item6": "No interferir con la seguridad o el funcionamiento de los servicios o de otros sistemas conectados a ellos.",
       "item7": "Ser responsable de mantener la confidencialidad de cualquier credencial de acceso proporcionada por Navnub o creada por el Usuario, y de todas las actividades que ocurran bajo su cuenta."
     },
@@ -436,7 +430,7 @@
     },
     "section10": {
       "title": "10. Indemnización",
-      "content": "Usted acepta defender, indemnizar y eximir de responsabilidad a Navnub y a sus directores, empleados, socios, agentes, proveedores y afiliados, de y contra cualquier reclamo, demanda, daño, obligación, pérdida, responsabilidad, costo o deuda, y gastos (incluidos, entre otros, honorarios de abogados razonables), que surjan de o estén relacionados con: a) su uso y acceso a los servicios; b) su incumplimiento de cualquiera de estos Términos; c) el contenido que usted proporcione o transmita a través de los servicios; d) su violación de cualquier derecho de terceros, incluyendo sin limitación cualquier derecho de propiedad intelectual, privacidad, o derecho de un tercero; e) su conducta negligente o intencional."
+      "content": "Usted acepta defender, indemnizar y eximir de responsabilidad a Navnub y a sus directores, empleados, socios, agentes, proveedores y afiliados, de y contra cualquier reclamo, demanda, daño, obligación, pérdida, responsabilidad, costo o deuda, y gastos (incluidos, entre otros, honorarios de abogados razonables), que surjan de o estén relacionados con: a) su uso y acceso a los servicios; b) su incumplimiento de cualquiera de estos Términos; c) el contenido que usted proporcione o transmita a través de los servicios; d) su violación de cualquier derecho de terceros, incluyendo sin limitación cualquier derecho de propiedad intelectual, privacidad o derecho de un tercero; e) su conducta negligente o intencional."
     },
     "section11": {
       "title": "11. Fuerza Mayor",

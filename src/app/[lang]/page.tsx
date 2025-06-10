@@ -4,9 +4,9 @@ import { getDictionary } from '@/lib/dictionaries';
 import HeroSection from '@/components/sections/HeroSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import WhyNavnubSection from '@/components/sections/WhyNavnubSection';
-import ChatbotCTASection from '@/components/sections/ChatbotCTASection';
 import HomePageClient from '@/components/HomePageClient';
 import type { Testimonial } from '@/components/TestimonialCard';
+import HowNavnubGrowsSection from '@/components/sections/HowNavnubGrowsSection';
 
 export default async function HomePage({ params: { lang } }: { params: { lang: Locale } }) {
   const dictionary = await getDictionary(lang);
@@ -31,7 +31,7 @@ export default async function HomePage({ params: { lang } }: { params: { lang: L
         <WhyNavnubSection dictionary={dictionary.whyNavnub} />
       </div>
       
-      <ChatbotCTASection dictionary={dictionary.chatbotCTA} lang={lang} />
+      <HowNavnubGrowsSection dictionary={dictionary.howNavnubGrows} />
     </div>
   );
 }
