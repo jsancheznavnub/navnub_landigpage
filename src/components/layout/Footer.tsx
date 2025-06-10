@@ -2,7 +2,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Linkedin, Instagram, Facebook, Mail, Phone } from 'lucide-react';
+import { Linkedin, Instagram, Mail, Phone } from 'lucide-react';
 import type { Dictionary } from '@/lib/dictionaries';
 import LanguageToggle from '@/components/LanguageToggle';
 import type { Locale } from '@/app/i18n-config';
@@ -16,6 +16,11 @@ type FooterProps = {
 export default function Footer({ dictionary, lang }: FooterProps) {
   const currentYear = new Date().getFullYear();
   const { openModal: openCookiePolicyModal } = useCookieModal();
+
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || dictionary.email;
+  const contactPhone = process.env.NEXT_PUBLIC_CONTACT_PHONE || dictionary.phone;
+  const linkedinUrl = process.env.NEXT_PUBLIC_LINKEDIN_URL || "#";
+  const instagramUrl = process.env.NEXT_PUBLIC_INSTAGRAM_URL || "#";
 
   return (
     <footer className="bg-footer-background text-footer-foreground py-12 mt-auto">
@@ -47,22 +52,24 @@ export default function Footer({ dictionary, lang }: FooterProps) {
              <h3 className="text-md font-display font-semibold mb-3 uppercase tracking-wider">{dictionary.contactTitle}</h3>
             <div className="flex items-center justify-center md:justify-start space-x-2">
               <Mail size={18} className="text-accent"/>
-              <a href={`mailto:${dictionary.email}`} className="text-sm font-body hover:text-accent transition-colors">{dictionary.email}</a>
+              <a href={`mailto:${contactEmail}`} className="text-sm font-body hover:text-accent transition-colors">{contactEmail}</a>
             </div>
             <div className="flex items-center justify-center md:justify-start space-x-2">
               <Phone size={18} className="text-accent"/>
-              <a href={`tel:${dictionary.phone.replace(/\s/g, '')}`} className="text-sm font-body hover:text-accent transition-colors">{dictionary.phone}</a>
+              <a href={`tel:${contactPhone.replace(/\s|-/g, '')}`} className="text-sm font-body hover:text-accent transition-colors">{contactPhone}</a>
             </div>
             <div className="flex justify-center md:justify-start space-x-4 mt-4">
-              <Link href="#" aria-label="LinkedIn" className="text-footer-foreground hover:text-accent transition-colors">
+              <Link href={linkedinUrl} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="text-footer-foreground hover:text-accent transition-colors">
                 <Linkedin size={22} />
               </Link>
-              <Link href="#" aria-label="Instagram" className="text-footer-foreground hover:text-accent transition-colors">
+              <Link href={instagramUrl} aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="text-footer-foreground hover:text-accent transition-colors">
                 <Instagram size={22} />
               </Link>
+              {/* Facebook icon and link removed/commented out
               <Link href="#" aria-label="Facebook" className="text-footer-foreground hover:text-accent transition-colors">
                 <Facebook size={22} />
               </Link>
+              */}
             </div>
           </div>
         </div>
