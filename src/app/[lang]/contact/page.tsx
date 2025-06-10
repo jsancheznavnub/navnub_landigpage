@@ -1,3 +1,4 @@
+
 import type { Locale } from '@/app/i18n-config';
 import { getDictionary } from '@/lib/dictionaries';
 import ContactForm from '@/components/ContactForm';
@@ -7,6 +8,10 @@ import { Mail, Phone, MapPin } from 'lucide-react';
 export default async function ContactPage({ params: { lang } }: { params: { lang: Locale } }) {
   const dictionary = await getDictionary(lang);
   const d = dictionary.contactPage;
+
+  const contactAddress = process.env.NEXT_PUBLIC_CONTACT_ADDRESS || d.addressDetail;
+  const contactPhone = process.env.NEXT_PUBLIC_CONTACT_PHONE || d.phoneDetail;
+  const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || d.emailDetail;
 
   return (
     <div className="space-y-12">
@@ -32,15 +37,15 @@ export default async function ContactPage({ params: { lang } }: { params: { lang
           <CardContent className="space-y-4 text-body text-foreground">
             <div className="flex items-start">
               <MapPin className="h-6 w-6 text-accent mr-3 mt-1 flex-shrink-0" />
-              <span>{d.addressDetail}</span>
+              <span>{contactAddress}</span>
             </div>
             <div className="flex items-center">
               <Phone className="h-6 w-6 text-accent mr-3 flex-shrink-0" />
-              <a href={`tel:${d.phoneDetail.replace(/\s/g, '')}`} className="hover:text-primary">{d.phoneDetail}</a>
+              <a href={`tel:${contactPhone.replace(/\s|-/g, '')}`} className="hover:text-primary">{contactPhone}</a>
             </div>
             <div className="flex items-center">
               <Mail className="h-6 w-6 text-accent mr-3 flex-shrink-0" />
-              <a href={`mailto:${d.emailDetail}`} className="hover:text-primary">{d.emailDetail}</a>
+              <a href={`mailto:${contactEmail}`} className="hover:text-primary">{contactEmail}</a>
             </div>
           </CardContent>
         </Card>
