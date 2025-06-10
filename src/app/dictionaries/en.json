@@ -474,7 +474,104 @@
       "title": "Important Note",
       "content": "This document is a draft for discussion. For final implementation, it is essential that an attorney specialized in technology and commercial law review and adapt these Terms to the specific laws of all jurisdictions where Navnub operates and those of its clients, ensuring maximum legal protection for both parties and compliance with local and international regulations."
     }
+  },
+  "privacyPolicyPage": {
+    "mainTitle": "Navnub Privacy Policy",
+    "effectiveDate": "Effective Date: {date}",
+    "introduction": "At Navnub, a leading company in the field of Artificial Intelligence (AI) that merges technological innovation with cloud-based solutions and artificial intelligence, our mission is to merge creativity with advanced technology to create exceptional digital experiences. We are dedicated to protecting your privacy and safeguarding your personal data. This Privacy Policy describes how Navnub ('we', 'our', 'Navnub') collects, uses, discloses, and protects the personal information you provide to us or that we collect through our website www.navnub.com and our services.",
+    "section1": {
+      "title": "1. What information do we collect?",
+      "intro": "We collect different types of information in connection with your use of our services:",
+      "subsection1": {
+        "title": "Information you provide directly to us:",
+        "item1": "Contact details: Name, email address, phone number, postal address, when you register on our site, request a demo, subscribe to our newsletter, contact us, or use our chatbots.",
+        "item2": "Company data: Company name, size, industry sector, and specific details about your web development, AI, or chatbot needs.",
+        "item3": "Account credentials: Usernames and passwords (encrypted) to access our services or platforms.",
+        "item4": "Communications: Content of your communications with us, including emails, phone calls, and messages via chatbots.",
+        "item5": "Payment information: Billing and transaction details if you contract our services (securely processed by third parties)."
+      },
+      "subsection2": {
+        "title": "Information we collect automatically:",
+        "item1": "Usage data: Information about how you interact with our website and services, such as the pages you visit, the duration of your visit, the type of content you view, the features you use in our chatbots.",
+        "item2": "Technical device data: IP address, browser type, operating system, unique device identifiers, language settings, mobile network information, and diagnostic data.",
+        "item3": "Location data: Approximate location information derived from your IP address.",
+        "item4": "Cookies and similar technologies: As described in our Cookie Policy, we use cookies and other tracking technologies to collect information about your browsing activity and preferences."
+      }
+    },
+    "section2": {
+      "title": "2. How do we use your information?",
+      "intro": "We use the information collected for the following purposes:",
+      "item1": "To provide and maintain our services: To operate, maintain, and improve our website and the services we offer, including the development of websites, applications, AI solutions, and chatbots.",
+      "item2": "To personalize your experience: We leverage the power of artificial intelligence to drive personalization and predictive analysis, resulting in solutions that adapt and evolve alongside our clients' changing needs. This includes tailoring the content and features of our services to your interests.",
+      "item3": "To communicate with you: To respond to your inquiries, send you information about our services, updates, security alerts, and administrative communications.",
+      "item4": "For marketing and advertising: To send you marketing communications about Navnub products and services that we believe may be of interest to you, in accordance with your marketing preferences.",
+      "item5": "For analysis and improvement: To analyze the use of our services, understand trends, measure the effectiveness of our campaigns, and improve the functionality and performance of our site and solutions.",
+      "item6": "To ensure security: To detect, prevent, and address fraud, abuse, malicious or illegal activities, and to protect the rights and property of Navnub and our users.",
+      "item7": "For legal compliance: To comply with our legal obligations, resolve disputes, and enforce our agreements."
+    },
+    "section3": {
+      "title": "3. How do we share your information?",
+      "intro": "We do not sell your personal information to third parties. We may share your personal information in the following circumstances:",
+      "item1": "With your consent: When you give us explicit permission to share your information.",
+      "item2": "Service providers: We share information with third-party vendors who perform services on our behalf, such as web hosting, payment processing, data analysis, marketing services, and customer support. These providers are contractually obligated to protect your information and use it only for the purposes for which it was provided.",
+      "item3": "Business partners: We may share information with business partners to offer joint services or promotions, provided you have previously consented.",
+      "item4": "Legal compliance and protection: We may disclose information if we believe in good faith that it is necessary to comply with a legal obligation, protect our rights or property, prevent fraud, or protect the safety of our users or the public.",
+      "item5": "Business transfers: In the event of a merger, acquisition, sale of assets, or any other business transaction involving the transfer of our company to another entity, your personal information may be transferred as part of such transaction."
+    },
+    "section4": {
+      "title": "4. Legal Bases for Data Processing (GDPR)",
+      "intro": "If you are a user from the European Economic Area (EEA), our legal basis for collecting and using the personal information described in this Privacy Policy will depend on the personal information concerned and the specific context in which we collect it:",
+      "item1": "Performance of a contract: When processing is necessary to perform a contract with you (e.g., to provide the services you have requested).",
+      "item2": "Consent: When you have given us your consent to do so.",
+      "item3": "Legitimate interests: When processing is necessary for our legitimate interests or those of a third party, and your interests and fundamental rights do not override those interests (e.g., to improve our services, direct marketing).",
+      "item4": "Legal obligation: When processing is necessary to comply with a legal obligation."
+    },
+    "section5": {
+      "title": "5. International Data Transfer",
+      "content": "As Navnub operates globally and uses cloud-based solutions, your personal information may be transferred to and stored on servers located outside your country of residence, including the United States. We will ensure that such transfers are made in accordance with applicable data protection laws and that appropriate safeguards (e.g., standard contractual clauses, data transfer frameworks) are implemented to protect your information."
+    },
+    "section6": {
+      "title": "6. Your Data Protection Rights",
+      "intro": "Depending on your location and applicable privacy laws, you may have the following rights regarding your personal information:",
+      "item1": "Right of Access: Request a copy of the personal information we hold about you.",
+      "item2": "Right of Rectification: Request correction of any incomplete or inaccurate personal information.",
+      "item3": "Right to Erasure ('Right to be Forgotten'): Request the deletion of your personal information in certain circumstances.",
+      "item4": "Right to Restriction of Processing: Request the restriction of processing of your personal information in certain circumstances.",
+      "item5": "Right to Data Portability: Request the transfer of your personal information to another organization, or directly to you, in a structured, commonly used, and machine-readable format.",
+      "item6": "Right to Object: Object to the processing of your personal information in certain circumstances (e.g., for direct marketing purposes).",
+      "item7": "Right to Withdraw Consent: If we rely on your consent to process your personal information, you have the right to withdraw your consent at any time.",
+      "outro": "To exercise any of these rights, please contact us using the contact information provided at the end of this Privacy Policy. We may ask you to verify your identity before responding to your request."
+    },
+    "section7": {
+      "title": "7. Data Security",
+      "content": "At Navnub, we transform ideas into digital realities, where every line of code and every design are testaments to our commitment to excellence and limitless innovation. We apply appropriate technical, organizational, and physical security measures to protect your personal information against unauthorized access, disclosure, alteration, or destruction. These measures include encryption, firewalls, access controls, and data security procedures. However, no data transmission over the Internet or electronic storage system can guarantee 100% security."
+    },
+    "section8": {
+      "title": "8. Data Retention",
+      "content": "We will retain your personal information only for as long as necessary to fulfill the purposes for which we collected it, including compliance with any legal, accounting, or reporting requirements. When your personal information is no longer needed, we will securely delete or anonymize it."
+    },
+    "section9": {
+      "title": "9. Links to Third-Party Websites",
+      "content": "Our website and services may contain links to other websites that are not operated by Navnub. We have no control over the content, privacy policies, or practices of third-party websites and assume no responsibility for them. We recommend that you review the privacy policies of each site you visit."
+    },
+    "section10": {
+      "title": "10. Children's Privacy",
+      "content": "Our services are not directed to individuals under the age of 16. We do not knowingly collect personal information from children under 16. If you are a parent or guardian and know that your child has provided us with personal information, please contact us. If we become aware that we have collected personal information from children without verification of parental consent, we will take steps to remove that information from our servers."
+    },
+    "section11": {
+      "title": "11. Changes to This Privacy Policy",
+      "content": "We reserve the right to update this Privacy Policy periodically to reflect changes in our practices or legal requirements. We will notify you of any significant changes by posting the updated Privacy Policy on our website and updating the 'Effective Date' at the top of this page. We recommend that you review this Privacy Policy regularly to stay informed about our privacy practices."
+    },
+    "section12": {
+      "title": "12. Contact",
+      "intro": "If you have questions or concerns about this Privacy Policy or our data practices, you can contact Navnub through:",
+      "item1": "Email: [Insert privacy contact email, e.g., privacy@navnub.com]",
+      "item2": "Postal address: [Insert Navnub's physical address, if applicable]",
+      "item3": "Through our website: www.navnub.com"
+    },
+    "legalNotice": {
+      "title": "IMPORTANT LEGAL NOTICE:",
+      "content": "This document is a draft and is for informational purposes only. It does not constitute legal advice. Data protection laws are complex and vary significantly by jurisdiction. To ensure Navnub's Privacy Policy complies with all applicable regulations (including GDPR, CCPA, LGPD, etc.) and adequately protects both the company and users, it is essential that it be reviewed, adapted, and approved by an attorney specializing in privacy and data protection law before its publication and application."
+    }
   }
 }
-
-    

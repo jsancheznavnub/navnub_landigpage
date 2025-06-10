@@ -32,7 +32,7 @@ export default function Footer({ dictionary, lang }: FooterProps) {
           {/* Column 2: Legal Links */}
           <div className="space-y-2">
             <h3 className="text-md font-display font-semibold mb-3 uppercase tracking-wider">{dictionary.legalLinksTitle}</h3>
-            <Link href="#" className="block text-sm font-body hover:text-accent transition-colors">{dictionary.privacyPolicy}</Link>
+            <Link href={`/${lang}/privacy-policy`} className="block text-sm font-body hover:text-accent transition-colors">{dictionary.privacyPolicy}</Link>
             <Link href={`/${lang}/terms-of-service`} className="block text-sm font-body hover:text-accent transition-colors">{dictionary.termsOfService}</Link>
             <button
               onClick={openCookiePolicyModal}
@@ -79,5 +79,3 @@ export default function Footer({ dictionary, lang }: FooterProps) {
     </footer>
   );
 }
-
-    

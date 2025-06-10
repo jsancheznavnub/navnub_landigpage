@@ -407,7 +407,7 @@
       },
       "clientContent": {
         "title": "Contenido del Cliente",
-        "content": "El Cliente conservará la propiedad intelectual de todo el contenido, datos y materiales que proporcione a Navnub para la prestación de los servicios. El Cliente otorga a Navnub una licencia no exclusiva, mundial, libre de regalías, sublicenciable y transferible para usar, reproducir, modificar, adaptar, publicar y distribuir dicho contenido únicamente con el fin de proporcionar los servicios contratados. El Cliente garantiza que tiene todos los derechos y permisos necesarios para proporcionar dicho contenido a Navnub."
+        "content": "El Cliente conservará la propiedad intelectual de todo el contenido, datos y materiales que proporcione a Navnub para la prestación de los servicios. El Cliente otorga a Navnub una licencia no exclusiva, mundial, libre de regalías, sublicensable y transferible para usar, reproducir, modificar, adaptar, publicar y distribuir dicho contenido únicamente con el fin de proporcionar los servicios contratados. El Cliente garantiza que tiene todos los derechos y permisos necesarios para proporcionar dicho contenido a Navnub."
       },
       "specificDevelopments": {
         "title": "Desarrollos Específicos",
@@ -428,7 +428,7 @@
     },
     "section8": {
       "title": "8. Exención de Garantías",
-      "content": "Navnub se dedica a la excelencia y la innovación constante y se esfuerza por ofrecer experiencias digitales excepcionales. Sin embargo, los servicios de Navnub se proporcionan \"tal cual\" y \"según disponibilidad\", sin garantías de ningún tipo, ya sean expresas o implícitas, incluyendo, pero no limitándose a, garantías implícitas de comerciabilidad, idoneidad para un propósito particular o no infracción. Navnub no garantiza que los servicios serán ininterrumpidos, libres de errores, seguros o que los defectos serán corregidos. Cualquier garantía específica sobre el rendimiento o características de un servicio particular será exclusivamente la establecida en un Acuerdo de Nivel de Servicio (SLA) adjunto al contrato de proyecto individual."
+      "content": "Navnub se dedica a la excelencia y la innovación constante y se esfuerza por ofrecer experiencias digitales excepcionales. Sin embargo, los servicios de Navnub se proporcionan 'tal cual' y 'según disponibilidad', sin garantías de ningún tipo, ya sean expresas o implícitas, incluyendo, pero no limitándose a, garantías implícitas de comerciabilidad, idoneidad para un propósito particular o no infracción. Navnub no garantiza que los servicios serán ininterrumpidos, libres de errores, seguros o que los defectos serán corregidos. Cualquier garantía específica sobre el rendimiento o características de un servicio particular será exclusivamente la establecida en un Acuerdo de Nivel de Servicio (SLA) adjunto al contrato de proyecto individual."
     },
     "section9": {
       "title": "9. Limitación de Responsabilidad",
@@ -436,7 +436,7 @@
     },
     "section10": {
       "title": "10. Indemnización",
-      "content": "Usted acepta defender, indemnizar y eximir de responsabilidad a Navnub y a sus directores, empleados, socios, agentes, proveedores y afiliados, de y contra cualquier reclamo, demanda, daño, obligación, pérdida, responsabilidad, costo o deuda, y gastos (incluidos, entre otros, honorarios de abogados razonables), que surjan de o estén relacionados con: a) su uso y acceso a los servicios; b) su incumplimiento de cualquiera de estos Términos; c) el contenido que usted proporcione o transmita a través de los servicios; d) su violación de cualquier derecho de terceros, incluidos, entre otros, cualquier derecho de propiedad intelectual, privacidad o derecho de un tercero; e) su conducta negligente o intencional."
+      "content": "Usted acepta defender, indemnizar y eximir de responsabilidad a Navnub y a sus directores, empleados, socios, agentes, proveedores y afiliados, de y contra cualquier reclamo, demanda, daño, obligación, pérdida, responsabilidad, costo o deuda, y gastos (incluidos, entre otros, honorarios de abogados razonables), que surjan de o estén relacionados con: a) su uso y acceso a los servicios; b) su incumplimiento de cualquiera de estos Términos; c) el contenido que usted proporcione o transmita a través de los servicios; d) su violación de cualquier derecho de terceros, incluyendo sin limitación cualquier derecho de propiedad intelectual, privacidad, o derecho de un tercero; e) su conducta negligente o intencional."
     },
     "section11": {
       "title": "11. Fuerza Mayor",
@@ -444,7 +444,7 @@
     },
     "section12": {
       "title": "12. Terminación",
-      "content": "Navnub puede terminar o suspender su acceso a los servicios inmediatamente, sin previo aviso o responsabilidad, por cualquier motivo, incluyendo, sin limitación, si usted incumple estos Términos. Tras la terminación, su derecho a usar los servicios cesará inmediatamente. Las disposiciones de estos Términos que por su naturaleza deberían sobrevivir a la terminación, incluyendo, sin limitación, las disposiciones de propiedad intelectual, exención de garantías, limitación de responsabilidad, indemnización y ley aplicable, seguirán en pleno vigor y efecto."
+      "content": "Navnub puede terminar o suspender su acceso a los servicios inmediatamente, sin previo aviso o responsabilidad, por cualquier motivo whatsoever, incluyendo sin limitación si usted incumple estos Términos. Tras la terminación, su derecho a usar los servicios cesará inmediatamente. Las disposiciones de estos Términos que por su naturaleza deberían sobrevivir a la terminación, incluyendo, sin limitación, las disposiciones de propiedad intelectual, exención de garantías, limitación de responsabilidad, indemnización y ley aplicable, seguirán en pleno vigor y efecto."
     },
     "section13": {
       "title": "13. Subcontratación",
@@ -472,9 +472,106 @@
     },
     "finalNote": {
       "title": "Nota Importante",
-      "content": "Este documento es un borrador para discusión. Para la implementación final, es imprescindible que un abogado especializado en derecho tecnológico y comercial revise y adapte estos Términos a las leyes específicas de todas las jurisdicciones donde Navnub opera y a las de sus clientes, garantizando la máxima protección legal para ambas partes y la conformidad con la normativa local e internacional."
+      "content": "Este documento es un borrador para discusión. Para la implementación final, es esencial que un abogado especializado en derecho tecnológico y comercial revise y adapte estos Términos a las leyes específicas de todas las jurisdicciones donde Navnub opera y a las de sus clientes, garantizando la máxima protección legal para ambas partes y la conformidad con la normativa local e internacional."
+    }
+  },
+  "privacyPolicyPage": {
+    "mainTitle": "Política de Privacidad de Navnub",
+    "effectiveDate": "Fecha de entrada en vigor: {date}",
+    "introduction": "En Navnub, una empresa líder en el campo de la Inteligencia Artificial (AI) que fusiona la innovación tecnológica con soluciones basadas en la nube e inteligencia artificial , nuestra misión es fusionar la creatividad con la tecnología avanzada para crear experiencias digitales excepcionales. Nos dedicamos a la protección de su privacidad y a la salvaguarda de sus datos personales. Esta Política de Privacidad describe cómo Navnub (\"nosotros\", \"nuestro\", \"Navnub\") recopila, utiliza, divulga y protege la información personal que usted nos proporciona o que recopilamos a través de nuestro sitio web www.navnub.com y de nuestros servicios.",
+    "section1": {
+      "title": "1. ¿Qué información recopilamos?",
+      "intro": "Recopilamos diferentes tipos de información en relación con su uso de nuestros servicios:",
+      "subsection1": {
+        "title": "Información que usted nos proporciona directamente:",
+        "item1": "Datos de contacto: Nombre, dirección de correo electrónico, número de teléfono, dirección postal, cuando usted se registra en nuestro sitio, solicita una demostración, se suscribe a nuestro boletín, contacta con nosotros o utiliza nuestros chatbots.",
+        "item2": "Datos de la empresa: Nombre de la empresa, tamaño, sector industrial, y detalles específicos sobre sus necesidades de desarrollo web, AI o chatbots.",
+        "item3": "Credenciales de cuenta: Nombres de usuario y contraseñas (cifradas) para acceder a nuestros servicios o plataformas.",
+        "item4": "Comunicaciones: Contenido de sus comunicaciones con nosotros, incluyendo correos electrónicos, llamadas telefónicas y mensajes a través de chatbots.",
+        "item5": "Información de pago: Detalles de facturación y transacciones si contrata nuestros servicios (procesada de forma segura por terceros)."
+      },
+      "subsection2": {
+        "title": "Información que recopilamos automáticamente:",
+        "item1": "Datos de uso: Información sobre cómo interactúa con nuestro sitio web y servicios, como las páginas que visita, la duración de su visita, el tipo de contenido que ve, las funciones que utiliza en nuestros chatbots.",
+        "item2": "Datos técnicos del dispositivo: Dirección IP, tipo de navegador, sistema operativo, identificadores únicos del dispositivo, configuración de idioma, información de la red móvil y datos de diagnóstico.",
+        "item3": "Datos de ubicación: Información de ubicación aproximada derivada de su dirección IP.",
+        "item4": "Cookies y tecnologías similares: Como se describe en nuestra Política de Cookies, utilizamos cookies y otras tecnologías de seguimiento para recopilar información sobre su actividad de navegación y preferencias."
+      }
+    },
+    "section2": {
+      "title": "2. ¿Cómo utilizamos su información?",
+      "intro": "Utilizamos la información recopilada para los siguientes propósitos:",
+      "item1": "Para proporcionar y mantener nuestros servicios: Para operar, mantener y mejorar nuestro sitio web y los servicios que ofrecemos, incluyendo el desarrollo de sitios web, aplicaciones, soluciones de AI y chatbots.",
+      "item2": "Para personalizar su experiencia: Aprovechamos la potencia de la inteligencia artificial para impulsar la personalización y el análisis predictivo , lo que resulta en soluciones que se adaptan y evolucionan junto con las necesidades cambiantes de nuestros clientes. Esto incluye adaptar el contenido y las características de nuestros servicios a sus intereses.",
+      "item3": "Para comunicarnos con usted: Para responder a sus consultas, enviarle información sobre nuestros servicios, actualizaciones, alertas de seguridad y comunicaciones administrativas.",
+      "item4": "Para marketing y publicidad: Para enviarle comunicaciones de marketing sobre productos y servicios de Navnub que creemos que pueden ser de su interés, de acuerdo con sus preferencias de marketing.",
+      "item5": "Para análisis y mejora: Para analizar el uso de nuestros servicios, comprender las tendencias, medir la efectividad de nuestras campañas y mejorar la funcionalidad y el rendimiento de nuestro sitio y soluciones.",
+      "item6": "Para garantizar la seguridad: Para detectar, prevenir y abordar fraudes, abusos, actividades maliciosas o ilegales, y para proteger los derechos y la propiedad de Navnub y de nuestros usuarios.",
+      "item7": "Para el cumplimiento legal: Para cumplir con nuestras obligaciones legales, resolver disputas y hacer cumplir nuestros acuerdos."
+    },
+    "section3": {
+      "title": "3. ¿Cómo compartimos su información?",
+      "intro": "No vendemos su información personal a terceros. Podemos compartir su información personal en las siguientes circunstancias:",
+      "item1": "Con su consentimiento: Cuando usted nos da permiso explícito para compartir su información.",
+      "item2": "Proveedores de servicios: Compartimos información con terceros proveedores que realizan servicios en nuestro nombre, como alojamiento web, procesamiento de pagos, análisis de datos, servicios de marketing y atención al cliente. Estos proveedores están obligados contractualmente a proteger su información y a utilizarla solo para los fines para los que se les proporcionó.",
+      "item3": "Socios comerciales: Podemos compartir información con socios comerciales para ofrecer servicios conjuntos o promociones, siempre que usted haya consentido previamente.",
+      "item4": "Cumplimiento legal y protección: Podemos divulgar información si creemos de buena fe que es necesario para cumplir con una obligación legal, proteger nuestros derechos o propiedad, prevenir fraudes, o proteger la seguridad de nuestros usuarios o del público.",
+      "item5": "Transferencias de negocio: En caso de una fusión, adquisición, venta de activos o cualquier otra transacción comercial que implique la transferencia de nuestra empresa a otra entidad, su información personal podría ser transferida como parte de dicha transacción."
+    },
+    "section4": {
+      "title": "4. Bases Legales para el Procesamiento de Datos (RGPD)",
+      "intro": "Si usted es un usuario del Espacio Económico Europeo (EEE), nuestra base legal para recopilar y utilizar la información personal descrita en esta Política de Privacidad dependerá de la información personal en cuestión y del contexto específico en el que la recopilamos:",
+      "item1": "Ejecución de un contrato: Cuando el procesamiento es necesario para ejecutar un contrato con usted (ej., para proporcionar los servicios que ha solicitado).",
+      "item2": "Consentimiento: Cuando usted nos ha dado su consentimiento para hacerlo.",
+      "item3": "Intereses legítimos: Cuando el procesamiento es necesario para nuestros intereses legítimos o los de un tercero, y sus intereses y derechos fundamentales no prevalecen sobre esos intereses (ej., para mejorar nuestros servicios, marketing directo).",
+      "item4": "Obligación legal: Cuando el procesamiento es necesario para cumplir con una obligación legal."
+    },
+    "section5": {
+      "title": "5. Transferencia Internacional de Datos",
+      "content": "Dado que Navnub opera a nivel global y utiliza soluciones basadas en la nube, su información personal puede ser transferida y almacenada en servidores ubicados fuera de su país de residencia, incluyendo Estados Unidos. Nos aseguraremos de que dichas transferencias se realicen de conformidad con las leyes de protección de datos aplicables y que se implementen salvaguardias adecuadas (ej. cláusulas contractuales tipo, marcos de transferencia de datos) para proteger su información."
+    },
+    "section6": {
+      "title": "6. Sus Derechos de Protección de Datos",
+      "intro": "Dependiendo de su ubicación y las leyes de privacidad aplicables, usted puede tener los siguientes derechos con respecto a su información personal:",
+      "item1": "Derecho de Acceso: Solicitar una copia de la información personal que tenemos sobre usted.",
+      "item2": "Derecho de Rectificación: Solicitar la corrección de cualquier información personal incompleta o inexacta.",
+      "item3": "Derecho de Supresión (\"Derecho al Olvido\"): Solicitar la eliminación de su información personal en ciertas circunstancias.",
+      "item4": "Derecho a la Limitación del Tratamiento: Solicitar la limitación del tratamiento de su información personal en ciertas circunstancias.",
+      "item5": "Derecho a la Portabilidad de Datos: Solicitar la transferencia de su información personal a otra organización, o directamente a usted, en un formato estructurado, de uso común y lectura mecánica.",
+      "item6": "Derecho de Oposición: Oponerse al procesamiento de su información personal en ciertas circunstancias (ej., para fines de marketing directo).",
+      "item7": "Derecho a retirar el consentimiento: Si basamos el procesamiento de su información personal en el consentimiento, usted tiene derecho a retirar su consentimiento en cualquier momento.",
+      "outro": "Para ejercer cualquiera de estos derechos, por favor contáctenos utilizando la información de contacto proporcionada al final de esta Política de Privacidad. Es posible que le solicitemos verificar su identidad antes de responder a su solicitud."
+    },
+    "section7": {
+      "title": "7. Seguridad de los Datos",
+      "content": "En Navnub, transformamos ideas en realidades digitales, donde cada línea de código y cada diseño son testimonios de nuestro compromiso con la excelencia y la innovación sin límites. Aplicamos medidas de seguridad técnicas, organizativas y físicas apropiadas para proteger su información personal contra el acceso no autorizado, la divulgación, la alteración o la destrucción. Estas medidas incluyen cifrado, firewalls, controles de acceso y procedimientos de seguridad de datos. Sin embargo, ninguna transmisión de datos por Internet o sistema de almacenamiento electrónico puede garantizar una seguridad del 100%."
+    },
+    "section8": {
+      "title": "8. Retención de Datos",
+      "content": "Retendremos su información personal solo durante el tiempo necesario para cumplir con los fines para los que la recopilamos, incluyendo el cumplimiento de cualquier requisito legal, contable o de informes. Cuando su información personal ya no sea necesaria, la eliminaremos o la anonimizaremos de forma segura."
+    },
+    "section9": {
+      "title": "9. Enlaces a Sitios Web de Terceros",
+      "content": "Nuestro sitio web y servicios pueden contener enlaces a otros sitios web que no son operados por Navnub. No tenemos control sobre el contenido, las políticas de privacidad o las prácticas de los sitios web de terceros y no asumimos ninguna responsabilidad por ellos. Le recomendamos revisar las políticas de privacidad de cada sitio que visite."
+    },
+    "section10": {
+      "title": "10. Privacidad de los Niños",
+      "content": "Nuestros servicios no están dirigidos a personas menores de 16 años. No recopilamos a sabiendas información personal de niños menores de 16 años. Si usted es padre o tutor y sabe que su hijo nos ha proporcionado información personal, contáctenos. Si nos damos cuenta de que hemos recopilado información personal de niños sin verificación del consentimiento de los padres, tomaremos medidas para eliminar esa información de nuestros servidores."
+    },
+    "section11": {
+      "title": "11. Cambios en esta Política de Privacidad",
+      "content": "Nos reservamos el derecho de actualizar esta Política de Privacidad periódicamente para reflejar cambios en nuestras prácticas o requisitos legales. Le notificaremos sobre cualquier cambio significativo publicando la Política de Privacidad actualizada en nuestro sitio web y actualizando la \"Fecha de entrada en vigor\" en la parte superior de esta página. Le recomendamos revisar esta Política de Privacidad regularmente para estar al tanto de nuestras prácticas de privacidad."
+    },
+    "section12": {
+      "title": "12. Contacto",
+      "intro": "Si tiene preguntas o inquietudes sobre esta Política de Privacidad o nuestras prácticas de datos, puede ponerse en contacto con Navnub a través de:",
+      "item1": "Correo electrónico: [Insertar correo electrónico de contacto de privacidad, ej. privacidad@navnub.com]",
+      "item2": "Dirección postal: [Insertar dirección física de Navnub, si aplica]",
+      "item3": "A través de nuestro sitio web: www.navnub.com"
+    },
+    "legalNotice": {
+      "title": "AVISO LEGAL IMPORTANTE:",
+      "content": "Este documento es un borrador y tiene fines informativos únicamente. No constituye asesoramiento legal. Las leyes de protección de datos son complejas y varían significativamente según la jurisdicción. Para asegurar que la Política de Privacidad de Navnub cumpla con todas las las normativas aplicables (incluyendo RGPD, CCPA, LGPD, etc.) y proteja adecuadamente tanto a la empresa como a los usuarios, es indispensable que sea revisada, adaptada y aprobada por un abogado especializado en derecho de la privacidad y protección de datos antes de su publicación y aplicación."
     }
   }
 }
-
-    
