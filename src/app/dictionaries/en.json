@@ -12,7 +12,6 @@
     "successCases": "Success Stories",
     "blog": "Blog",
     "contact": "Contact",
-    "ctaDemo": "Request a Demo",
     "navnubLogoAlt": "Navnub"
   },
   "themeToggle": {
@@ -112,6 +111,10 @@
     "title": "Contact Us",
     "description": "Let's discuss how Navnub can help your business thrive. Fill out the form below or reach out to us directly.",
     "form": {
+      "name": "Name",
+      "namePlaceholder": "Your Name",
+      "subject": "Subject",
+      "subjectPlaceholder": "e.g., Project Inquiry",
       "firstName": "First Name",
       "firstNamePlaceholder": "Your first name",
       "lastName": "Last Name",

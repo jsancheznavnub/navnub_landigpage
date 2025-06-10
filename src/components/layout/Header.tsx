@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import LanguageToggle from '@/components/LanguageToggle';
-import ThemeToggle from '@/components/ThemeToggle'; // Import ThemeToggle
+import ThemeToggle from '@/components/ThemeToggle';
 import type { Locale } from '@/app/i18n-config';
 import type { Dictionary } from '@/lib/dictionaries';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -18,7 +18,7 @@ import { cn } from "@/lib/utils";
 type HeaderProps = {
   lang: Locale;
   dictionary: Dictionary['navigation'];
-  themeDictionary: Dictionary['themeToggle']; // Add theme dictionary prop
+  themeDictionary: Dictionary['themeToggle'];
 };
 
 const NavLink = ({ href, children, lang, onClick, className }: { href: string; children: React.ReactNode; lang: Locale; onClick?: () => void; className?: string; }) => (
@@ -86,9 +86,7 @@ export default function Header({ lang, dictionary, themeDictionary }: HeaderProp
           <div className="hidden md:flex items-center space-x-3">
             <ThemeToggle dictionary={themeDictionary} />
             <LanguageToggle currentLocale={lang} />
-            <Button asChild size="sm" className="button-text bg-cta hover:bg-cta/90 text-cta-foreground px-4 py-2">
-              <Link href={`/${lang}/contact`}>{dictionary.ctaDemo}</Link>
-            </Button>
+            {/* Botón CTA "Solicita una Demo" eliminado */}
           </div>
 
           <div className="md:hidden flex items-center">
@@ -134,11 +132,7 @@ export default function Header({ lang, dictionary, themeDictionary }: HeaderProp
                         <NavLink href={link.href} lang={lang} className="block py-2">{link.label}</NavLink>
                      </SheetClose>
                   ))}
-                   <SheetClose asChild>
-                    <Button asChild size="sm" className="button-text bg-cta hover:bg-cta/90 text-cta-foreground w-full mt-4">
-                      <Link href={`/${lang}/contact`}>{dictionary.ctaDemo}</Link>
-                    </Button>
-                  </SheetClose>
+                  {/* Botón CTA "Solicita una Demo" eliminado del menú móvil también */}
                 </nav>
               </SheetContent>
             </Sheet>
