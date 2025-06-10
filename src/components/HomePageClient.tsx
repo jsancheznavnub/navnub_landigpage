@@ -1,3 +1,4 @@
+
 'use client';
 
 import React, { useRef } from 'react';
@@ -20,7 +21,7 @@ type HomePageClientProps = {
 
 export default function HomePageClient({ dictionary, testimonials }: HomePageClientProps) {
   const autoplayPlugin = useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: true, stopOnMouseEnter: true })
+    Autoplay({ delay: 3500, stopOnInteraction: true, stopOnMouseEnter: true })
   );
 
   return (
