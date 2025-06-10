@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { Quote } from 'lucide-react';
@@ -17,9 +18,9 @@ type TestimonialCardProps = {
 
 export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
-    <Card className="shadow-lg hover:shadow-xl transition-shadow duration-300 h-full flex flex-col">
-      <CardHeader className="flex flex-row items-center space-x-4 p-6">
-        <div className="relative w-16 h-16 rounded-full overflow-hidden">
+    <Card className="bg-card border border-border/70 shadow-xl hover:shadow-2xl transition-shadow duration-300 h-full flex flex-col rounded-xl overflow-hidden">
+      <CardHeader className="flex flex-row items-center space-x-4 p-6 bg-muted/50">
+        <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-primary">
           <Image
             src={testimonial.imageUrl}
             alt={testimonial.name}
@@ -33,9 +34,9 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
           <p className="text-sm text-muted-foreground">{testimonial.company}</p>
         </div>
       </CardHeader>
-      <CardContent className="pt-0 p-6 flex-grow">
-        <Quote className="w-8 h-8 text-accent mb-2" />
-        <p className="text-body text-foreground italic">"{testimonial.quote}"</p>
+      <CardContent className="pt-6 p-6 flex-grow bg-background">
+        <Quote className="w-10 h-10 text-accent mb-4 transform -scale-x-100" strokeWidth={1.5}/>
+        <p className="text-body text-foreground italic leading-relaxed">"{testimonial.quote}"</p>
       </CardContent>
     </Card>
   );

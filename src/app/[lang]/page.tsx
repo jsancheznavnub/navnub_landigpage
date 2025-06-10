@@ -1,27 +1,14 @@
 
-'use client' 
-
 import type { Locale } from '@/app/i18n-config';
 import { getDictionary } from '@/lib/dictionaries';
 import HeroSection from '@/components/sections/HeroSection';
 import ServicesSection from '@/components/sections/ServicesSection';
 import WhyNavnubSection from '@/components/sections/WhyNavnubSection';
 import ChatbotCTASection from '@/components/sections/ChatbotCTASection';
-import TestimonialCard, { type Testimonial } from '@/components/TestimonialCard';
-import { Card, CardContent } from '@/components/ui/card';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import React, { useEffect, useState, useRef } from 'react';
-import type { Dictionary } from '@/lib/dictionaries';
+import HomePageClient from '@/components/HomePageClient'; // New Client Component
+import type { Testimonial } from '@/components/TestimonialCard';
 
-
-// Placeholder data for testimonials - This should ideally come from a shared source or API
+// Placeholder data for testimonials - This can remain here or be moved if preferred
 const staticTestimonials: Testimonial[] = [
   {
     id: '1',
@@ -65,59 +52,27 @@ const staticTestimonials: Testimonial[] = [
   },
 ];
 
-// This component now needs to be a client component because of the carousel hooks
-export default function HomePage({ params: { lang } }: { params: { lang: Locale } }) {
-  const [dictionary, setDictionary] = useState<Dictionary | null>(null);
-
-  useEffect(() => {
-    async function fetchDictionary() {
-      const dict = await getDictionary(lang);
-      setDictionary(dict);
-    }
-    fetchDictionary();
-  }, [lang]);
-
-  const autoplayPlugin = useRef(
-    Autoplay({ delay: 5000, stopOnInteraction: true, stopOnMouseEnter: true })
-  );
-
-  if (!dictionary) {
-    // You can render a loading state here if needed
-    return <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">Loading...</div>;
-  }
+export default async function HomePage({ params: { lang } }: { params: { lang: Locale } }) {
+  const dictionary = await getDictionary(lang);
 
   return (
-    <div className="space-y-16 md:space-y-24">
+    <div className="space-y-20 md:space-y-32">
       <HeroSection dictionary={dictionary.hero} lang={lang} />
-      <ServicesSection dictionary={dictionary.services} />
+      
+      <div className="bg-muted/30 py-16 md:py-24">
+        <ServicesSection dictionary={dictionary.services} />
+      </div>
 
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-center text-primary mb-12">{dictionary.homePageTestimonials.title}</h2>
-          <Carousel
-            plugins={[autoplayPlugin.current]}
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-1">
-              {staticTestimonials.map((testimonial) => (
-                <CarouselItem key={testimonial.id} className="pl-1 md:basis-1/2 lg:basis-1/3">
-                  <div className="p-1 h-full">
-                    <TestimonialCard testimonial={testimonial} />
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious className="ml-12" />
-            <CarouselNext className="mr-12" />
-          </Carousel>
-        </div>
-      </section>
+      {/* Client component handles the carousel and its state */}
+      <HomePageClient
+        dictionary={dictionary.homePageTestimonials}
+        testimonials={staticTestimonials}
+      />
 
-      <WhyNavnubSection dictionary={dictionary.whyNavnub} />
+      <div className="bg-card py-16 md:py-24">
+        <WhyNavnubSection dictionary={dictionary.whyNavnub} />
+      </div>
+      
       <ChatbotCTASection dictionary={dictionary.chatbotCTA} lang={lang} />
     </div>
   );
