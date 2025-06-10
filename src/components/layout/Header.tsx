@@ -13,10 +13,12 @@ type HeaderProps = {
 };
 
 const NavLink = ({ href, children, lang, onClick }: { href: string; children: React.ReactNode; lang: Locale; onClick?: () => void }) => (
-  <Link href={`/${lang}${href}`} passHref legacyBehavior>
-    <a onClick={onClick} className="nav-text text-foreground hover:text-primary transition-colors px-3 py-2 rounded-md">
-      {children}
-    </a>
+  <Link
+    href={`/${lang}${href}`}
+    onClick={onClick}
+    className="nav-text text-foreground hover:text-primary transition-colors px-3 py-2 rounded-md"
+  >
+    {children}
   </Link>
 );
 
