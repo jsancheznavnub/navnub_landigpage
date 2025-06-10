@@ -72,7 +72,7 @@ export default function Header({ lang, dictionary, themeDictionary }: HeaderProp
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link href={`/${lang}`} className="flex items-center space-x-2">
-            <span className="text-2xl font-bold font-display text-primary">{dictionary.navnubLogoAlt}</span>
+            <span className="text-2xl font-bold font-display text-foreground dark:text-primary">{dictionary.navnubLogoAlt}</span>
           </Link>
 
           <nav className="hidden md:flex items-center space-x-1">
@@ -102,7 +102,7 @@ export default function Header({ lang, dictionary, themeDictionary }: HeaderProp
               <SheetContent side="right" className="w-[280px] bg-background p-6 border-l border-border">
                 <div className="flex justify-between items-center mb-6">
                    <Link href={`/${lang}`} className="flex items-center space-x-2">
-                     <span className="text-2xl font-bold font-display text-primary">{dictionary.navnubLogoAlt}</span>
+                     <span className="text-2xl font-bold font-display text-foreground dark:text-primary">{dictionary.navnubLogoAlt}</span>
                    </Link>
                   <SheetClose asChild>
                      <Button variant="ghost" size="icon">
