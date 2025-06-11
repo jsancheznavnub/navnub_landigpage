@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { Skeleton } from '@/components/ui/skeleton'; // Import Skeleton
 
 type EnhancedServiceCardProps = {
   title: string;
@@ -6,7 +7,9 @@ type EnhancedServiceCardProps = {
   benefits: string[];
   imageSrc: string;
   imageAlt?: string;
+  aiHint?: string;
   reverse?: boolean; // Para alternar imagen/texto
+  isLoading?: boolean; // Add isLoading prop
 };
 
 export default function EnhancedServiceCard({
@@ -15,10 +18,12 @@ export default function EnhancedServiceCard({
   benefits,
   imageSrc,
   imageAlt = '',
+  aiHint,
   reverse = false,
+  isLoading = false, // Default to false
 }: EnhancedServiceCardProps) {
   return (
-    <div className={`flex flex-col lg:flex-row ${reverse ? 'lg:flex-row-reverse' : ''} items-center bg-white shadow-md rounded-xl overflow-hidden mb-10`}>
+    <div className={`flex flex-col lg:flex-row ${reverse ? 'lg:flex-row-reverse' : ''} items-center bg-card shadow-md rounded-xl overflow-hidden mb-10`}>
       {/* Texto */}
       <div className="w-full lg:w-1/2 p-8">
         <h3 className="text-primary text-2xl font-bold mb-4">{title}</h3>
@@ -34,14 +39,19 @@ export default function EnhancedServiceCard({
       </div>
 
       {/* Imagen */}
-      <div className="w-full lg:w-1/2">
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          width={600}
-          height={400}
-          className="object-cover w-full h-full"
-        />
+      <div className="w-full lg:w-1/2 h-64 md:h-80 lg:h-auto relative">
+        {isLoading ? (
+          <Skeleton className="w-full h-full" />
+        ) : (
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            layout="fill" // Use fill to cover the container
+            objectFit="cover" // Ensure the image covers the area, might crop
+            className="w-full h-full" // These ensure it tries to fill the parent
+            data-ai-hint={aiHint}
+          />
+        )}
       </div>
     </div>
   );
