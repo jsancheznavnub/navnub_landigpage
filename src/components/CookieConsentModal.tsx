@@ -62,55 +62,58 @@ export default function CookieConsentModal({
         </AlertDialogHeader>
         
         <ScrollArea className="flex-grow">
-          <AlertDialogDescription className="space-y-4 text-sm text-foreground text-body pr-6">
-            {/* Cambiado <p> a <div> para evitar la anidación invalida */}
-            <div className="italic">{dictionary.effectiveDate?.replace('{date}', '10 de junio de 2025')}</div>
-            <div>{dictionary.introduction}</div>
+          {/* Añadir asChild={true} para asegurar que se renderice el div hijo en lugar del p por defecto */}
+          <AlertDialogDescription asChild={true}>
+            {/* Envuelve todo el contenido en un div para evitar anidación inválida */}
+            <div className="space-y-4 text-sm text-foreground text-body pr-6">
+              <div className="italic">{dictionary.effectiveDate?.replace('{date}', '10 de junio de 2025')}</div>
+              <div>{dictionary.introduction}</div>
 
-            <h3 className="font-semibold text-md text-primary pt-2">{dictionary.whatAreCookies?.title}</h3>
-            <div>{dictionary.whatAreCookies?.content}</div>
+              <h3 className="font-semibold text-md text-primary pt-2">{dictionary.whatAreCookies?.title}</h3>
+              <div>{dictionary.whatAreCookies?.content}</div>
 
-            <h3 className="font-semibold text-md text-primary pt-2">{dictionary.howWeUseCookies?.title}</h3>
-            <div>{dictionary.howWeUseCookies?.content}</div>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>{dictionary.howWeUseCookies?.item1}</li>
-              <li>{dictionary.howWeUseCookies?.item2}</li>
-              <li>{dictionary.howWeUseCookies?.item3}</li>
-              <li>{dictionary.howWeUseCookies?.item4}</li>
-            </ul>
-            <div>{dictionary.howWeUseCookies?.aiNote}</div>
+              <h3 className="font-semibold text-md text-primary pt-2">{dictionary.howWeUseCookies?.title}</h3>
+              <div>{dictionary.howWeUseCookies?.content}</div>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>{dictionary.howWeUseCookies?.item1}</li>
+                <li>{dictionary.howWeUseCookies?.item2}</li>
+                <li>{dictionary.howWeUseCookies?.item3}</li>
+                <li>{dictionary.howWeUseCookies?.item4}</li>
+              </ul>
+              <div>{dictionary.howWeUseCookies?.aiNote}</div>
 
-            <h3 className="font-semibold text-md text-primary pt-2">{dictionary.typesOfCookies?.title}</h3>
-            <div>{dictionary.typesOfCookies?.intro}</div>
-            <ul className="list-disc pl-5 space-y-2">
-              <li><strong>{dictionary.typesOfCookies?.strictlyNecessary?.title}:</strong> {dictionary.typesOfCookies?.strictlyNecessary?.content}</li>
-              <li><strong>{dictionary.typesOfCookies?.performance?.title}:</strong> {dictionary.typesOfCookies?.performance?.content}</li>
-              <li><strong>{dictionary.typesOfCookies?.functionality?.title}:</strong> {dictionary.typesOfCookies?.functionality?.content}</li>
-              <li><strong>{dictionary.typesOfCookies?.advertising?.title}:</strong> {dictionary.typesOfCookies?.advertising?.content}</li>
-            </ul>
-            
-            <h3 className="font-semibold text-md text-primary pt-2">{dictionary.thirdPartyCookies?.title}</h3>
-            <div>{dictionary.thirdPartyCookies?.content}</div>
-            
-            <h3 className="font-semibold text-md text-primary pt-2">{dictionary.yourConsent?.title}</h3>
-            <div>{dictionary.yourConsent?.content}</div>
+              <h3 className="font-semibold text-md text-primary pt-2">{dictionary.typesOfCookies?.title}</h3>
+              <div>{dictionary.typesOfCookies?.intro}</div>
+              <ul className="list-disc pl-5 space-y-2">
+                <li><strong>{dictionary.typesOfCookies?.strictlyNecessary?.title}:</strong> {dictionary.typesOfCookies?.strictlyNecessary?.content}</li>
+                <li><strong>{dictionary.typesOfCookies?.performance?.title}:</strong> {dictionary.typesOfCookies?.performance?.content}</li>
+                <li><strong>{dictionary.typesOfCookies?.functionality?.title}:</strong> {dictionary.typesOfCookies?.functionality?.content}</li>
+                <li><strong>{dictionary.typesOfCookies?.advertising?.title}:</strong> {dictionary.typesOfCookies?.advertising?.content}</li>
+              </ul>
+              
+              <h3 className="font-semibold text-md text-primary pt-2">{dictionary.thirdPartyCookies?.title}</h3>
+              <div>{dictionary.thirdPartyCookies?.content}</div>
+              
+              <h3 className="font-semibold text-md text-primary pt-2">{dictionary.yourConsent?.title}</h3>
+              <div>{dictionary.yourConsent?.content}</div>
 
-            <h3 className="font-semibold text-md text-primary pt-2">{dictionary.managingPreferences?.title}</h3>
-            <div>{dictionary.managingPreferences?.intro}</div>
-            <ul className="list-disc pl-5 space-y-1">
-              <li>{dictionary.managingPreferences?.item1}</li>
-              <li>{dictionary.managingPreferences?.item2}</li>
-              <li>{dictionary.managingPreferences?.item3}</li>
-            </ul>
+              <h3 className="font-semibold text-md text-primary pt-2">{dictionary.managingPreferences?.title}</h3>
+              <div>{dictionary.managingPreferences?.intro}</div>
+              <ul className="list-disc pl-5 space-y-1">
+                <li>{dictionary.managingPreferences?.item1}</li>
+                <li>{dictionary.managingPreferences?.item2}</li>
+                <li>{dictionary.managingPreferences?.item3}</li>
+              </ul>
 
-            <h3 className="font-semibold text-md text-primary pt-2">{dictionary.dataRetention?.title}</h3>
-            <div>{dictionary.dataRetention?.content}</div>
-            
-            <h3 className="font-semibold text-md text-primary pt-2">{dictionary.policyUpdates?.title}</h3>
-            <div>{dictionary.policyUpdates?.content}</div>
+              <h3 className="font-semibold text-md text-primary pt-2">{dictionary.dataRetention?.title}</h3>
+              <div>{dictionary.dataRetention?.content}</div>
+              
+              <h3 className="font-semibold text-md text-primary pt-2">{dictionary.policyUpdates?.title}</h3>
+              <div>{dictionary.policyUpdates?.content}</div>
 
-            <h3 className="font-semibold text-md text-primary pt-2">{dictionary.contact?.title}</h3>
-            <div>{dictionary.contact?.content}</div>
+              <h3 className="font-semibold text-md text-primary pt-2">{dictionary.contact?.title}</h3>
+              <div>{dictionary.contact?.content}</div>
+            </div>
           </AlertDialogDescription>
         </ScrollArea>
 
