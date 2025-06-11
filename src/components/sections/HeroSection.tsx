@@ -15,9 +15,8 @@ export default function HeroSection({ dictionary, lang }: HeroSectionProps) {
       <Image 
         src="https://placehold.co/1920x1080.png" 
         alt="Modern abstract technology background for Navnub hero section" 
-        layout="fill" 
-        objectFit="cover" 
-        className="absolute inset-0 z-0 opacity-30"
+        fill={true}
+        className="absolute inset-0 z-0 opacity-30 object-cover"
         data-ai-hint="abstract technology"
         priority
       />

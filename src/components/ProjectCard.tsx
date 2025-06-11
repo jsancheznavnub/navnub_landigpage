@@ -24,8 +24,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <Image
           src={project.imageUrl}
           alt={project.title}
-          layout="fill"
-          objectFit="cover"
+          fill={true}
+          className="object-cover"
           data-ai-hint={project.imageHint}
         />
       </div>

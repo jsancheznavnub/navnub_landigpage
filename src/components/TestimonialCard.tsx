@@ -24,8 +24,8 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
           <Image
             src={testimonial.imageUrl}
             alt={testimonial.name}
-            layout="fill"
-            objectFit="cover"
+            fill={true}
+            className="object-cover"
             data-ai-hint={testimonial.imageHint}
           />
         </div>

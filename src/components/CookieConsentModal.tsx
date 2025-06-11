@@ -62,8 +62,9 @@ export default function CookieConsentModal({
         </AlertDialogHeader>
         
         <ScrollArea className="flex-grow">
-          <AlertDialogDescription className="space-y-4 text-sm text-foreground text-body pr-6"> {/* Añadido pr-6 aquí para el contenido */}
-            <p className="italic">{dictionary.effectiveDate?.replace('{date}', '10 de junio de 2025')}</p>
+          <AlertDialogDescription className="space-y-4 text-sm text-foreground text-body pr-6">
+            {/* Cambiado <p> a <div> para evitar la anidación invalida */}
+            <div className="italic">{dictionary.effectiveDate?.replace('{date}', '10 de junio de 2025')}</div>
             <div>{dictionary.introduction}</div>
 
             <h3 className="font-semibold text-md text-primary pt-2">{dictionary.whatAreCookies?.title}</h3>
