@@ -34,17 +34,32 @@
     "cloudSolutions": {
       "title": "Soluciones en la Nube",
       "description": "Infraestructura y servicios en la nube a medida para PYMEs, garantizando escalabilidad y eficiencia.",
-      "seeMore": "Ver Más"
+      "seeMore": "Ver Más",
+      "benefits": [
+        "Escalabilidad y Eficiencia",
+        "Seguridad Mejorada",
+        "Perspectivas con IA"
+      ]
     },
     "webDevelopment": {
       "title": "Desarrollo Web y Apps",
       "description": "Creación de sitios web y aplicaciones de alta calidad enfocados en la experiencia de usuario y rendimiento.",
-      "seeMore": "Ver Más"
+      "seeMore": "Ver Más",
+      "benefits": [
+        "Diseño UX/UI Personalizado",
+        "Aplicaciones de Alto Rendimiento",
+        "Enfoque Mobile-First"
+      ]
     },
     "chatbots": {
       "title": "Chatbots y Automatización",
       "description": "Chatbots personalizados con integración en WhatsApp Business y automatización de procesos impulsada por IA.",
-      "seeMore": "Ver Más"
+      "seeMore": "Ver Más",
+      "benefits": [
+        "Interacción 24/7 con Clientes",
+        "Automatización de Procesos",
+        "Integración con WhatsApp"
+      ]
     },
     "exploreButton": "Explorar Todos los Servicios"
   },
@@ -299,7 +314,7 @@
       "title": "2. ¿Cómo Utiliza Navnub las Cookies?",
       "content": "Utilizamos cookies y tecnologías de seguimiento similares para diversos fines, que incluyen:",
       "item1": "Funcionalidad esencial del sitio: Para permitir la navegación y las funciones básicas del sitio, como el acceso a áreas seguras.",
-      "item2": "Mejora de la experiencia del usuario: Para recordar sus preferencias y configuraciones, haciendo que su visita sea más eficiente y personalizada.",
+      "item2": "Mejora de la experiencia del usuario: Para recordar sus preferences y configuraciones, haciendo que su visita sea más eficiente y personalizada.",
       "item3": "Análisis y rendimiento: Para recopilar información sobre cómo los visitantes utilizan nuestro sitio web, lo que nos ayuda a mejorar su rendimiento y diseño.",
       "item4": "Publicidad dirigida: Para ofrecer anuncios relevantes basados en sus intereses y comportamiento de navegación.",
       "aiNote": "Navnub aprovecha la potencia de la inteligencia artificial para impulsar la personalización y el análisis predictivo, y esto se extiende a la forma en que optimizamos la experiencia del usuario a través de las cookies."
@@ -570,3 +585,5 @@
     }
   }
 }
+
+    

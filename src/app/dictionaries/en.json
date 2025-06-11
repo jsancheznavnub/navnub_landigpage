@@ -34,17 +34,32 @@
     "cloudSolutions": {
       "title": "Cloud Solutions",
       "description": "Tailored cloud infrastructure and services for PYMEs, ensuring scalability and efficiency.",
-      "seeMore": "See More"
+      "seeMore": "See More",
+      "benefits": [
+        "Scalability & Efficiency",
+        "Enhanced Security",
+        "AI-Powered Insights"
+      ]
     },
     "webDevelopment": {
       "title": "Web & App Development",
       "description": "Creation of high-quality websites and applications focused on user experience and performance.",
-      "seeMore": "See More"
+      "seeMore": "See More",
+      "benefits": [
+        "Custom UX/UI Design",
+        "High Performance Apps",
+        "Mobile-First Approach"
+      ]
     },
     "chatbots": {
       "title": "Chatbots & Automation",
       "description": "Custom chatbots with WhatsApp Business integration and AI-powered process automation.",
-      "seeMore": "See More"
+      "seeMore": "See More",
+      "benefits": [
+        "24/7 Customer Engagement",
+        "Business Process Automation",
+        "Seamless WhatsApp Integration"
+      ]
     },
     "exploreButton": "Explore All Services"
   },
@@ -570,3 +585,5 @@
     }
   }
 }
+
+    

@@ -1,41 +1,59 @@
-import { Cloud, Code, Bot } from 'lucide-react';
+
 import type { Dictionary } from '@/lib/dictionaries';
-import ServiceCard from '@/components/ServiceCard';
+import EnhancedServiceCard from '@/components/EnhancedServiceCard';
 
 type ServicesSectionProps = {
   dictionary: Dictionary['services'];
 };
 
 export default function ServicesSection({ dictionary }: ServicesSectionProps) {
-  const services = [
+  const serviceItems = [
     {
-      icon: <Cloud size={40} strokeWidth={1.5} className="text-primary" />,
       title: dictionary.cloudSolutions.title,
       description: dictionary.cloudSolutions.description,
+      benefits: dictionary.cloudSolutions.benefits || [],
+      imageSrc: '/images/cloud-ai.jpg',
+      imageAlt: 'AI Powered Cloud Solutions', 
+      reverse: false,
     },
     {
-      icon: <Code size={40} strokeWidth={1.5} className="text-primary" />,
       title: dictionary.webDevelopment.title,
       description: dictionary.webDevelopment.description,
+      benefits: dictionary.webDevelopment.benefits || [],
+      imageSrc: '/images/web-dev.jpg',
+      imageAlt: 'Innovative Web and App Development',
+      reverse: true,
     },
     {
-      icon: <Bot size={40} strokeWidth={1.5} className="text-primary" />,
       title: dictionary.chatbots.title,
       description: dictionary.chatbots.description,
+      benefits: dictionary.chatbots.benefits || [],
+      imageSrc: '/images/chatbots.jpg',
+      imageAlt: 'Intelligent Chatbots and Automation',
+      reverse: false,
     },
   ];
 
   return (
-    <section className="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="text-center mb-16 md:mb-20">
-        <h2 className="text-foreground">{dictionary.title}</h2>
+    <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="text-center mb-16">
+        <h2 className="text-foreground text-3xl font-bold">{dictionary.title}</h2>
         <div className="mt-4 h-1 w-20 bg-accent mx-auto rounded-full"></div>
       </div>
-      <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-        {services.map((service) => (
-          <ServiceCard key={service.title} {...service} />
-        ))}
-      </div>
+
+      {serviceItems.map((service, index) => (
+        <EnhancedServiceCard
+          key={index}
+          title={service.title}
+          description={service.description}
+          benefits={service.benefits}
+          imageSrc={service.imageSrc}
+          imageAlt={service.imageAlt}
+          reverse={service.reverse}
+        />
+      ))}
     </section>
   );
 }
+
+    

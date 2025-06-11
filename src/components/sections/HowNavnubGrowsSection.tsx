@@ -90,6 +90,7 @@ export default function HowNavnubGrowsSection({ dictionary }: HowNavnubGrowsSect
                 layout="fill"
                 objectFit="cover"
                 data-ai-hint="team collaboration office"
+                sizes="(max-width: 768px) 100vw, 50vw" // Added sizes prop
               />
             ) : (
                 <div className="w-full h-full bg-gray-200 flex items-center justify-center text-gray-500">
