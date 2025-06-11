@@ -20,18 +20,37 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-// This would typically be a server action in a separate file or defined with 'use server'
 async function submitContactForm(data: FormData): Promise<{ success: boolean; message: string }> {
-  // 'use server'; // Uncomment if defining action in the same file as a server component
-  console.log('Form data submitted:', data);
-  // Simulate API call
-  await new Promise(resolve => setTimeout(resolve, 1000));
-  // Simulate a random success/failure for demonstration
-  // In a real app, this would interact with your backend (e.g., send an email, save to DB)
-  if (Math.random() > 0.2) {
-    return { success: true, message: "Message sent successfully!" };
-  } else {
-    return { success: false, message: "Failed to send message. Please try again." };
+  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+  if (!backendUrl) {
+    console.error("NEXT_PUBLIC_BACKEND_URL is not defined in .env");
+    return { success: false, message: "Backend URL is not configured." };
+  }
+
+  try {
+    const response = await fetch(`${backendUrl}/v1/contact_messages`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      // Assuming the backend returns a success message or similar on 2xx status
+      // You might want to read the response body if it contains useful info
+      // const result = await response.json();
+      console.log("Backend response OK"); // Added log
+      return { success: true, message: "Message sent successfully!" };
+    } else {
+      // Handle non-2xx responses
+      const errorBody = await response.text(); // or .json() if backend sends JSON error
+      console.error("Failed to send message:", response.status, errorBody); // Added log
+      return { success: false, message: `Failed to send message: ${response.statusText}` };
+    }
+  } catch (error) {
+    console.error("Error submitting form:", error); // Added log
+    return { success: false, message: "An error occurred while sending the message." };
   }
 }
 
@@ -48,18 +67,24 @@ export default function ContactForm({ dictionary }: ContactFormProps) {
   });
 
   const onSubmit: SubmitHandler<FormData> = (data) => {
+    console.log('onSubmit triggered'); // Log al inicio
     startTransition(async () => {
-      const result = await submitContactForm(data); // Call the (simulated) server action
+      console.log('startTransition started'); // Log al inicio de la transición
+      const result = await submitContactForm(data);
+      console.log('submitContactForm result:', result); // Log del resultado
       if (result.success) {
+        console.log('Submission successful, attempting to reset form.'); // Log en caso de éxito
         toast({
           title: "Success",
           description: dictionary.success,
         });
         reset();
+        console.log('Form reset called.'); // Log después de llamar a reset
       } else {
+        console.log('Submission failed:', result.message); // Log en caso de error
         toast({
           title: "Error",
-          description: dictionary.error,
+          description: result.message, // Use the message from the submit function
           variant: "destructive",
         });
       }
@@ -93,7 +118,7 @@ export default function ContactForm({ dictionary }: ContactFormProps) {
       </div>
 
       <Button type="submit" disabled={isPending} size="lg" className="w-full button-text bg-secondary hover:bg-secondary/90 text-secondary-foreground">
-        {isPending ? 'Sending...' : dictionary.submit}
+        {isPending ? 'Enviando...' : dictionary.submit}
       </Button>
     </form>
   );
