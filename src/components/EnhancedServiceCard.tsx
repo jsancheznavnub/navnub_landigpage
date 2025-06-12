@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Skeleton } from '@/components/ui/skeleton'; // Import Skeleton
+import { Skeleton } from '@/components/ui/skeleton';
 
 type EnhancedServiceCardProps = {
   title: string;
@@ -8,8 +8,8 @@ type EnhancedServiceCardProps = {
   imageSrc: string;
   imageAlt?: string;
   aiHint?: string;
-  reverse?: boolean; // Para alternar imagen/texto
-  isLoading?: boolean; // Add isLoading prop
+  reverse?: boolean;
+  isLoading?: boolean;
 };
 
 export default function EnhancedServiceCard({
@@ -20,12 +20,11 @@ export default function EnhancedServiceCard({
   imageAlt = '',
   aiHint,
   reverse = false,
-  isLoading = false, // Default to false
+  isLoading = false,
 }: EnhancedServiceCardProps) {
   return (
-    <div className={`flex flex-col lg:flex-row ${reverse ? 'lg:flex-row-reverse' : ''} items-center bg-card shadow-md rounded-xl overflow-hidden mb-10`}>
-      {/* Texto */}
-      <div className="w-full lg:w-1/2 p-8">
+    <div className={`flex flex-col lg:flex-row ${reverse ? 'lg:flex-row-reverse' : ''} items-stretch bg-card shadow-md rounded-xl overflow-hidden mb-10 min-h-[350px] md:min-h-[400px]`}>
+      <div className="w-full lg:w-1/2 p-8 flex flex-col justify-center">
         <h3 className="text-primary text-2xl font-bold mb-4">{title}</h3>
         <p className="text-muted-foreground mb-6 leading-relaxed">{description}</p>
         <ul className="space-y-2 text-foreground text-sm">
@@ -38,17 +37,22 @@ export default function EnhancedServiceCard({
         </ul>
       </div>
 
-      {/* Imagen */}
-      <div className="w-full lg:w-1/2 h-64 md:h-80 lg:h-auto relative">
+      <div className="w-full lg:w-1/2 relative">
         {isLoading ? (
-          <Skeleton className="w-full h-full" />
+          <Skeleton className="absolute inset-0 w-full h-full" />
         ) : (
           <Image
             src={imageSrc}
             alt={imageAlt}
-            fill // Use fill to cover the container
-            className="w-full h-full object-cover" // These ensure it tries to fill the parent and cover the area
+            layout="fill"
+            objectFit="cover"
+            className="w-full h-full"
             data-ai-hint={aiHint}
+            onError={(e) => {
+              // Fallback to a placeholder if the image fails to load
+              e.currentTarget.srcset = "https://placehold.co/600x400.png?text=Error";
+              e.currentTarget.src = "https://placehold.co/600x400.png?text=Error";
+            }}
           />
         )}
       </div>
