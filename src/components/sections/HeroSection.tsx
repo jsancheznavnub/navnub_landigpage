@@ -101,7 +101,11 @@ export default function HeroSection({ dictionary, lang }: HeroSectionProps) {
           <Button asChild size="lg" className="button-text text-lg px-10 py-7 bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg transform hover:scale-105 transition-transform duration-300">
             <Link href={`/${lang}/solutions`}>{dictionary.ctaExplore}</Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="button-text text-lg px-10 py-7 text-primary-foreground border-primary-foreground/50 hover:bg-primary-foreground/10 hover:border-primary-foreground shadow-md">
+          <Button 
+            asChild 
+            size="lg" 
+            className="button-text text-lg px-10 py-7 bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg transform hover:scale-105 transition-transform duration-300"
+          >
             <Link href={`/${lang}/contact`}>{dictionary.ctaContact}</Link>
           </Button>
         </div>
