@@ -46,7 +46,7 @@ export default function EnhancedServiceCard({
             alt={imageAlt}
             layout="fill"
             objectFit="contain"
-            className="w-full h-full p-4"
+            className="w-full h-full"
             data-ai-hint={aiHint}
             onError={(e) => {
               // Fallback to a placeholder if the image fails to load

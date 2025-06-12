@@ -60,7 +60,7 @@ export default function SolutionDetailCard({
               layout="fill"
               objectFit="contain"
               data-ai-hint={aiHint}
-              className="transition-opacity duration-500 ease-in-out p-4"
+              className="transition-opacity duration-500 ease-in-out"
               onError={(e) => {
                 // Fallback to a placeholder if the image fails to load
                 const target = e.target as HTMLImageElement;
