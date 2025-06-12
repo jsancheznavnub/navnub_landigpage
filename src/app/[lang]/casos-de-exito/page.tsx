@@ -90,6 +90,14 @@ const getProjects = async (dscp: Dictionary['successCasesPage']): Promise<Projec
             currentImageUrl = signedUrl;
           }
         }
+      } else if (p.id === "4") {
+        const imageKey = process.env.NEXT_PUBLIC_SUCCESS_CASE_CLOUD_MIGRATION_IMAGE_KEY;
+        if (imageKey) {
+          const signedUrl = await fetchSignedUrlForImage(imageKey);
+          if (signedUrl) {
+            currentImageUrl = signedUrl;
+          }
+        }
       }
 
 
