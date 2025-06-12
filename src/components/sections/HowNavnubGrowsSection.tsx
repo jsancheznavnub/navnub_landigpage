@@ -5,59 +5,73 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import type { Dictionary } from '@/lib/dictionaries';
 import { Separator } from '@/components/ui/separator';
+import { Skeleton } from '@/components/ui/skeleton';
 
 type HowNavnubGrowsSectionProps = {
   dictionary: Dictionary['howNavnubGrows'];
 };
 
+const DEFAULT_IMAGE_PLACEHOLDER = "https://placehold.co/600x400.png?text=Growth+Strategy";
+
 export default function HowNavnubGrowsSection({ dictionary }: HowNavnubGrowsSectionProps) {
-  const [imageUrl, setImageUrl] = useState<string>(''); // Iniciar vacío para mostrar el spinner
+  const [imageUrl, setImageUrl] = useState<string>(DEFAULT_IMAGE_PLACEHOLDER);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchSignedUrl = async () => {
-      // Obtener la clave de la imagen de la variable de entorno
+      setLoading(true);
       const imageKey = process.env.NEXT_PUBLIC_HOW_NAVNUB_GROWS_IMAGE_KEY;
       const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
 
-      if (!imageKey) {
-        console.error("NEXT_PUBLIC_HOW_NAVNUB_GROWS_IMAGE_KEY is not defined in .env");
-        setLoading(false);
-        return;
-      }
-
       if (!backendUrl) {
-        console.error("NEXT_PUBLIC_BACKEND_URL is not defined in .env");
+        console.error("HowNavnubGrowsSection: NEXT_PUBLIC_BACKEND_URL is not defined.");
+        setImageUrl(DEFAULT_IMAGE_PLACEHOLDER);
         setLoading(false);
         return;
       }
 
-      // Construir la URL correcta con el query parameter usando la variable de entorno
+      if (!backendUrl.startsWith('http://') && !backendUrl.startsWith('https://')) {
+        console.error(`HowNavnubGrowsSection: NEXT_PUBLIC_BACKEND_URL ("${backendUrl}") is not a valid absolute URL. It must start with http:// or https://.`);
+        setImageUrl(DEFAULT_IMAGE_PLACEHOLDER);
+        setLoading(false);
+        return;
+      }
+      
+      if (!imageKey) {
+        console.warn("HowNavnubGrowsSection: NEXT_PUBLIC_HOW_NAVNUB_GROWS_IMAGE_KEY is not defined. Using placeholder.");
+        setImageUrl(DEFAULT_IMAGE_PLACEHOLDER);
+        setLoading(false);
+        return;
+      }
+
       const apiUrl = `${backendUrl}/v1/media/s3-signed-url?key=${encodeURIComponent(imageKey)}`;
+      // console.log(`HowNavnubGrowsSection: Fetching from ${apiUrl}`);
 
       try {
         const response = await fetch(apiUrl);
-
         if (response.ok) {
-          const data = await response.json(); // El backend devuelve { "url": "...", "expires_in": ... }
+          const data = await response.json();
           if (data.url) {
             setImageUrl(data.url);
-            console.log('Image URL fetched successfully from API.', data.url); // Log para confirmar
           } else {
-            console.error('La respuesta de la API no contiene una URL.', data);
+            console.error('HowNavnubGrowsSection: API response did not contain a URL.', data);
+            setImageUrl(DEFAULT_IMAGE_PLACEHOLDER);
           }
         } else {
-          console.error('Falló la obtención de la URL firmada:', response.status, response.statusText);
+          const errorText = await response.text();
+          console.error(`HowNavnubGrowsSection: Failed to fetch signed URL from ${apiUrl}. Status: ${response.status}, Response: ${errorText}`);
+          setImageUrl(DEFAULT_IMAGE_PLACEHOLDER);
         }
       } catch (error) {
-        console.error('Error en la llamada a la API:', error);
+        console.error(`HowNavnubGrowsSection: Error fetching from ${apiUrl}:`, error);
+        setImageUrl(DEFAULT_IMAGE_PLACEHOLDER);
       } finally {
         setLoading(false);
       }
     };
 
     fetchSignedUrl();
-  }, []); // El array vacío asegura que esto se ejecute solo una vez
+  }, []);
 
   const steps = [
     {
@@ -81,22 +95,19 @@ export default function HowNavnubGrowsSection({ dictionary }: HowNavnubGrowsSect
         <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
           <div className="relative w-full h-72 sm:h-80 md:h-[450px] rounded-lg overflow-hidden shadow-xl border border-transparent hover:shadow-2xl hover:border-primary/50 transition-all duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-103">
             {loading ? (
-              <div className="w-full h-full bg-gray-200 animate-pulse flex items-center justify-center text-gray-500">
-                Cargando imagen...
-              </div>
-            ) : imageUrl ? (
+              <Skeleton className="w-full h-full" />
+            ) : (
               <Image
                 src={imageUrl}
-                alt={dictionary.title}
+                alt={dictionary.title} // Consider a more descriptive alt based on the image content
                 layout="fill"
                 objectFit="cover"
-                data-ai-hint="coding programming"
-                sizes="(max-width: 768px) 100vw, 50vw" // Added sizes prop
+                data-ai-hint="coding programming" // Updated hint
+                sizes="(max-width: 768px) 100vw, 50vw"
+                onError={() => {
+                  setImageUrl(DEFAULT_IMAGE_PLACEHOLDER); // Fallback on error
+                }}
               />
-            ) : (
-                <div className="w-full h-full bg-gray-200 flex items-center justify-center text-gray-500">
-                    No se pudo cargar la imagen.
-                </div>
             )}
           </div>
           <div className="space-y-8">

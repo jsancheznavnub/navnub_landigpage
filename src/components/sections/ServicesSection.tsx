@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -8,29 +9,37 @@ type ServicesSectionProps = {
   dictionary: Dictionary['services'];
 };
 
-async function fetchSignedUrlForImage(imageKey: string): Promise<string | null> {
+async function fetchSignedUrlForImage(imageKey: string | undefined, context: string): Promise<string | null> {
   const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
   if (!backendUrl) {
-    console.error("fetchSignedUrlForImage: NEXT_PUBLIC_BACKEND_URL is not defined in .env. Cannot fetch signed URL.");
+    console.error(`fetchSignedUrlForImage (${context}): NEXT_PUBLIC_BACKEND_URL is not defined. Cannot fetch signed URL.`);
     return null;
+  }
+  if (!backendUrl.startsWith('http://') && !backendUrl.startsWith('https://')) {
+    console.error(`fetchSignedUrlForImage (${context}): NEXT_PUBLIC_BACKEND_URL ("${backendUrl}") is not a valid absolute URL. It must start with http:// or https://.`);
+    return null;
+  }
+  if (!imageKey) {
+    // console.warn(`fetchSignedUrlForImage (${context}): imageKey is not provided or is undefined. Will use placeholder.`);
+    return null; // Return null so placeholder can be used
   }
 
   const apiUrl = `${backendUrl}/v1/media/s3-signed-url?key=${encodeURIComponent(imageKey)}`;
-  console.log("fetchSignedUrlForImage: Attempting to fetch from API URL:", apiUrl);
+  // console.log(`fetchSignedUrlForImage (${context}): Attempting to fetch from API URL: ${apiUrl}`);
 
   try {
     const response = await fetch(apiUrl);
     if (response.ok) {
       const data = await response.json();
-      console.log(`fetchSignedUrlForImage: Successfully fetched signed URL for ${imageKey}.`);
+      // console.log(`fetchSignedUrlForImage (${context}): Successfully fetched signed URL for ${imageKey}.`);
       return data.url || null;
     } else {
       const errorText = await response.text();
-      console.error(`fetchSignedUrlForImage: Failed to fetch signed URL for ${imageKey}. Status: ${response.status}, StatusText: ${response.statusText}, Response: ${errorText}`);
+      console.error(`fetchSignedUrlForImage (${context}): Failed to fetch signed URL for ${imageKey} from ${apiUrl}. Status: ${response.status}, Response: ${errorText}`);
       return null;
     }
   } catch (error) {
-    console.error(`fetchSignedUrlForImage: Error during fetch operation for ${imageKey}:`, error);
+    console.error(`fetchSignedUrlForImage (${context}): Error during fetch operation for ${imageKey} from ${apiUrl}:`, error);
     return null;
   }
 }
@@ -47,44 +56,14 @@ export default function ServicesSection({ dictionary }: ServicesSectionProps) {
     chatbots: true,
   });
 
-  useEffect(() => {
-    const imageKeysConfig = {
-      cloudSolutions: process.env.NEXT_PUBLIC_CLOUD_SOLUTIONS_IMAGE_KEY,
-      webDevelopment: process.env.NEXT_PUBLIC_WEB_DEV_IMAGE_KEY,
-      chatbots: process.env.NEXT_PUBLIC_CHATBOTS_IMAGE_KEY,
-    };
-
-    const fetchAllImages = async () => {
-      const urls: { [key: string]: string | null } = {};
-      const loadingStates: { [key: string]: boolean } = {};
-
-      for (const [serviceKey, imageKey] of Object.entries(imageKeysConfig)) {
-        loadingStates[serviceKey] = true; // Set loading true before fetch
-        if (imageKey) {
-          console.log(`Fetching image for ${serviceKey} with key ${imageKey}`);
-          urls[serviceKey] = await fetchSignedUrlForImage(imageKey);
-        } else {
-          console.log(`No image key found for ${serviceKey}. Using static placeholder or default.`);
-          // Fallback to a generic placeholder if no key is provided or if fetch fails
-          urls[serviceKey] = `https://placehold.co/600x400.png?text=${serviceKey.replace(/([A-Z])/g, ' $1').trim()}`;
-        }
-        loadingStates[serviceKey] = false; // Set loading false after fetch
-      }
-      
-      setImageUrls(urls);
-      setIsLoadingImages(loadingStates);
-    };
-
-    fetchAllImages();
-  }, []);
-
-  const serviceItems = [
+  const serviceDefinitions = [
     {
       key: 'cloudSolutions',
       title: dictionary.cloudSolutions.title,
       description: dictionary.cloudSolutions.description,
       benefits: dictionary.cloudSolutions.benefits || [],
-      imageSrc: isLoadingImages.cloudSolutions ? "https://placehold.co/600x400.png?text=Loading..." : (imageUrls.cloudSolutions || "https://placehold.co/600x400.png?text=Cloud+Solutions"),
+      envVarKey: process.env.NEXT_PUBLIC_CLOUD_SOLUTIONS_IMAGE_KEY,
+      placeholder: "https://placehold.co/600x400.png?text=Cloud+Solutions",
       imageAlt: 'AI Powered Cloud Solutions',
       aiHint: 'cloud computing tablet',
       reverse: false,
@@ -94,7 +73,8 @@ export default function ServicesSection({ dictionary }: ServicesSectionProps) {
       title: dictionary.webDevelopment.title,
       description: dictionary.webDevelopment.description,
       benefits: dictionary.webDevelopment.benefits || [],
-      imageSrc: isLoadingImages.webDevelopment ? "https://placehold.co/600x400.png?text=Loading..." : (imageUrls.webDevelopment || "https://placehold.co/600x400.png?text=Web+Development"),
+      envVarKey: process.env.NEXT_PUBLIC_WEB_DEV_IMAGE_KEY,
+      placeholder: "https://placehold.co/600x400.png?text=Web+Development",
       imageAlt: 'Innovative Web and App Development',
       aiHint: 'web design code',
       reverse: true,
@@ -104,12 +84,34 @@ export default function ServicesSection({ dictionary }: ServicesSectionProps) {
       title: dictionary.chatbots.title,
       description: dictionary.chatbots.description,
       benefits: dictionary.chatbots.benefits || [],
-      imageSrc: isLoadingImages.chatbots ? "https://placehold.co/600x400.png?text=Loading..." : (imageUrls.chatbots || "https://placehold.co/600x400.png?text=Chatbots"),
+      envVarKey: process.env.NEXT_PUBLIC_CHATBOTS_IMAGE_KEY,
+      placeholder: "https://placehold.co/600x400.png?text=Chatbots",
       imageAlt: 'Intelligent Chatbots and Automation',
       aiHint: 'chatbot interface',
       reverse: false,
     }
   ];
+
+
+  useEffect(() => {
+    const fetchAllImages = async () => {
+      const urls: { [key: string]: string | null } = {};
+      const loadingStates: { [key: string]: boolean } = {};
+
+      for (const service of serviceDefinitions) {
+        loadingStates[service.key] = true;
+        const signedUrl = await fetchSignedUrlForImage(service.envVarKey, `ServicesSection-${service.key}`);
+        urls[service.key] = signedUrl || service.placeholder; // Use placeholder if fetch fails or key is missing
+        loadingStates[service.key] = false;
+      }
+      
+      setImageUrls(urls);
+      setIsLoadingImages(loadingStates);
+    };
+
+    fetchAllImages();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // dictionary is not needed as dep as content is static within the effect's scope based on serviceDefinitions
 
   return (
     <section className="container mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -118,13 +120,13 @@ export default function ServicesSection({ dictionary }: ServicesSectionProps) {
         <div className="mt-4 h-1 w-20 bg-accent mx-auto rounded-full"></div>
       </div>
 
-      {serviceItems.map((service) => (
+      {serviceDefinitions.map((service) => (
         <EnhancedServiceCard
           key={service.key}
           title={service.title}
           description={service.description}
           benefits={service.benefits}
-          imageSrc={service.imageSrc}
+          imageSrc={imageUrls[service.key] || service.placeholder}
           imageAlt={service.imageAlt}
           aiHint={service.aiHint}
           reverse={service.reverse}

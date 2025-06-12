@@ -11,15 +11,20 @@ import HowNavnubGrowsSection from '@/components/sections/HowNavnubGrowsSection';
 async function fetchSignedUrlForImage(imageKey: string | undefined): Promise<string | null> {
   const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
   if (!backendUrl) {
-    console.error("fetchSignedUrlForImage: NEXT_PUBLIC_BACKEND_URL is not defined. Cannot fetch signed URL.");
+    console.error("fetchSignedUrlForImage (HomePage): NEXT_PUBLIC_BACKEND_URL is not defined. Cannot fetch signed URL.");
+    return null;
+  }
+  if (!backendUrl.startsWith('http://') && !backendUrl.startsWith('https://')) {
+    console.error(`fetchSignedUrlForImage (HomePage): NEXT_PUBLIC_BACKEND_URL ("${backendUrl}") is not a valid absolute URL. It must start with http:// or https://.`);
     return null;
   }
   if (!imageKey) {
-    console.warn("fetchSignedUrlForImage: imageKey is not provided or is undefined.");
+    console.warn("fetchSignedUrlForImage (HomePage): imageKey is not provided or is undefined.");
     return null;
   }
 
   const apiUrl = `${backendUrl}/v1/media/s3-signed-url?key=${encodeURIComponent(imageKey)}`;
+  // console.log(`fetchSignedUrlForImage (HomePage): Attempting to fetch from API URL: ${apiUrl}`);
   
   try {
     const response = await fetch(apiUrl, { cache: 'no-store' });
@@ -28,11 +33,11 @@ async function fetchSignedUrlForImage(imageKey: string | undefined): Promise<str
       return data.url || null;
     } else {
       const errorText = await response.text();
-      console.error(`fetchSignedUrlForImage: Failed to fetch signed URL for ${imageKey}. Status: ${response.status}, Response: ${errorText}`);
+      console.error(`fetchSignedUrlForImage (HomePage): Failed to fetch signed URL for ${imageKey} from ${apiUrl}. Status: ${response.status}, Response: ${errorText}`);
       return null;
     }
   } catch (error) {
-    console.error(`fetchSignedUrlForImage: Error during fetch operation for ${imageKey}:`, error);
+    console.error(`fetchSignedUrlForImage (HomePage): Error during fetch operation for ${imageKey} from ${apiUrl}:`, error);
     return null;
   }
 }

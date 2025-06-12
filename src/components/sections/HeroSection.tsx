@@ -17,15 +17,20 @@ type HeroSectionProps = {
 async function fetchSignedUrlForImage(imageKey: string | undefined): Promise<string | null> {
   const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
   if (!backendUrl) {
-    console.error("fetchSignedUrlForImage: NEXT_PUBLIC_BACKEND_URL is not defined. Cannot fetch signed URL.");
+    console.error("fetchSignedUrlForImage (HeroSection): NEXT_PUBLIC_BACKEND_URL is not defined. Cannot fetch signed URL.");
+    return null;
+  }
+  if (!backendUrl.startsWith('http://') && !backendUrl.startsWith('https://')) {
+    console.error(`fetchSignedUrlForImage (HeroSection): NEXT_PUBLIC_BACKEND_URL ("${backendUrl}") is not a valid absolute URL. It must start with http:// or https://.`);
     return null;
   }
   if (!imageKey) {
-    console.warn("fetchSignedUrlForImage: imageKey is not provided or is undefined.");
+    console.warn("fetchSignedUrlForImage (HeroSection): imageKey is not provided or is undefined.");
     return null;
   }
 
   const apiUrl = `${backendUrl}/v1/media/s3-signed-url?key=${encodeURIComponent(imageKey)}`;
+  // console.log(`fetchSignedUrlForImage (HeroSection): Attempting to fetch from API URL: ${apiUrl}`);
   
   try {
     const response = await fetch(apiUrl, { cache: 'no-store' });
@@ -34,11 +39,11 @@ async function fetchSignedUrlForImage(imageKey: string | undefined): Promise<str
       return data.url || null;
     } else {
       const errorText = await response.text();
-      console.error(`fetchSignedUrlForImage: Failed to fetch signed URL for ${imageKey}. Status: ${response.status}, Response: ${errorText}`);
+      console.error(`fetchSignedUrlForImage (HeroSection): Failed to fetch signed URL for ${imageKey} from ${apiUrl}. Status: ${response.status}, Response: ${errorText}`);
       return null;
     }
   } catch (error) {
-    console.error(`fetchSignedUrlForImage: Error during fetch operation for ${imageKey}:`, error);
+    console.error(`fetchSignedUrlForImage (HeroSection): Error during fetch operation for ${imageKey} from ${apiUrl}:`, error);
     return null;
   }
 }
@@ -58,11 +63,9 @@ export default function HeroSection({ dictionary, lang }: HeroSectionProps) {
         if (signedUrl) {
           setImageUrl(signedUrl);
         } else {
-          // Fallback to default if signed URL fails but key was present
           setImageUrl(DEFAULT_HERO_IMAGE); 
         }
       } else {
-        // Fallback to default if no key is present
         setImageUrl(DEFAULT_HERO_IMAGE);
       }
       setIsLoading(false);
@@ -84,7 +87,6 @@ export default function HeroSection({ dictionary, lang }: HeroSectionProps) {
           data-ai-hint="office work"
           priority
           onError={() => {
-            // In case the fetched URL also fails, fallback to the absolute placeholder
             setImageUrl(DEFAULT_HERO_IMAGE);
           }}
         />

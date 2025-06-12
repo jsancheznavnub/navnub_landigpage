@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState, useEffect, type ReactElement, use } from 'react'; // Import use
+import { useState, useEffect, type ReactElement, use } from 'react';
 import type { Locale } from '@/app/i18n-config';
 import { getDictionary, type Dictionary } from '@/lib/dictionaries';
 import SolutionDetailCard from '@/components/SolutionDetailCard';
@@ -9,18 +9,23 @@ import { Cloud, Code, Bot } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
 import React from 'react';
 
-async function fetchSignedUrlForImage(imageKey: string | undefined): Promise<string | null> {
+async function fetchSignedUrlForImage(imageKey: string | undefined, context: string): Promise<string | null> {
   const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
   if (!backendUrl) {
-    console.error("fetchSignedUrlForImage: NEXT_PUBLIC_BACKEND_URL is not defined. Cannot fetch signed URL.");
+    console.error(`fetchSignedUrlForImage (${context}): NEXT_PUBLIC_BACKEND_URL is not defined. Cannot fetch signed URL.`);
+    return null;
+  }
+  if (!backendUrl.startsWith('http://') && !backendUrl.startsWith('https://')) {
+    console.error(`fetchSignedUrlForImage (${context}): NEXT_PUBLIC_BACKEND_URL ("${backendUrl}") is not a valid absolute URL. It must start with http:// or https://.`);
     return null;
   }
   if (!imageKey) {
-    console.warn("fetchSignedUrlForImage: imageKey is not provided or is undefined.");
+    console.warn(`fetchSignedUrlForImage (${context}): imageKey is not provided or is undefined.`);
     return null;
   }
 
   const apiUrl = `${backendUrl}/v1/media/s3-signed-url?key=${encodeURIComponent(imageKey)}`;
+  // console.log(`fetchSignedUrlForImage (${context}): Attempting to fetch from API URL: ${apiUrl}`);
   
   try {
     const response = await fetch(apiUrl);
@@ -29,18 +34,16 @@ async function fetchSignedUrlForImage(imageKey: string | undefined): Promise<str
       return data.url || null;
     } else {
       const errorText = await response.text();
-      console.error(`fetchSignedUrlForImage: Failed to fetch signed URL for ${imageKey}. Status: ${response.status}, Response: ${errorText}`);
+      console.error(`fetchSignedUrlForImage (${context}): Failed to fetch signed URL for ${imageKey} from ${apiUrl}. Status: ${response.status}, Response: ${errorText}`);
       return null;
     }
   } catch (error) {
-    console.error(`fetchSignedUrlForImage: Error during fetch operation for ${imageKey}:`, error);
+    console.error(`fetchSignedUrlForImage (${context}): Error during fetch operation for ${imageKey} from ${apiUrl}:`, error);
     return null;
   }
 }
 
-// Adjust the type of props.params to be Promise<{ lang: Locale }>
 export default function SolutionsPage(props: { params: Promise<{ lang: Locale }> }) {
-  // Use React.use to unwrap the params promise
   const resolvedParams = use(props.params);
   const lang = resolvedParams.lang;
 
@@ -79,7 +82,7 @@ export default function SolutionsPage(props: { params: Promise<{ lang: Locale }>
       setIsLoadingImages({ cloud: true, webDev: true, chatbots: true });
 
       for (const [serviceKey, imageKey] of Object.entries(imageKeysConfig)) {
-        const fetchedUrl = await fetchSignedUrlForImage(imageKey);
+        const fetchedUrl = await fetchSignedUrlForImage(imageKey, `SolutionsPage-${serviceKey}`);
         urls[serviceKey] = fetchedUrl;
       }
       setImageUrls(urls);
@@ -107,7 +110,7 @@ export default function SolutionsPage(props: { params: Promise<{ lang: Locale }>
       title: d.cloudTitle,
       description: d.cloudDescription,
       benefits: d.cloudBenefits || [],
-      icon: <Cloud size={32} strokeWidth={1.5}/>, // Ensure icon props consistent
+      icon: <Cloud size={32} strokeWidth={1.5}/>,
       imageAlt: "Cloud Solutions Illustration",
       aiHint: "cloud infrastructure data",
       defaultPlaceholder: "https://placehold.co/600x400.png?text=Cloud+Solutions"
@@ -117,7 +120,7 @@ export default function SolutionsPage(props: { params: Promise<{ lang: Locale }>
       title: d.webDevTitle,
       description: d.webDevDescription,
       benefits: d.webDevBenefits || [],
-      icon: <Code size={32} strokeWidth={1.5}/>, // Ensure icon props consistent
+      icon: <Code size={32} strokeWidth={1.5}/>,
       imageAlt: "Web Development Illustration",
       aiHint: "modern web application",
       defaultPlaceholder: "https://placehold.co/600x400.png?text=Web+Development"
@@ -127,7 +130,7 @@ export default function SolutionsPage(props: { params: Promise<{ lang: Locale }>
       title: d.chatbotsTitle,
       description: d.chatbotsDescription,
       benefits: d.chatbotsBenefits || [],
-      icon: <Bot size={32} strokeWidth={1.5}/>, // Ensure icon props consistent
+      icon: <Bot size={32} strokeWidth={1.5}/>,
       imageAlt: "Chatbots Illustration",
       aiHint: "ai chatbot conversation",
       defaultPlaceholder: "https://placehold.co/600x400.png?text=Chatbots"
