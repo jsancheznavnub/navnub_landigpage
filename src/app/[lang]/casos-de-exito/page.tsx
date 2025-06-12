@@ -106,6 +106,14 @@ const getProjects = async (dscp: Dictionary['successCasesPage']): Promise<Projec
             currentImageUrl = signedUrl;
           }
         }
+      } else if (p.id === "6") {
+        const imageKey = process.env.NEXT_PUBLIC_SUCCESS_CASE_AI_SALES_IMAGE_KEY;
+        if (imageKey) {
+          const signedUrl = await fetchSignedUrlForImage(imageKey);
+          if (signedUrl) {
+            currentImageUrl = signedUrl;
+          }
+        }
       }
 
 
