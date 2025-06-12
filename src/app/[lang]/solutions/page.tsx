@@ -1,7 +1,7 @@
 
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, type ReactElement } from 'react';
 import type { Locale } from '@/app/i18n-config';
 import { getDictionary, type Dictionary } from '@/lib/dictionaries';
 import SolutionDetailCard from '@/components/SolutionDetailCard';
@@ -38,7 +38,8 @@ async function fetchSignedUrlForImage(imageKey: string | undefined): Promise<str
 }
 
 
-export default function SolutionsPage({ params: { lang } }: { params: { lang: Locale } }) {
+export default function SolutionsPage(props: { params: { lang: Locale } }) {
+  const lang = props.params.lang;
   const [dictionary, setDictionary] = useState<Dictionary | null>(null);
   const [imageUrls, setImageUrls] = useState<{ [key: string]: string | null }>({
     cloud: null,
@@ -71,7 +72,6 @@ export default function SolutionsPage({ params: { lang } }: { params: { lang: Lo
     const fetchAllImages = async () => {
       const urls: { [key: string]: string | null } = {};
       
-      // Initialize loading states to true before fetching
       setIsLoadingImages({ cloud: true, webDev: true, chatbots: true });
 
       for (const [serviceKey, imageKey] of Object.entries(imageKeysConfig)) {
@@ -79,20 +79,19 @@ export default function SolutionsPage({ params: { lang } }: { params: { lang: Lo
         urls[serviceKey] = fetchedUrl;
       }
       setImageUrls(urls);
-      // Set all loading states to false after all fetches are attempted
       setIsLoadingImages({ cloud: false, webDev: false, chatbots: false });
     };
 
     fetchAllImages();
-  }, [dictionary]);
+  }, [dictionary]); // Added dictionary to dependency array
 
   if (!dictionary) {
     return (
       <div className="space-y-12 md:space-y-16 container mx-auto px-4 py-12">
         <Skeleton className="h-12 w-1/2 mx-auto mb-16 rounded-md" />
-        <Skeleton className="h-96 w-full rounded-xl mb-12" />
-        <Skeleton className="h-96 w-full rounded-xl mb-12" />
-        <Skeleton className="h-96 w-full rounded-xl" />
+        <Skeleton className="h-[400px] w-full rounded-xl mb-12" />
+        <Skeleton className="h-[400px] w-full rounded-xl mb-12" />
+        <Skeleton className="h-[400px] w-full rounded-xl" />
       </div>
     );
   }
@@ -103,8 +102,8 @@ export default function SolutionsPage({ params: { lang } }: { params: { lang: Lo
       key: 'cloud',
       title: d.cloudTitle,
       description: d.cloudDescription,
-      benefits: d.cloudBenefits,
-      icon: <Cloud />,
+      benefits: d.cloudBenefits || [],
+      icon: <Cloud size={28} strokeWidth={1.5}/>,
       imageAlt: "Cloud Solutions Illustration",
       aiHint: "cloud infrastructure data",
       defaultPlaceholder: "https://placehold.co/600x400.png?text=Cloud+Solutions"
@@ -113,8 +112,8 @@ export default function SolutionsPage({ params: { lang } }: { params: { lang: Lo
       key: 'webDev',
       title: d.webDevTitle,
       description: d.webDevDescription,
-      benefits: d.webDevBenefits,
-      icon: <Code />,
+      benefits: d.webDevBenefits || [],
+      icon: <Code size={28} strokeWidth={1.5}/>,
       imageAlt: "Web Development Illustration",
       aiHint: "modern web application",
       defaultPlaceholder: "https://placehold.co/600x400.png?text=Web+Development"
@@ -123,8 +122,8 @@ export default function SolutionsPage({ params: { lang } }: { params: { lang: Lo
       key: 'chatbots',
       title: d.chatbotsTitle,
       description: d.chatbotsDescription,
-      benefits: d.chatbotsBenefits,
-      icon: <Bot />,
+      benefits: d.chatbotsBenefits || [],
+      icon: <Bot size={28} strokeWidth={1.5}/>,
       imageAlt: "Chatbots Illustration",
       aiHint: "ai chatbot conversation",
       defaultPlaceholder: "https://placehold.co/600x400.png?text=Chatbots"
@@ -144,7 +143,7 @@ export default function SolutionsPage({ params: { lang } }: { params: { lang: Lo
           title={service.title}
           description={service.description}
           benefits={service.benefits}
-          icon={service.icon}
+          icon={service.icon as ReactElement}
           imageSrc={imageUrls[service.key] || service.defaultPlaceholder}
           imageAlt={service.imageAlt}
           aiHint={service.aiHint}
@@ -155,3 +154,4 @@ export default function SolutionsPage({ params: { lang } }: { params: { lang: Lo
     </div>
   );
 }
+
