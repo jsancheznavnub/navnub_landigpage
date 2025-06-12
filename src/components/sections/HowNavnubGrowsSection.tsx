@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -89,7 +90,7 @@ export default function HowNavnubGrowsSection({ dictionary }: HowNavnubGrowsSect
                 alt={dictionary.title}
                 layout="fill"
                 objectFit="cover"
-                data-ai-hint="team collaboration office"
+                data-ai-hint="coding programming"
                 sizes="(max-width: 768px) 100vw, 50vw" // Added sizes prop
               />
             ) : (
