@@ -1,12 +1,13 @@
 
 'use client';
 
-import { useState, useEffect, type ReactElement } from 'react';
+import { useState, useEffect, type ReactElement, use } from 'react'; // Import use
 import type { Locale } from '@/app/i18n-config';
 import { getDictionary, type Dictionary } from '@/lib/dictionaries';
 import SolutionDetailCard from '@/components/SolutionDetailCard';
 import { Cloud, Code, Bot } from 'lucide-react';
 import { Skeleton } from '@/components/ui/skeleton';
+import React from 'react';
 
 async function fetchSignedUrlForImage(imageKey: string | undefined): Promise<string | null> {
   const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
@@ -37,9 +38,12 @@ async function fetchSignedUrlForImage(imageKey: string | undefined): Promise<str
   }
 }
 
+// Adjust the type of props.params to be Promise<{ lang: Locale }>
+export default function SolutionsPage(props: { params: Promise<{ lang: Locale }> }) {
+  // Use React.use to unwrap the params promise
+  const resolvedParams = use(props.params);
+  const lang = resolvedParams.lang;
 
-export default function SolutionsPage(props: { params: { lang: Locale } }) {
-  const lang = props.params.lang;
   const [dictionary, setDictionary] = useState<Dictionary | null>(null);
   const [imageUrls, setImageUrls] = useState<{ [key: string]: string | null }>({
     cloud: null,
@@ -83,7 +87,7 @@ export default function SolutionsPage(props: { params: { lang: Locale } }) {
     };
 
     fetchAllImages();
-  }, [dictionary]); // Added dictionary to dependency array
+  }, [dictionary]); 
 
   if (!dictionary) {
     return (
@@ -103,7 +107,7 @@ export default function SolutionsPage(props: { params: { lang: Locale } }) {
       title: d.cloudTitle,
       description: d.cloudDescription,
       benefits: d.cloudBenefits || [],
-      icon: <Cloud size={28} strokeWidth={1.5}/>,
+      icon: <Cloud size={32} strokeWidth={1.5}/>, // Ensure icon props consistent
       imageAlt: "Cloud Solutions Illustration",
       aiHint: "cloud infrastructure data",
       defaultPlaceholder: "https://placehold.co/600x400.png?text=Cloud+Solutions"
@@ -113,7 +117,7 @@ export default function SolutionsPage(props: { params: { lang: Locale } }) {
       title: d.webDevTitle,
       description: d.webDevDescription,
       benefits: d.webDevBenefits || [],
-      icon: <Code size={28} strokeWidth={1.5}/>,
+      icon: <Code size={32} strokeWidth={1.5}/>, // Ensure icon props consistent
       imageAlt: "Web Development Illustration",
       aiHint: "modern web application",
       defaultPlaceholder: "https://placehold.co/600x400.png?text=Web+Development"
@@ -123,7 +127,7 @@ export default function SolutionsPage(props: { params: { lang: Locale } }) {
       title: d.chatbotsTitle,
       description: d.chatbotsDescription,
       benefits: d.chatbotsBenefits || [],
-      icon: <Bot size={28} strokeWidth={1.5}/>,
+      icon: <Bot size={32} strokeWidth={1.5}/>, // Ensure icon props consistent
       imageAlt: "Chatbots Illustration",
       aiHint: "ai chatbot conversation",
       defaultPlaceholder: "https://placehold.co/600x400.png?text=Chatbots"
@@ -154,4 +158,3 @@ export default function SolutionsPage(props: { params: { lang: Locale } }) {
     </div>
   );
 }
-
