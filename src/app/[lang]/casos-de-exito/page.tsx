@@ -74,7 +74,16 @@ const getProjects = async (dscp: Dictionary['successCasesPage']): Promise<Projec
             currentImageUrl = signedUrl;
           }
         }
+      } else if (p.id === "2") {
+        const imageKey = process.env.NEXT_PUBLIC_SUCCESS_CASE_ECOMMERCE_IMAGE_KEY;
+        if (imageKey) {
+          const signedUrl = await fetchSignedUrlForImage(imageKey);
+          if (signedUrl) {
+            currentImageUrl = signedUrl;
+          }
+        }
       }
+
 
       return {
         id: p.id,
@@ -109,4 +118,3 @@ export default async function SuccessCasesPage({ params: { lang } }: { params: {
     </div>
   );
 }
-
