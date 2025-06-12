@@ -23,7 +23,7 @@ export default function EnhancedServiceCard({
   isLoading = false,
 }: EnhancedServiceCardProps) {
   return (
-    <div className={`flex flex-col lg:flex-row ${reverse ? 'lg:flex-row-reverse' : ''} items-stretch bg-card shadow-md rounded-xl overflow-hidden mb-10 min-h-[350px] md:min-h-[400px]`}>
+    <div className={`flex flex-col lg:flex-row ${reverse ? 'lg:flex-row-reverse' : ''} items-stretch bg-card shadow-lg rounded-xl overflow-hidden mb-10 min-h-[350px] md:min-h-[400px] transition-all duration-300 ease-in-out transform hover:shadow-2xl hover:-translate-y-1 hover:scale-[1.01]`}>
       <div className="w-full lg:w-1/2 p-8 flex flex-col justify-center">
         <h3 className="text-primary text-2xl font-bold mb-4">{title}</h3>
         <p className="text-muted-foreground mb-6 leading-relaxed">{description}</p>
