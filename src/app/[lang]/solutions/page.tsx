@@ -1,78 +1,157 @@
+
+'use client';
+
+import { useState, useEffect } from 'react';
 import type { Locale } from '@/app/i18n-config';
 import { getDictionary, type Dictionary } from '@/lib/dictionaries';
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
-import { Cloud, Code, Bot, CheckCircle } from 'lucide-react';
-import Image from 'next/image';
+import SolutionDetailCard from '@/components/SolutionDetailCard';
+import { Cloud, Code, Bot } from 'lucide-react';
+import { Skeleton } from '@/components/ui/skeleton';
 
-const SolutionDetailCard = ({ title, description, benefits, icon, imageSrc, imageAlt, aiHint }: { title: string; description: string; benefits: string[]; icon: React.ReactNode; imageSrc: string; imageAlt: string; aiHint: string; }) => (
-  <Card className="overflow-hidden shadow-lg">
-    <div className="md:flex">
-      <div className="md:w-1/2 p-6 md:p-8">
-        <div className="flex items-center mb-4">
-          <div className="p-3 bg-secondary text-secondary-foreground rounded-full mr-4">
-            {icon}
-          </div>
-          <CardTitle className="text-3xl text-primary">{title}</CardTitle>
-        </div>
-        <CardDescription className="text-body text-muted-foreground mb-6">{description}</CardDescription>
-        <h3 className="font-headline text-xl text-primary mb-3">Key Benefits:</h3>
-        <ul className="space-y-2">
-          {benefits.map((benefit, index) => (
-            <li key={index} className="flex items-start">
-              <CheckCircle className="h-5 w-5 text-accent mr-2 mt-1 flex-shrink-0" strokeWidth={1.5} />
-              <span className="text-body">{benefit}</span>
-            </li>
-          ))}
-        </ul>
+async function fetchSignedUrlForImage(imageKey: string | undefined): Promise<string | null> {
+  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+  if (!backendUrl) {
+    console.error("fetchSignedUrlForImage: NEXT_PUBLIC_BACKEND_URL is not defined. Cannot fetch signed URL.");
+    return null;
+  }
+  if (!imageKey) {
+    console.warn("fetchSignedUrlForImage: imageKey is not provided or is undefined.");
+    return null;
+  }
+
+  const apiUrl = `${backendUrl}/v1/media/s3-signed-url?key=${encodeURIComponent(imageKey)}`;
+  
+  try {
+    const response = await fetch(apiUrl);
+    if (response.ok) {
+      const data = await response.json();
+      return data.url || null;
+    } else {
+      const errorText = await response.text();
+      console.error(`fetchSignedUrlForImage: Failed to fetch signed URL for ${imageKey}. Status: ${response.status}, Response: ${errorText}`);
+      return null;
+    }
+  } catch (error) {
+    console.error(`fetchSignedUrlForImage: Error during fetch operation for ${imageKey}:`, error);
+    return null;
+  }
+}
+
+
+export default function SolutionsPage({ params: { lang } }: { params: { lang: Locale } }) {
+  const [dictionary, setDictionary] = useState<Dictionary | null>(null);
+  const [imageUrls, setImageUrls] = useState<{ [key: string]: string | null }>({
+    cloud: null,
+    webDev: null,
+    chatbots: null,
+  });
+  const [isLoadingImages, setIsLoadingImages] = useState<{ [key: string]: boolean }>({
+    cloud: true,
+    webDev: true,
+    chatbots: true,
+  });
+
+  useEffect(() => {
+    const loadDictionary = async () => {
+      const dict = await getDictionary(lang);
+      setDictionary(dict);
+    };
+    loadDictionary();
+  }, [lang]);
+
+  useEffect(() => {
+    if (!dictionary) return; 
+
+    const imageKeysConfig = {
+      cloud: process.env.NEXT_PUBLIC_CLOUD_SOLUTIONS_IMAGE_KEY,
+      webDev: process.env.NEXT_PUBLIC_WEB_DEV_IMAGE_KEY,
+      chatbots: process.env.NEXT_PUBLIC_CHATBOTS_IMAGE_KEY,
+    };
+
+    const fetchAllImages = async () => {
+      const urls: { [key: string]: string | null } = {};
+      
+      // Initialize loading states to true before fetching
+      setIsLoadingImages({ cloud: true, webDev: true, chatbots: true });
+
+      for (const [serviceKey, imageKey] of Object.entries(imageKeysConfig)) {
+        const fetchedUrl = await fetchSignedUrlForImage(imageKey);
+        urls[serviceKey] = fetchedUrl;
+      }
+      setImageUrls(urls);
+      // Set all loading states to false after all fetches are attempted
+      setIsLoadingImages({ cloud: false, webDev: false, chatbots: false });
+    };
+
+    fetchAllImages();
+  }, [dictionary]);
+
+  if (!dictionary) {
+    return (
+      <div className="space-y-12 md:space-y-16 container mx-auto px-4 py-12">
+        <Skeleton className="h-12 w-1/2 mx-auto mb-16 rounded-md" />
+        <Skeleton className="h-96 w-full rounded-xl mb-12" />
+        <Skeleton className="h-96 w-full rounded-xl mb-12" />
+        <Skeleton className="h-96 w-full rounded-xl" />
       </div>
-      <div className="md:w-1/2 relative min-h-[250px] md:min-h-full">
-        <Image src={imageSrc} alt={imageAlt} layout="fill" objectFit="cover" data-ai-hint={aiHint} />
-      </div>
-    </div>
-  </Card>
-);
+    );
+  }
 
-
-export default async function SolutionsPage({ params: { lang } }: { params: { lang: Locale } }) {
-  const dictionary = await getDictionary(lang);
   const d = dictionary.solutionsPage;
+  const serviceItems = [
+    {
+      key: 'cloud',
+      title: d.cloudTitle,
+      description: d.cloudDescription,
+      benefits: d.cloudBenefits,
+      icon: <Cloud />,
+      imageAlt: "Cloud Solutions Illustration",
+      aiHint: "cloud infrastructure data",
+      defaultPlaceholder: "https://placehold.co/600x400.png?text=Cloud+Solutions"
+    },
+    {
+      key: 'webDev',
+      title: d.webDevTitle,
+      description: d.webDevDescription,
+      benefits: d.webDevBenefits,
+      icon: <Code />,
+      imageAlt: "Web Development Illustration",
+      aiHint: "modern web application",
+      defaultPlaceholder: "https://placehold.co/600x400.png?text=Web+Development"
+    },
+    {
+      key: 'chatbots',
+      title: d.chatbotsTitle,
+      description: d.chatbotsDescription,
+      benefits: d.chatbotsBenefits,
+      icon: <Bot />,
+      imageAlt: "Chatbots Illustration",
+      aiHint: "ai chatbot conversation",
+      defaultPlaceholder: "https://placehold.co/600x400.png?text=Chatbots"
+    },
+  ];
 
   return (
-    <div className="space-y-12 md:space-y-16">
-      <header className="text-center py-8">
-        <h1 className="text-primary">{d.title}</h1>
+    <div className="space-y-16 md:space-y-20 container mx-auto px-4 py-12">
+      <header className="text-center pt-8 pb-4">
+        <h1 className="text-primary font-bold">{d.title}</h1>
+        <div className="mt-4 h-1.5 w-24 bg-accent mx-auto rounded-full"></div>
       </header>
 
-      <SolutionDetailCard
-        title={d.cloudTitle}
-        description={d.cloudDescription}
-        benefits={d.cloudBenefits}
-        icon={<Cloud size={32} strokeWidth={1.5} />}
-        imageSrc="https://placehold.co/600x400.png"
-        imageAlt="Cloud Solutions Illustration"
-        aiHint="cloud infrastructure"
-      />
-
-      <SolutionDetailCard
-        title={d.webDevTitle}
-        description={d.webDevDescription}
-        benefits={d.webDevBenefits}
-        icon={<Code size={32} strokeWidth={1.5} />}
-        imageSrc="https://placehold.co/600x400.png"
-        imageAlt="Web Development Illustration"
-        aiHint="web design"
-      />
-      
-      <SolutionDetailCard
-        title={d.chatbotsTitle}
-        description={d.chatbotsDescription}
-        benefits={d.chatbotsBenefits}
-        icon={<Bot size={32} strokeWidth={1.5} />}
-        imageSrc="https://placehold.co/600x400.png"
-        imageAlt="Chatbots Illustration"
-        aiHint="chatbot interface"
-      />
-
+      {serviceItems.map((service, index) => (
+        <SolutionDetailCard
+          key={service.key}
+          title={service.title}
+          description={service.description}
+          benefits={service.benefits}
+          icon={service.icon}
+          imageSrc={imageUrls[service.key] || service.defaultPlaceholder}
+          imageAlt={service.imageAlt}
+          aiHint={service.aiHint}
+          isLoading={isLoadingImages[service.key]}
+          reverseLayout={index % 2 !== 0} 
+        />
+      ))}
     </div>
   );
 }
