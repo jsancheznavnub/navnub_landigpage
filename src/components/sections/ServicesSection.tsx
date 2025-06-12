@@ -4,17 +4,12 @@
 import { useState, useEffect } from 'react';
 import type { Dictionary } from '@/lib/dictionaries';
 import EnhancedServiceCard from '@/components/EnhancedServiceCard';
-// import Image from 'next/image'; // No longer directly needed here
 
 type ServicesSectionProps = {
   dictionary: Dictionary['services'];
 };
 
-async function fetchSignedUrlForImage(imageKey: string | undefined): Promise<string | null> {
-  if (!imageKey) {
-    console.error("fetchSignedUrlForImage: Image key is not defined.");
-    return null;
-  }
+async function fetchSignedUrlForImage(imageKey: string): Promise<string | null> {
   const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
   if (!backendUrl) {
     console.error("fetchSignedUrlForImage: NEXT_PUBLIC_BACKEND_URL is not defined in .env. Cannot fetch signed URL.");
@@ -22,13 +17,13 @@ async function fetchSignedUrlForImage(imageKey: string | undefined): Promise<str
   }
 
   const apiUrl = `${backendUrl}/v1/media/s3-signed-url?key=${encodeURIComponent(imageKey)}`;
-  console.log("fetchSignedUrlForImage: Attempting to fetch from API URL:", apiUrl); // Log the API URL
+  console.log("fetchSignedUrlForImage: Attempting to fetch from API URL:", apiUrl);
 
   try {
     const response = await fetch(apiUrl);
     if (response.ok) {
       const data = await response.json();
-      console.log("fetchSignedUrlForImage: Successfully fetched signed URL:", data.url);
+      console.log("fetchSignedUrlForImage: Successfully fetched signed URL.");
       return data.url || null;
     } else {
       const errorText = await response.text();
@@ -41,46 +36,74 @@ async function fetchSignedUrlForImage(imageKey: string | undefined): Promise<str
   }
 }
 
-
 export default function ServicesSection({ dictionary }: ServicesSectionProps) {
-  const [cloudImageUrl, setCloudImageUrl] = useState<string | null>(null);
-  const [isLoadingCloudImage, setIsLoadingCloudImage] = useState(true);
+  const [imageUrls, setImageUrls] = useState<{ [key: string]: string | null }>({});
+  const [isLoadingImages, setIsLoadingImages] = useState<{ [key: string]: boolean }>({});
 
   useEffect(() => {
-    const imageKey = process.env.NEXT_PUBLIC_CLOUD_SOLUTIONS_IMAGE_KEY;
-    if (imageKey) {
-      setIsLoadingCloudImage(true); // Set loading true before fetch
-      fetchSignedUrlForImage(imageKey)
-        .then(url => {
-          setCloudImageUrl(url);
-          // setIsLoadingCloudImage(false); // Loading is set to false in finally
-        })
-        .catch((error) => { // Catch errors from the promise itself
-            console.error("Error in useEffect calling fetchSignedUrlForImage:", error);
-            // setCloudImageUrl(null); // Ensure it's null on error
-            // setIsLoadingCloudImage(false); // Loading is set to false in finally
-        })
-        .finally(() => {
-            setIsLoadingCloudImage(false); // Set loading to false after fetch attempt (success or fail)
-        });
-    } else {
-      console.log("ServicesSection: NEXT_PUBLIC_CLOUD_SOLUTIONS_IMAGE_KEY is not defined. Using fallback image.");
-      setIsLoadingCloudImage(false); // No key, stop loading, use fallback
-    }
-  }, []);
+    const imageKeysConfig = {
+      cloudSolutions: process.env.NEXT_PUBLIC_CLOUD_SOLUTIONS_IMAGE_KEY,
+      webDevelopment: process.env.NEXT_PUBLIC_WEB_DEV_IMAGE_KEY,
+      chatbots: process.env.NEXT_PUBLIC_CHATBOTS_IMAGE_KEY,
+    };
+
+    const fetchImages = async () => {
+      const newImageUrls: { [key: string]: string | null } = {};
+      const initialLoadingStates: { [key: string]: boolean } = {};
+      const fetchPromises = [];
+
+      for (const [serviceKey, imageKey] of Object.entries(imageKeysConfig)) {
+        if (imageKey) {
+          initialLoadingStates[serviceKey] = true;
+          fetchPromises.push(
+            fetchSignedUrlForImage(imageKey)
+              .then(url => {
+                newImageUrls[serviceKey] = url;
+              })
+              .catch(error => {
+                console.error(`Error fetching image for ${serviceKey}:`, error);
+                newImageUrls[serviceKey] = null; // Use null or a static fallback on error
+              })
+          );
+        } else {
+          // If no env var, use a static fallback path and set loading to false immediately
+          console.log(`Image key for ${serviceKey} is not defined in environment variables. Using static fallback.`);
+          newImageUrls[serviceKey] = `/images/${serviceKey}.jpg`; // Assuming fallback names like cloudSolutions.jpg, webDevelopment.jpg, chatbots.jpg
+          initialLoadingStates[serviceKey] = false;
+        }
+      }
+
+      // Set initial loading states
+      setIsLoadingImages(prev => ({ ...prev, ...initialLoadingStates }));
+
+      // Wait for all fetch promises to settle
+      await Promise.allSettled(fetchPromises);
+
+      // Update image URLs state after all fetches are done
+      setImageUrls(prev => ({ ...prev, ...newImageUrls }));
+
+      // Set loading to false for all services that had a key defined
+      const finalLoadingStates: { [key: string]: boolean } = {};
+      for (const serviceKey of Object.keys(imageKeysConfig)) {
+          finalLoadingStates[serviceKey] = false;
+      }
+      setIsLoadingImages(finalLoadingStates);
+
+    };
+
+    fetchImages();
+
+  }, []); // Empty dependency array means this runs once on mount
 
   const serviceItems = [
     {
       title: dictionary.cloudSolutions.title,
       description: dictionary.cloudSolutions.description,
       benefits: dictionary.cloudSolutions.benefits || [],
-      // Logic for imageSrc:
-      // 1. If loading, use placeholder.
-      // 2. If not loading and cloudImageUrl is available, use it.
-      // 3. Otherwise (not loading, no cloudImageUrl), use static fallback.
-      imageSrc: isLoadingCloudImage ? "https://placehold.co/600x400.png" : (cloudImageUrl || '/images/cloud-ai.jpg'),
+      // Use the URL from state, or a placeholder/fallback
+      imageSrc: isLoadingImages.cloudSolutions ? "https://placehold.co/600x400.png" : (imageUrls.cloudSolutions || '/images/cloudSolutions.jpg'), // Fallback if fetch fails or no key
       imageAlt: 'AI Powered Cloud Solutions',
-      isLoading: isLoadingCloudImage,
+      isLoading: isLoadingImages.cloudSolutions,
       aiHint: 'cloud computing tablet',
       reverse: false,
     },
@@ -88,9 +111,10 @@ export default function ServicesSection({ dictionary }: ServicesSectionProps) {
       title: dictionary.webDevelopment.title,
       description: dictionary.webDevelopment.description,
       benefits: dictionary.webDevelopment.benefits || [],
-      imageSrc: '/images/web-dev.jpg', // Assuming this is a static image
+      // Use the URL from state, or a placeholder/fallback
+      imageSrc: isLoadingImages.webDevelopment ? "https://placehold.co/600x400.png" : (imageUrls.webDevelopment || '/images/webDevelopment.jpg'), // Fallback
       imageAlt: 'Innovative Web and App Development',
-      isLoading: false, // This image is static, so never loading
+      isLoading: isLoadingImages.webDevelopment,
       aiHint: 'web design code',
       reverse: true,
     },
@@ -98,12 +122,13 @@ export default function ServicesSection({ dictionary }: ServicesSectionProps) {
       title: dictionary.chatbots.title,
       description: dictionary.chatbots.description,
       benefits: dictionary.chatbots.benefits || [],
-      imageSrc: '/images/chatbots.jpg', // Assuming this is a static image
+      // Use the URL from state, or a placeholder/fallback
+      imageSrc: isLoadingImages.chatbots ? "https://placehold.co/600x400.png" : (imageUrls.chatbots || '/images/chatbots.jpg'), // Fallback
       imageAlt: 'Intelligent Chatbots and Automation',
-      isLoading: false, // This image is static, so never loading
+      isLoading: isLoadingImages.chatbots,
       aiHint: 'chatbot interface',
       reverse: false,
-    },
+    }
   ];
 
   return (

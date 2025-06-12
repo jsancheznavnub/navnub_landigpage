@@ -46,9 +46,8 @@ export default function EnhancedServiceCard({
           <Image
             src={imageSrc}
             alt={imageAlt}
-            layout="fill" // Use fill to cover the container
-            objectFit="cover" // Ensure the image covers the area, might crop
-            className="w-full h-full" // These ensure it tries to fill the parent
+            fill // Use fill to cover the container
+            className="w-full h-full object-cover" // These ensure it tries to fill the parent and cover the area
             data-ai-hint={aiHint}
           />
         )}
