@@ -58,7 +58,7 @@ export default function SolutionDetailCard({
               src={imageSrc}
               alt={imageAlt}
               layout="fill"
-              objectFit="contain"
+              objectFit="cover"
               data-ai-hint={aiHint}
               className="transition-opacity duration-500 ease-in-out"
               onError={(e) => {

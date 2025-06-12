@@ -37,7 +37,7 @@ export default function EnhancedServiceCard({
         </ul>
       </div>
 
-      <div className="w-full lg:w-1/2 relative">
+      <div className="w-full lg:w-1/2 relative min-h-[250px] lg:min-h-full">
         {isLoading ? (
           <Skeleton className="absolute inset-0 w-full h-full" />
         ) : (
@@ -45,7 +45,7 @@ export default function EnhancedServiceCard({
             src={imageSrc}
             alt={imageAlt}
             layout="fill"
-            objectFit="contain"
+            objectFit="cover"
             className="w-full h-full"
             data-ai-hint={aiHint}
             onError={(e) => {
