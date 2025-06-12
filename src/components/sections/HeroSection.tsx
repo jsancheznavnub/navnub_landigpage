@@ -72,7 +72,7 @@ export default function HeroSection({ dictionary, lang }: HeroSectionProps) {
   }, []);
 
   return (
-    <section className="relative min-h-[75vh] md:min-h-[85vh] flex items-center text-center text-primary-foreground overflow-hidden bg-background">
+    <section className="relative min-h-[75vh] md:min-h-[85vh] flex items-center text-center overflow-hidden bg-background">
       {isLoading ? (
         <Skeleton className="absolute inset-0 z-0 w-full h-full" />
       ) : (
@@ -91,7 +91,7 @@ export default function HeroSection({ dictionary, lang }: HeroSectionProps) {
       )}
       <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-transparent z-10"></div>
       <div className="relative z-20 container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-32">
-        <h1 className="text-primary-foreground mb-6 text-stroke-hero-title">
+        <h1 className="text-foreground dark:text-primary-foreground mb-6">
           {dictionary.title}
         </h1>
         <p className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto">
