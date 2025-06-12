@@ -200,7 +200,7 @@
         "title": "Plataforma Analítica Potenciada por IA",
         "description": "Una plataforma analítica integral que utiliza aprendizaje automático para proporcionar información empresarial procesable para PYMEs.",
         "imageUrl": "https://placehold.co/600x400.png",
-        "imageHint": "dashboard analytics",
+        "imageHint": "diseño ui ux",
         "categoryKey": "AI",
         "tags": ["IA", "Aprendizaje Automático", "Big Data", "SaaS"]
       },
@@ -586,4 +586,3 @@
   }
 }
 
-    

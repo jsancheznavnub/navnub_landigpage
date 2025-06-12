@@ -200,7 +200,7 @@
         "title": "AI-Powered Analytics Platform",
         "description": "A comprehensive analytics platform using machine learning to provide actionable business insights for PYMEs.",
         "imageUrl": "https://placehold.co/600x400.png",
-        "imageHint": "dashboard analytics",
+        "imageHint": "ui ux design",
         "categoryKey": "AI",
         "tags": ["AI", "Machine Learning", "Big Data", "SaaS"]
       },
@@ -586,4 +586,3 @@
   }
 }
 
-    

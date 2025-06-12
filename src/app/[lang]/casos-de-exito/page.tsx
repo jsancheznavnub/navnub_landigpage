@@ -10,46 +10,89 @@ type DictionaryProject = {
   description: string;
   imageUrl: string;
   imageHint: string;
-  categoryKey: 'AI' | 'Web' | 'Chatbot' | string; // Add string for flexibility
+  categoryKey: 'AI' | 'Web' | 'Chatbot' | string; 
   tags?: string[];
 };
 
-const getProjects = (dscp: Dictionary['successCasesPage']): Project[] => {
-  if (!dscp.projects || !Array.isArray(dscp.projects)) {
-    return []; // Return empty array if projects are not defined or not an array
+async function fetchSignedUrlForImage(imageKey: string | undefined): Promise<string | null> {
+  const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+  if (!backendUrl) {
+    console.error("fetchSignedUrlForImage: NEXT_PUBLIC_BACKEND_URL is not defined. Cannot fetch signed URL.");
+    return null;
   }
-  return dscp.projects.map((p: DictionaryProject) => {
-    let categoryDisplay = '';
-    switch (p.categoryKey) {
-      case 'AI':
-        categoryDisplay = dscp.projectCategoryAI;
-        break;
-      case 'Web':
-        categoryDisplay = dscp.projectCategoryWeb;
-        break;
-      case 'Chatbot':
-        categoryDisplay = dscp.projectCategoryChatbot;
-        break;
-      default:
-        // Fallback or default category if key is not recognized
-        // If you expect only the defined keys, you might want to log an error here
-        categoryDisplay = p.categoryKey; 
+  if (!imageKey) {
+    console.warn("fetchSignedUrlForImage: imageKey is not provided or is undefined.");
+    return null;
+  }
+
+  const apiUrl = `${backendUrl}/v1/media/s3-signed-url?key=${encodeURIComponent(imageKey)}`;
+  
+  try {
+    const response = await fetch(apiUrl, { cache: 'no-store' }); // Consider caching strategy
+    if (response.ok) {
+      const data = await response.json();
+      return data.url || null;
+    } else {
+      const errorText = await response.text();
+      console.error(`fetchSignedUrlForImage: Failed to fetch signed URL for ${imageKey}. Status: ${response.status}, Response: ${errorText}`);
+      return null;
     }
-    return {
-      id: p.id,
-      title: p.title,
-      description: p.description,
-      imageUrl: p.imageUrl,
-      imageHint: p.imageHint,
-      category: categoryDisplay, // This is the translated string for display
-      tags: p.tags,
-    };
-  });
+  } catch (error) {
+    console.error(`fetchSignedUrlForImage: Error during fetch operation for ${imageKey}:`, error);
+    return null;
+  }
+}
+
+const getProjects = async (dscp: Dictionary['successCasesPage']): Promise<Project[]> => {
+  if (!dscp.projects || !Array.isArray(dscp.projects)) {
+    return []; 
+  }
+
+  const processedProjects = await Promise.all(
+    dscp.projects.map(async (p: DictionaryProject) => {
+      let categoryDisplay = '';
+      switch (p.categoryKey) {
+        case 'AI':
+          categoryDisplay = dscp.projectCategoryAI;
+          break;
+        case 'Web':
+          categoryDisplay = dscp.projectCategoryWeb;
+          break;
+        case 'Chatbot':
+          categoryDisplay = dscp.projectCategoryChatbot;
+          break;
+        default:
+          categoryDisplay = p.categoryKey; 
+      }
+
+      let currentImageUrl = p.imageUrl;
+      if (p.id === "1") {
+        const imageKey = process.env.NEXT_PUBLIC_SUCCESS_CASE_AI_ANALYTICS_IMAGE_KEY;
+        if (imageKey) {
+          const signedUrl = await fetchSignedUrlForImage(imageKey);
+          if (signedUrl) {
+            currentImageUrl = signedUrl;
+          }
+        }
+      }
+
+      return {
+        id: p.id,
+        title: p.title,
+        description: p.description,
+        imageUrl: currentImageUrl, // Use the potentially updated URL
+        imageHint: p.imageHint,
+        category: categoryDisplay,
+        tags: p.tags,
+      };
+    })
+  );
+  return processedProjects;
 };
 
 export default async function SuccessCasesPage({ params: { lang } }: { params: { lang: Locale } }) {
   const dictionary = await getDictionary(lang);
-  const projects = getProjects(dictionary.successCasesPage);
+  const projects = await getProjects(dictionary.successCasesPage);
 
   return (
     <div className="space-y-12">
@@ -67,4 +110,3 @@ export default async function SuccessCasesPage({ params: { lang } }: { params: {
   );
 }
 
-    
