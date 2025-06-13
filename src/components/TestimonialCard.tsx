@@ -26,7 +26,7 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
             src={testimonial.imageUrl}
             alt={testimonial.name}
             fill={true} // Hace que la imagen llene el contenedor padre
-            className="object-cover" // Asegura que la imagen cubra el área manteniendo la proporción, recortando si es necesario
+            className="object-cover rounded-full" // Asegura que la imagen cubra el área y también intenta ser redonda
             data-ai-hint={testimonial.imageHint}
           />
         </div>
