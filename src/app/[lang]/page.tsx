@@ -1,4 +1,6 @@
 
+export const dynamic = 'force-dynamic';
+
 import type { Locale } from '@/app/i18n-config';
 import { getDictionary } from '@/lib/dictionaries';
 import HeroSection from '@/components/sections/HeroSection';

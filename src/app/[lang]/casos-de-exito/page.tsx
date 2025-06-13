@@ -1,4 +1,6 @@
 
+export const dynamic = 'force-dynamic';
+
 import type { Locale } from '@/app/i18n-config';
 import { getDictionary, type Dictionary } from '@/lib/dictionaries';
 import ProjectCard, { type Project } from '@/components/ProjectCard';
