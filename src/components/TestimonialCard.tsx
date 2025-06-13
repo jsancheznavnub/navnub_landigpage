@@ -20,12 +20,13 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
   return (
     <Card className="bg-card border border-border/50 shadow-lg hover:shadow-2xl hover:scale-[1.03] transition-all duration-300 ease-in-out h-full flex flex-col rounded-xl overflow-hidden">
       <CardHeader className="flex flex-row items-center space-x-4 p-6 bg-muted/30 border-b border-border/50">
-        <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-accent">
+        {/* Contenedor de la imagen: asegurar que sea cuadrado y con bordes redondeados completos y overflow hidden */}
+        <div className="relative w-24 h-24 aspect-square rounded-full overflow-hidden border-2 border-accent">
           <Image
             src={testimonial.imageUrl}
             alt={testimonial.name}
-            fill={true}
-            className="object-cover"
+            fill={true} // Hace que la imagen llene el contenedor padre
+            className="object-cover" // Asegura que la imagen cubra el área manteniendo la proporción, recortando si es necesario
             data-ai-hint={testimonial.imageHint}
           />
         </div>
@@ -41,5 +42,3 @@ export default function TestimonialCard({ testimonial }: TestimonialCardProps) {
     </Card>
   );
 }
-
-    
