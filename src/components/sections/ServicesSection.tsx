@@ -16,7 +16,11 @@ async function fetchSignedUrlForImage(imageKey: string | undefined, context: str
     return null;
   }
   if (!backendUrl.startsWith('http://') && !backendUrl.startsWith('https://')) {
-    console.error(`fetchSignedUrlForImage (${context}): NEXT_PUBLIC_BACKEND_URL ("${backendUrl}") is not a valid absolute URL. It must start with http:// or https://.`);
+    let finalErrorMessage = `fetchSignedUrlForImage (${context}): NEXT_PUBLIC_BACKEND_URL ("${backendUrl}") is not a valid absolute URL. It must start with http:// or https://.`;
+    if (backendUrl === "YOUR_BACKEND_URL_HERE") {
+      finalErrorMessage += " This value seems to be a placeholder. Ensure NEXT_PUBLIC_BACKEND_URL is correctly set in your .env file and RESTART your server.";
+    }
+    console.error(finalErrorMessage);
     return null;
   }
   if (!imageKey) {

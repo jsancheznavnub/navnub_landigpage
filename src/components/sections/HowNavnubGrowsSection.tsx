@@ -31,7 +31,11 @@ export default function HowNavnubGrowsSection({ dictionary }: HowNavnubGrowsSect
       }
 
       if (!backendUrl.startsWith('http://') && !backendUrl.startsWith('https://')) {
-        console.error(`HowNavnubGrowsSection: NEXT_PUBLIC_BACKEND_URL ("${backendUrl}") is not a valid absolute URL. It must start with http:// or https://.`);
+        let finalErrorMessage = `HowNavnubGrowsSection: NEXT_PUBLIC_BACKEND_URL ("${backendUrl}") is not a valid absolute URL. It must start with http:// or https://.`;
+        if (backendUrl === "YOUR_BACKEND_URL_HERE") {
+          finalErrorMessage += " This value seems to be a placeholder. Ensure NEXT_PUBLIC_BACKEND_URL is correctly set in your .env file and RESTART your server.";
+        }
+        console.error(finalErrorMessage);
         setImageUrl(DEFAULT_IMAGE_PLACEHOLDER);
         setLoading(false);
         return;
