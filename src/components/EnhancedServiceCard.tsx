@@ -44,8 +44,8 @@ export default function EnhancedServiceCard({
           <Image
             src={imageSrc}
             alt={imageAlt}
-            layout="fill"
-            objectFit="cover"
+            fill={true}
+            style={{ objectFit: 'cover' as 'cover' }}
             className="w-full h-full"
             data-ai-hint={aiHint}
             onError={(e) => {

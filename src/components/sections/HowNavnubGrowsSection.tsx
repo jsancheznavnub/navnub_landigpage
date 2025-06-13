@@ -104,8 +104,8 @@ export default function HowNavnubGrowsSection({ dictionary }: HowNavnubGrowsSect
               <Image
                 src={imageUrl}
                 alt={dictionary.title} // Consider a more descriptive alt based on the image content
-                layout="fill"
-                objectFit="cover"
+                fill={true}
+                style={{ objectFit: 'cover' as 'cover' }}
                 data-ai-hint="coding programming" // Updated hint
                 sizes="(max-width: 768px) 100vw, 50vw"
                 onError={() => {

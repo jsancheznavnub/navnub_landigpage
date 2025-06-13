@@ -71,7 +71,7 @@ export default function ContactForm({ dictionary }: ContactFormProps) {
     startTransition(async () => {
       console.log('startTransition started'); // Log al inicio de la transición
       const result = await submitContactForm(data);
-      console.log('submitContactForm result:', result); // Log del resultado
+      console.log('submitContactForm result:', JSON.stringify(result)); // Log del resultado
       if (result.success) {
         console.log('Submission successful, attempting to reset form.'); // Log en caso de éxito
         toast({

@@ -1,4 +1,6 @@
 
+'use client';
+
 import type { ReactElement } from 'react';
 import Image from 'next/image';
 import { Card, CardTitle, CardDescription } from '@/components/ui/card';
@@ -57,8 +59,8 @@ export default function SolutionDetailCard({
             <Image
               src={imageSrc}
               alt={imageAlt}
-              layout="fill"
-              objectFit="cover"
+              fill={true}
+              style={{ objectFit: 'cover' as 'cover' }}
               data-ai-hint={aiHint}
               className="transition-opacity duration-500 ease-in-out"
               onError={(e) => {
