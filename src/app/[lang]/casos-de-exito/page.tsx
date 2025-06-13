@@ -70,55 +70,32 @@ const getProjects = async (dscp: Dictionary['successCasesPage']): Promise<Projec
           categoryDisplay = p.categoryKey; 
       }
 
-      let currentImageUrl = p.imageUrl;
+      let currentImageUrl = p.imageUrl; // Default to placeholder
+      let imageKeyToFetch: string | undefined = undefined;
+
       if (p.id === "1") {
-        const imageKey = process.env.NEXT_PUBLIC_SUCCESS_CASE_AI_ANALYTICS_IMAGE_KEY;
-        if (imageKey) {
-          const signedUrl = await fetchSignedUrlForImage(imageKey);
-          if (signedUrl) {
-            currentImageUrl = signedUrl;
-          }
-        }
+        imageKeyToFetch = process.env.NEXT_PUBLIC_SUCCESS_CASE_AI_ANALYTICS_IMAGE_KEY;
       } else if (p.id === "2") {
-        const imageKey = process.env.NEXT_PUBLIC_SUCCESS_CASE_ECOMMERCE_IMAGE_KEY;
-        if (imageKey) {
-          const signedUrl = await fetchSignedUrlForImage(imageKey);
-          if (signedUrl) {
-            currentImageUrl = signedUrl;
-          }
-        }
+        imageKeyToFetch = process.env.NEXT_PUBLIC_SUCCESS_CASE_ECOMMERCE_IMAGE_KEY;
       } else if (p.id === "3") {
-        const imageKey = process.env.NEXT_PUBLIC_SUCCESS_CASE_CHATBOT_IMAGE_KEY;
-        if (imageKey) {
-          const signedUrl = await fetchSignedUrlForImage(imageKey);
-          if (signedUrl) {
-            currentImageUrl = signedUrl;
-          }
-        }
+        imageKeyToFetch = process.env.NEXT_PUBLIC_SUCCESS_CASE_CHATBOT_IMAGE_KEY;
       } else if (p.id === "4") {
-        const imageKey = process.env.NEXT_PUBLIC_SUCCESS_CASE_CLOUD_MIGRATION_IMAGE_KEY;
-        if (imageKey) {
-          const signedUrl = await fetchSignedUrlForImage(imageKey);
-          if (signedUrl) {
-            currentImageUrl = signedUrl;
-          }
-        }
+        imageKeyToFetch = process.env.NEXT_PUBLIC_SUCCESS_CASE_CLOUD_MIGRATION_IMAGE_KEY;
       } else if (p.id === "5") {
-        const imageKey = process.env.NEXT_PUBLIC_SUCCESS_CASE_LOGISTICS_APP_IMAGE_KEY;
-        if (imageKey) {
-          const signedUrl = await fetchSignedUrlForImage(imageKey);
-          if (signedUrl) {
-            currentImageUrl = signedUrl;
-          }
-        }
+        imageKeyToFetch = process.env.NEXT_PUBLIC_SUCCESS_CASE_LOGISTICS_APP_IMAGE_KEY;
       } else if (p.id === "6") {
-        const imageKey = process.env.NEXT_PUBLIC_SUCCESS_CASE_AI_SALES_IMAGE_KEY;
-        if (imageKey) {
-          const signedUrl = await fetchSignedUrlForImage(imageKey);
-          if (signedUrl) {
-            currentImageUrl = signedUrl;
-          }
+        imageKeyToFetch = process.env.NEXT_PUBLIC_SUCCESS_CASE_AI_SALES_IMAGE_KEY;
+      }
+
+      if (imageKeyToFetch) {
+        const signedUrl = await fetchSignedUrlForImage(imageKeyToFetch);
+        if (signedUrl) {
+          currentImageUrl = signedUrl;
+        } else {
+          console.warn(`getProjects (SuccessCasesPage): Failed to get signed URL for project ID ${p.id} (key: ${imageKeyToFetch}). Using placeholder: ${p.imageUrl}`);
         }
+      } else if (["1", "2", "3", "4", "5", "6"].includes(p.id)) { // Only warn if an image was expected
+         console.warn(`getProjects (SuccessCasesPage): Image key not found in .env for project ID ${p.id}. Using placeholder: ${p.imageUrl}`);
       }
 
 

@@ -70,23 +70,38 @@ export default function SolutionsPage(props: { params: Promise<{ lang: Locale }>
   useEffect(() => {
     if (!dictionary) return; 
 
-    const imageKeysConfig = {
-      cloud: process.env.NEXT_PUBLIC_CLOUD_SOLUTIONS_IMAGE_KEY,
-      webDev: process.env.NEXT_PUBLIC_WEB_DEV_IMAGE_KEY,
-      chatbots: process.env.NEXT_PUBLIC_CHATBOTS_IMAGE_KEY,
-    };
+    const imageKeysConfig = [
+      { key: 'cloud', envVar: process.env.NEXT_PUBLIC_CLOUD_SOLUTIONS_IMAGE_KEY, defaultPlaceholder: "https://placehold.co/600x400.png?text=Cloud+Solutions" },
+      { key: 'webDev', envVar: process.env.NEXT_PUBLIC_WEB_DEV_IMAGE_KEY, defaultPlaceholder: "https://placehold.co/600x400.png?text=Web+Development" },
+      { key: 'chatbots', envVar: process.env.NEXT_PUBLIC_CHATBOTS_IMAGE_KEY, defaultPlaceholder: "https://placehold.co/600x400.png?text=Chatbots" },
+    ];
 
     const fetchAllImages = async () => {
       const urls: { [key: string]: string | null } = {};
+      const loadingStates: { [key: string]: boolean } = { cloud: true, webDev: true, chatbots: true };
       
-      setIsLoadingImages({ cloud: true, webDev: true, chatbots: true });
+      setImageUrls(prev => ({...prev, ...imageKeysConfig.reduce((acc,curr) => ({...acc, [curr.key]: curr.defaultPlaceholder}), {})})); // Set placeholders initially
+      setIsLoadingImages(loadingStates);
 
-      for (const [serviceKey, imageKey] of Object.entries(imageKeysConfig)) {
-        const fetchedUrl = await fetchSignedUrlForImage(imageKey, `SolutionsPage-${serviceKey}`);
-        urls[serviceKey] = fetchedUrl;
+      for (const config of imageKeysConfig) {
+        if (config.envVar) {
+          const fetchedUrl = await fetchSignedUrlForImage(config.envVar, `SolutionsPage-${config.key}`);
+          if (fetchedUrl) {
+            urls[config.key] = fetchedUrl;
+          } else {
+            console.warn(`SolutionsPage: Failed to get signed URL for ${config.key} (key: ${config.envVar}). Using placeholder: ${config.defaultPlaceholder}`);
+            urls[config.key] = config.defaultPlaceholder; // Ensure placeholder on explicit fail
+          }
+        } else {
+          console.warn(`SolutionsPage: Image key not found in .env for ${config.key}. Using placeholder: ${config.defaultPlaceholder}`);
+          urls[config.key] = config.defaultPlaceholder; // Ensure placeholder if envVar is missing
+        }
+        // Update loading state for this specific image
+        // This approach might cause multiple re-renders. Consider batching state updates if performance is an issue.
+        setIsLoadingImages(prev => ({...prev, [config.key]: false}));
       }
-      setImageUrls(urls);
-      setIsLoadingImages({ cloud: false, webDev: false, chatbots: false });
+      setImageUrls(prev => ({...prev, ...urls})); // Batch update URLs at the end
+      // setIsLoadingImages({ cloud: false, webDev: false, chatbots: false }); // Batch update loading states at the end
     };
 
     fetchAllImages();
