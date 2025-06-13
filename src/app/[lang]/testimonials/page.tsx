@@ -70,6 +70,14 @@ async function processTestimonials(rawTestimonials: Testimonial[]): Promise<Test
             updatedTestimonial.imageUrl = signedUrl;
           }
         }
+      } else if (testimonial.id === "3") { // Alice Brown's testimonial
+        const imageKey = process.env.NEXT_PUBLIC_TESTIMONIAL_ALICE_BROWN_IMAGE_KEY;
+        if (imageKey) {
+          const signedUrl = await fetchSignedUrlForImage(imageKey);
+          if (signedUrl) {
+            updatedTestimonial.imageUrl = signedUrl;
+          }
+        }
       }
       // Add more conditions here for other testimonials if needed in the future
       return updatedTestimonial;
