@@ -47,7 +47,15 @@ async function processTestimonials(rawTestimonials: Testimonial[]): Promise<Test
       let updatedTestimonial = { ...testimonial };
 
       if (testimonial.id === "5") { // Sofia Chen's testimonial
-        const imageKey = process.env.NEXT_PUBLIC_TESTIMONial_SOFIA_CHEN_IMAGE_KEY;
+        const imageKey = process.env.NEXT_PUBLIC_TESTIMONIAL_SOFIA_CHEN_IMAGE_KEY;
+        if (imageKey) {
+          const signedUrl = await fetchSignedUrlForImage(imageKey);
+          if (signedUrl) {
+            updatedTestimonial.imageUrl = signedUrl;
+          }
+        }
+      } else if (testimonial.id === "2") { // John Smith's testimonial
+        const imageKey = process.env.NEXT_PUBLIC_TESTIMONIAL_JOHN_SMITH_IMAGE_KEY;
         if (imageKey) {
           const signedUrl = await fetchSignedUrlForImage(imageKey);
           if (signedUrl) {

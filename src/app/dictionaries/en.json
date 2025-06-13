@@ -272,7 +272,7 @@
     {
       "id": "2",
       "name": "John Smith",
-      "company": "Cloud Innovations Ltd.",
+      "company": "MTP DIGITAL BUSINESS ASSURANCE",
       "quote": "The AI-powered chatbot Navnub developed for us has significantly improved our customer engagement and operational efficiency. A game-changer for our PYME!",
       "imageUrl": "https://placehold.co/100x100.png",
       "imageHint": "smiling man"
@@ -585,4 +585,3 @@
     }
   }
 }
-
