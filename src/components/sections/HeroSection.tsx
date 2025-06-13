@@ -83,7 +83,7 @@ export default function HeroSection({ dictionary, lang }: HeroSectionProps) {
           src={imageUrl}
           alt="Professional working in a modern office environment for Navnub hero section"
           fill={true}
-          className="absolute inset-0 z-0 opacity-30 object-cover"
+          className="absolute inset-0 z-0 opacity-40 object-cover"
           data-ai-hint="office work"
           priority
           onError={() => {
