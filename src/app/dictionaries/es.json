@@ -272,7 +272,7 @@
     {
       "id": "2",
       "name": "John Smith",
-      "company": "MTP DIGITAL BUSINESS ASSURANCE",
+      "company": "MTP Digital Business Assurance",
       "quote": "El chatbot con IA que Navnub desarrolló para nosotros ha mejorado significativamente nuestra interacción con clientes y eficiencia operativa. ¡Un cambio radical para nuestra PYME!",
       "imageUrl": "https://placehold.co/100x100.png",
       "imageHint": "hombre sonriente"
@@ -585,3 +585,5 @@
     }
   }
 }
+
+    
