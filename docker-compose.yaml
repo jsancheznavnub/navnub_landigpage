@@ -1,0 +1,24 @@
+services:
+  www:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9082:3000"
+    volumes:
+      - app_data:/app/data
+    networks:
+      - app-network
+    restart: always
+    environment:
+      NODE_ENV: production
+    env_file:
+      - .env
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  app_data:
+    driver: local
