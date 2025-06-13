@@ -51,7 +51,15 @@ async function processTestimonials(rawTestimonials: Testimonial[]): Promise<Test
     rawTestimonials.map(async (testimonial) => {
       let updatedTestimonial = { ...testimonial };
 
-      if (testimonial.id === "5") { // Sofia Chen's testimonial
+      if (testimonial.id === "1") { // Jane Doe's testimonial
+        const imageKey = process.env.NEXT_PUBLIC_TESTIMONIAL_JANE_DOE_IMAGE_KEY;
+        if (imageKey) {
+          const signedUrl = await fetchSignedUrlForImage(imageKey);
+          if (signedUrl) {
+            updatedTestimonial.imageUrl = signedUrl;
+          }
+        }
+      } else if (testimonial.id === "5") { // Sofia Chen's testimonial
         const imageKey = process.env.NEXT_PUBLIC_TESTIMONIAL_SOFIA_CHEN_IMAGE_KEY;
         if (imageKey) {
           const signedUrl = await fetchSignedUrlForImage(imageKey);
@@ -84,7 +92,6 @@ async function processTestimonials(rawTestimonials: Testimonial[]): Promise<Test
           }
         }
       }
-      // Add more conditions here for other testimonials if needed in the future
       return updatedTestimonial;
     })
   );
